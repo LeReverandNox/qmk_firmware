@@ -62,21 +62,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Dvorak
  * ,-----------------------------------------------------------------------------------.
- * | Tab  |   "  |   ,  |   .  |   P  |   Y  |   F  |   G  |   C  |   R  |   L  |  /   |
+ * |   `  |   "  |   ,  |   .  |   P  |   Y  |   F  |   G  |   C  |   R  |   L  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Caps |   A  |   O  |   E  |   U  |   I  |   D  |   H  |   T  |   N  |   S  |Enter |
+ * |      |   A  |   O  |   E  |   U  |   I  |   D  |   H  |   T  |   N  |   S  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Shift|   ;  |   Q  |   J  |   K  |   X  |   B  |   M  |   W  |   V  |   Z  |Shift |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl | GUI  | Alt  |      |  Spc |Lower |Raise | Bksp | Left | Down |  Up  |Right |
- * |      |      |      |      |      |      |      |      |      | Alt  |  GUI | Ctrl |
+ * | Ctrl | GUI  | Alt  | Caps |  Spc | Tab  |Enter | Bksp |      | Alt  |  GUI | Ctrl |
+ * |      |      |      |      |      |Lower |Raise |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_DVORAK] = LAYOUT_planck_grid(
-    KC_TAB,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_SLSH,
-    KC_CAPS, KC_A,    KC_O,    KC_E,    KC_U,    KC_I,    KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    KC_ENT,
+    KC_GRV,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_NO,
+    KC_NO,   KC_A,    KC_O,    KC_E,    KC_U,    KC_I,    KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    KC_NO,
     KC_LSFT, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,    KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_RSFT,
-    KC_LCTL, KC_LGUI, KC_LALT, _______, KC_SPC,  LOWER,   RAISE,   KC_BSPC, KC_LEFT, RALT_T(KC_DOWN), RGUI_T(KC_UP),   RCTL_T(KC_RGHT)
+    KC_LCTL, KC_LGUI, KC_LALT, KC_CAPS, KC_SPC,  LT(LOWER, KC_TAB), LT(RAISE, KC_ENT), KC_BSPC, KC_NO, KC_RALT, KC_RGUI, KC_RCTL
     ),
 
 /* Lower
