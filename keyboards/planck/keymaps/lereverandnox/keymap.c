@@ -38,11 +38,21 @@ enum planck_keycodes {
   ALT_TAB
 };
 
+enum {
+  TD_DOT_COLN = 0
+};
+
 #define LNAV MO(_LNAV)
 #define SYM MO(_SYM)
 #define NUM MO(_NUM)
 
 #define ALT_TAB_TRESHOLD 500
+
+//Tap Dance Definitions
+qk_tap_dance_action_t tap_dance_actions[] = {
+  //Tap once for Dot, twice for Colon
+  [TD_DOT_COLN]  = ACTION_TAP_DANCE_DOUBLE(KC_DOT, KC_COLN)
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -131,13 +141,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |  C   |  B   |  A   |      |  \   |  1   |  2   |  3   |  +   |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |  0   |  ,   |  .   |  =   |      |
+ * |      |      |      |      |      |      |      |      |      |  :   |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_NUM] = LAYOUT_planck_grid(
     _______, _______, _______, _______, _______, _______, KC_SLSH, KC_7,    KC_8,    KC_9,    KC_ASTR, _______,
     _______, KC_LCTL, LGUI_T(KC_F), LALT_T(KC_E), LSFT_T(KC_D), _______, KC_HASH, RSFT_T(KC_4), RALT_T(KC_5), RGUI_T(KC_6), RCTL_T(KC_MINS), _______,
     _______, _______, KC_C,    KC_B,    KC_A,    _______, KC_BSLS, KC_1,    KC_2,    KC_3,    KC_PLUS, _______,
-    _______, _______, _______, _______, _______, _______, _______, KC_0,    KC_COMM, KC_DOT,  KC_EQL,  _______
+    _______, _______, _______, _______, _______, _______, _______, KC_0,    KC_COMM, TD(TD_DOT_COLN),  KC_EQL,  _______
         ),
 
 /* Plover layer (http://opensteno.org)
