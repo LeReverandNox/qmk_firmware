@@ -23,7 +23,6 @@ enum planck_layers {
   _QWERTY,
   _DVORAK,
   _LNAV,
-  _RNAV,
   _SYM,
   _NUM,
   _PLOVER,
@@ -40,7 +39,6 @@ enum planck_keycodes {
 };
 
 #define LNAV MO(_LNAV)
-#define RNAV MO(_RNAV)
 #define SYM MO(_SYM)
 #define NUM MO(_NUM)
 
@@ -77,14 +75,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |   ;  |   Q  |   J  |   K  |   X  |   B  |   M  |   W  |   V  |   Z  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Ctrl | GUI  | Alt  | Esc  |  Spc | Tab  | Alt  | Bksp |Enter | Alt  |  GUI | Ctrl |
- * |      |      |      | LNav | Sym  | Num  | Num  | Sym  | RNav |      |      |      |
+ * |      |      |      | LNav | Sym  | Num  | Num  | Sym  |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_DVORAK] = LAYOUT_planck_grid(
     KC_NO,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_NO,
     KC_NO,   LCTL_T(KC_A),    LGUI_T(KC_O),    LALT_T(KC_E),    LSFT_T(KC_U),    KC_I,    KC_D,    RSFT_T(KC_H),    RALT_T(KC_T),    RGUI_T(KC_N),    RCTL_T(KC_S),    KC_NO,
     KC_NO, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,    KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_NO,
-    KC_LCTL, KC_LGUI, KC_LALT, LT(LNAV, KC_ESC), LT(SYM, KC_SPC),  LT(NUM, KC_TAB), LT(NUM, KC_RALT), LT(SYM, KC_BSPC), LT(RNAV, KC_ENT), OSM(MOD_RALT), OSM(MOD_RGUI), OSM(MOD_RCTL)
+    KC_LCTL, KC_LGUI, KC_LALT, LT(LNAV, KC_ESC), LT(SYM, KC_SPC),  LT(NUM, KC_TAB), LT(NUM, KC_RALT), LT(SYM, KC_BSPC), KC_ENT, OSM(MOD_RALT), OSM(MOD_RGUI), OSM(MOD_RCTL)
     ),
 
 /* Left Nav
@@ -103,24 +101,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, _______, _______, KC_LEFT, KC_DOWN,  KC_UP,   KC_RGHT, _______,
     _______, _______, _______, _______, _______, _______, _______, KC_END,  KC_PGDN,  _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______
-    ),
-
-/* Right Nav
- * ,-----------------------------------------------------------------------------------
- * |      |      |      |Pg Up | Home |      |      |      |      |      |      |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      | Left | Down |  Up  |Right |      |      |Shift |  Alt |  GUI | Ctrl |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |Pg Dn | End  |      |      |      |      |      |      |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |      |      |
- * `-----------------------------------------------------------------------------------'
- */
-[_RNAV] = LAYOUT_planck_grid(
-    _______, _______, _______, KC_PGUP, KC_HOME, _______, _______, _______, _______, _______, _______, _______,
-    _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______, KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, _______,
-    _______, _______, _______, KC_PGDN, KC_END,  _______, _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
 /* Symbols
