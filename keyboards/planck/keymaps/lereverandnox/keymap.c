@@ -38,10 +38,15 @@ enum planck_keycodes {
   EXT_PLV
 };
 
+enum custom_keycodes {
+  ALT_TAB
+};
+
 #define LOWER MO(_LOWER)
 #define RAISE MO(_RAISE)
 #define LNAV MO(_LNAV)
 #define RNAV MO(_RNAV)
+#define ALT_TAB_TRESHOLD 500
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -86,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Left Nav
  * ,-----------------------------------------------------------------------------------
- * |      |      |      |      |      |      |      | Home |Pg Up |      |      |      |
+ * | ATab |      |      |      |      |      |      | Home |Pg Up |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      | Ctrl |  GUI |  Alt |Shift |      |      | Left | Down |  Up  |Right |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -96,7 +101,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_LNAV] = LAYOUT_planck_grid(
-    _______, _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGUP,  _______, _______, _______,
+    ALT_TAB, _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGUP,  _______, _______, _______,
     _______, KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, _______, _______, KC_LEFT, KC_DOWN,  KC_UP,   KC_RGHT, _______,
     _______, _______, _______, _______, _______, _______, _______, KC_END,  KC_PGDN,  _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______
@@ -200,6 +205,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   float plover_gb_song[][2]  = SONG(PLOVER_GOODBYE_SOUND);
 #endif
 
+bool is_alt_tab_active = false;
+uint16_t alt_tab_timer = 0;
+
 layer_state_t layer_state_set_user(layer_state_t state) {
   return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
 }
@@ -263,6 +271,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         layer_off(_PLOVER);
       }
       return false;
+      break;
+    case ALT_TAB:
+      if (record->event.pressed) {
+        if (!is_alt_tab_active) {
+          is_alt_tab_active = true;
+          register_code(KC_LALT);
+        }
+        alt_tab_timer = timer_read();
+        register_code(KC_TAB);
+      } else {
+        unregister_code(KC_TAB);
+      }
       break;
   }
   return true;
@@ -347,6 +367,13 @@ void matrix_scan_user(void) {
       muse_counter = (muse_counter + 1) % muse_tempo;
     }
   #endif
+
+  if (is_alt_tab_active) {
+    if (timer_elapsed(alt_tab_timer) > ALT_TAB_TRESHOLD) {
+        unregister_code(KC_LALT);
+        is_alt_tab_active = false;
+    }
+  }
 }
 
 bool music_mask_user(uint16_t keycode) {
