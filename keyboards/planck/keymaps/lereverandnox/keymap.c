@@ -35,10 +35,7 @@ enum planck_keycodes {
   DVORAK,
   PLOVER,
   BACKLIT,
-  EXT_PLV
-};
-
-enum custom_keycodes {
+  EXT_PLV,
   ALT_TAB
 };
 
@@ -283,6 +280,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       } else {
         unregister_code(KC_TAB);
       }
+      return false;
       break;
   }
   return true;
