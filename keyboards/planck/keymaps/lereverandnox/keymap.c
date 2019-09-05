@@ -84,15 +84,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |   ;  |   Q  |   J  |   K  |   X  |   B  |   M  |   W  |   V  |   Z  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl | GUI  | Alt  | Esc  |  Spc | Tab  | Alt  | Bksp |Enter | Alt  |  GUI | Ctrl |
+ * | Ctrl | GUI  | Alt  | Esc  |  Spc | Tab  |Enter | Bksp | RAlt | Alt  |  GUI | Ctrl |
  * |      |      |      | Nav  | Sym  | Num  | Num  | Sym  |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_DVORAK] = LAYOUT_planck_grid(
     KC_NO,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_NO,
-    KC_NO,   LCTL_T(KC_A),    LGUI_T(KC_O),    LALT_T(KC_E),    LSFT_T(KC_U),    KC_I,    KC_D,    RSFT_T(KC_H),    RALT_T(KC_T),    RGUI_T(KC_N),    RCTL_T(KC_S),    KC_NO,
+    KC_NO,   LCTL_T(KC_A),    LGUI_T(KC_O),    LALT_T(KC_E),    LSFT_T(KC_U),    KC_I,    KC_D,    RSFT_T(KC_H),    LALT_T(KC_T),    RGUI_T(KC_N),    RCTL_T(KC_S),    KC_NO,
     KC_NO, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,    KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_NO,
-    KC_LCTL, KC_LGUI, KC_LALT, LT(NAV, KC_ESC), LT(SYM, KC_SPC),  LT(NUM, KC_TAB), LT(NUM, KC_RALT), LT(SYM, KC_BSPC), KC_ENT, OSM(MOD_RALT), OSM(MOD_RGUI), OSM(MOD_RCTL)
+    KC_LCTL, KC_LGUI, KC_LALT, LT(NAV, KC_ESC), LT(SYM, KC_SPC),  LT(NUM, KC_TAB), LT(NUM, KC_ENT), LT(SYM, KC_BSPC), KC_RALT, OSM(MOD_LALT), OSM(MOD_RGUI), OSM(MOD_RCTL)
     ),
 
 /* Left Nav
@@ -146,7 +146,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_NUM] = LAYOUT_planck_grid(
     _______, _______, _______, _______, _______, _______, KC_SLSH, KC_7,    KC_8,    KC_9,    KC_ASTR, _______,
-    _______, KC_LCTL, LGUI_T(KC_F), LALT_T(KC_E), LSFT_T(KC_D), _______, KC_HASH, RSFT_T(KC_4), RALT_T(KC_5), RGUI_T(KC_6), RCTL_T(KC_MINS), _______,
+    _______, KC_LCTL, LGUI_T(KC_F), LALT_T(KC_E), LSFT_T(KC_D), _______, KC_HASH, RSFT_T(KC_4), LALT_T(KC_5), RGUI_T(KC_6), RCTL_T(KC_MINS), _______,
     _______, _______, KC_C,    KC_B,    KC_A,    _______, KC_BSLS, KC_1,    KC_2,    KC_3,    KC_PLUS, _______,
     _______, _______, _______, _______, _______, _______, _______, KC_0,    KC_COMM, TD(TD_DOT_COLN),  KC_EQL,  _______
         ),
