@@ -38,7 +38,7 @@ enum planck_keycodes {
   ALT_TAB
 };
 
-enum {
+enum tap_dances {
   TD_DOT_COLN = 0
 };
 
