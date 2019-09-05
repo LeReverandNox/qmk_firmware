@@ -78,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |   ;  |   Q  |   J  |   K  |   X  |   B  |   M  |   W  |   V  |   Z  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl | GUI  | Alt  | Caps |  Spc | Tab  | Alt  | Bksp |Enter | Alt  |  GUI | Ctrl |
+ * | Ctrl | GUI  | Alt  | Esc  |  Spc | Tab  | Alt  | Bksp |Enter | Alt  |  GUI | Ctrl |
  * |      |      |      | LNav | Sym  |      |      | Sym  | RNav |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
@@ -86,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_NO,
     RAISE,   LCTL_T(KC_A),    LGUI_T(KC_O),    LALT_T(KC_E),    LSFT_T(KC_U),    KC_I,    KC_D,    RSFT_T(KC_H),    RALT_T(KC_T),    RGUI_T(KC_N),    RCTL_T(KC_S),    LOWER,
     KC_NO, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,    KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_NO,
-    OSM(MOD_LCTL), OSM(MOD_LGUI), OSM(MOD_LALT), LT(LNAV, KC_CAPS), LT(SYM, KC_SPC),  LT(SYM, KC_TAB), LT(SYM, KC_RALT), LT(SYM, KC_BSPC), LT(RNAV, KC_ENT), OSM(MOD_RALT), OSM(MOD_RGUI), OSM(MOD_RCTL)
+    OSM(MOD_LCTL), OSM(MOD_LGUI), OSM(MOD_LALT), LT(LNAV, KC_ESC), LT(SYM, KC_SPC),  LT(SYM, KC_TAB), LT(SYM, KC_RALT), LT(SYM, KC_BSPC), LT(RNAV, KC_ENT), OSM(MOD_RALT), OSM(MOD_RGUI), OSM(MOD_RCTL)
     ),
 
 /* Left Nav
