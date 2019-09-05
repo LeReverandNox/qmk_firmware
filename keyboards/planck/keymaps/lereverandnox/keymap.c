@@ -108,7 +108,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Caps |  `   |  ~   |  *   |  &   |      |      |  (   |  )   |  /   |  ?   |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |  -   |  ^   |  %   |  $   |      |      |  [   |  ]   |  \   |  |   |      |
- * |      | Ctrl | GUI  | Alt  |Shift |      |      |Shift |  Alt |  GUI | Ctrl |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |  _   |  #   |  @   |  !   |      |      |  {   |  }   |  =   |  +   |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -117,7 +116,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_SYM] = LAYOUT_planck_grid(
     KC_CAPS, KC_GRV,  KC_TILD, KC_ASTR, KC_AMPR, _______, _______, KC_LPRN, KC_RPRN, KC_SLSH, KC_QUES, _______,
-    _______, LCTL_T(KC_MINS), LGUI_T(KC_CIRC), LALT_T(KC_PERC), LSFT_T(KC_DLR),  _______, _______, RSFT_T(KC_LBRC), RALT_T(KC_RBRC), RGUI_T(KC_BSLS), RCTL_T(KC_PIPE), _______,
+    _______, KC_MINS, KC_CIRC, KC_PERC, KC_DLR,  _______, _______, KC_LBRC, KC_RBRC, KC_BSLS, KC_PIPE, _______,
     _______, KC_UNDS, KC_HASH, KC_AT,   KC_EXLM, _______, _______, KC_LCBR, KC_RCBR, KC_EQL,  KC_PLUS, _______,
     _______, _______, _______, _______, _______, _______, _______, KC_DEL,  _______, _______, _______, _______
     ),
