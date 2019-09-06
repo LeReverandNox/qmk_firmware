@@ -147,7 +147,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_NUM] = LAYOUT_planck_grid(
     _______, _______, _______, _______, _______, _______, KC_SLSH, KC_7,    KC_8,    KC_9,    KC_ASTR, _______,
-    _______, KC_LCTL, LGUI_T(KC_F), LALT_T(KC_E), LSFT_T(KC_D), _______, KC_HASH, RSFT_T(KC_4), LALT_T(KC_5), RGUI_T(KC_6), RCTL_T(KC_MINS), _______,
+    _______, LCTL_T(KC_NO), LGUI_T(KC_F), LALT_T(KC_E), LSFT_T(KC_D), _______, KC_HASH, RSFT_T(KC_4), LALT_T(KC_5), RGUI_T(KC_6), RCTL_T(KC_MINS), _______,
     _______, _______, KC_C,    KC_B,    KC_A,    _______, KC_BSLS, KC_1,    KC_2,    KC_3,    KC_PLUS, _______,
     _______, _______, _______, _______, _______, _______, _______, KC_0,    KC_COMM, TD(TD_DOT_COLN),  KC_EQL,  _______
         ),
