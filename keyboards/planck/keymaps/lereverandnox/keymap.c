@@ -52,6 +52,8 @@ enum tap_dances {
 
 #define ALT_TAB_TRESHOLD 500
 
+#define NKR_TOG MAGIC_TOGGLE_NKRO
+
 //Tap Dance Definitions
 qk_tap_dance_action_t tap_dance_actions[] = {
   //Tap once for Dot, twice for Colon
@@ -198,7 +200,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------------------------------------
  * |Mu Tog|Ck Tog|Au Tog| RGB  |RGBMOD| HUE+ | HUE- | SAT+ | SAT- |BRGTH+|BRGTH-|Reset |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |Mu Mod|Ck Rst|MidiTo|      |      |      |      |      |      |      |      |Debug |
+ * |Mu Mod|Ck Rst|MidiTo|Ag Tog|NKRO T|      |      |      |      |      |      |Debug |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |Voice+|Ck P+ |      |      |      |      |      |      |      |      |      |Dvorak|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -207,7 +209,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_ADJUST] = LAYOUT_planck_grid(
     MU_TOG, CK_TOGG, AU_TOG,  RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD,  RGB_VAI, RGB_VAD, RESET,
-    MU_MOD, CK_RST,  MI_TOG,  _______, _______, _______, _______, _______, _______,  _______, _______, DEBUG,
+    MU_MOD, CK_RST,  MI_TOG,  AG_TOGG, NKR_TOG, _______, _______, _______, _______,  _______, _______, DEBUG,
     MUV_IN, CK_UP,   _______, _______, _______, _______, _______, _______, _______,  _______, _______, DVORAK,
     MUV_DE, CK_DOWN, _______, _______, _______, _______, _______, _______, _______,  _______, PLOVER,  QWERTY
     ),
@@ -220,7 +222,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Rec  | Stop | Play |Speed-|Speed+|      |      |      |      |      |      |      |
+ * | Rec  | Stop | Play |Speed-|Speed+|Adjust|      |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_MUSIC] = LAYOUT_planck_grid(
