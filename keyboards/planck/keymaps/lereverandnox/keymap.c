@@ -196,21 +196,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Adjust (Sym + Num)
  *                      v------------------------RGB CONTROL--------------------v
  * ,-----------------------------------------------------------------------------------
- * |      | Reset|Debug | RGB  |RGBMOD| HUE+ | HUE- | SAT+ | SAT- |BRGTH+|BRGTH-|  Del |
+ * |Mu Tog|Ck Tog|Au Tog| RGB  |RGBMOD| HUE+ | HUE- | SAT+ | SAT- |BRGTH+|BRGTH-|Reset |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |Aud on|Audoff|AGnorm|AGswap|Qwerty|      |Dvorak|Plover|      |
+ * |Mu Mod|Ck Rst|MidiTo|      |      |      |      |      |      |      |      |Debug |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |Voice-|Voice+|Mus on|Musoff|MIDIon|MIDIof|      |      |      |      |      |
+ * |Voice+|Ck P+ |      |      |      |      |      |      |      |      |      |Dvorak|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |             |      |      |      |      |      |
+ * |Voice-|Ck P- |      |      |      |      |      |      |      |      |Plover|Qwerty|
  * `-----------------------------------------------------------------------------------'
  */
 [_ADJUST] = LAYOUT_planck_grid(
-    _______, RESET,   DEBUG,   RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD,  RGB_VAI, RGB_VAD, KC_DEL ,
-    _______, _______, MU_MOD,  AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, QWERTY,  _______,  DVORAK,  PLOVER,  _______,
-    _______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  TERM_ON, TERM_OFF, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______
-    )
+    MU_TOG, CK_TOGG, AU_TOG,  RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD,  RGB_VAI, RGB_VAD, RESET,
+    MU_MOD, CK_RST,  MI_TOG,  _______, _______, _______, _______, _______, _______,  _______, _______, DEBUG,
+    MUV_IN, CK_UP,   _______, _______, _______, _______, _______, _______, _______,  _______, _______, DVORAK,
+    MUV_DE, CK_DOWN, _______, _______, _______, _______, _______, _______, _______,  _______, PLOVER,  QWERTY
+    ),
 
 /* Music
  * ,-----------------------------------------------------------------------------------
