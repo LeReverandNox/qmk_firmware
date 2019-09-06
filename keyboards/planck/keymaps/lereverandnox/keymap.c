@@ -396,3 +396,9 @@ bool music_mask_user(uint16_t keycode) {
       return true;
   }
 }
+
+void keyboard_post_init_user(void) {
+    #ifdef AUDIO_CLICKY
+    clicky_off();
+    #endif
+}
