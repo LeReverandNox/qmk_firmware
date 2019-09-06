@@ -8,6 +8,7 @@
                                   SONG(COLEMAK_SOUND), \
                                   SONG(DVORAK_SOUND) \
                                 }
+     #define AUDIO_CLICKY
 #endif
 
 /*
