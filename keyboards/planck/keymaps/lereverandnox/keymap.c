@@ -239,8 +239,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 bool is_alt_tab_active = false;
 uint16_t alt_tab_timer = 0;
 
-bool is_music_mode_on = false;
-
 /* layer_state_t layer_state_set_user(layer_state_t state) { */
     /* return update_tri_layer_state(state, _SYM, _NUM, _ADJUST); */
 /* } */
@@ -320,13 +318,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
     case MU_TOG:
         if (record->event.pressed) {
-            if (!is_music_mode_on) {
-                is_music_mode_on = true;
+            if (!is_music_on()) {
                 layer_off(_FN);
                 layer_off(_ADJUST);
                 layer_on(_MUSIC);
             } else {
-                is_music_mode_on = false;
                 layer_off(_MUSIC);
             }
         }
