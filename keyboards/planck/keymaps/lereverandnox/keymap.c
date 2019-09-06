@@ -58,21 +58,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Qwerty
  * ,-----------------------------------------------------------------------------------.
- * | Tab  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  |  [   |
+ * |      |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Caps |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  |Enter |
+ * |      |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  |      |
+ * |      | Ctrl | GUI  | Alt  |Shift |      |      |Shift |  Alt |  GUI | Ctrl |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Shift |
+ * |      |   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl | GUI  | Alt  |      |  Spc |      |      | Bksp | Left | Down |  Up  |Right |
- * |      |      |      |      |      |      |      |      |      | Alt  |  GUI | Ctrl |
+ * | Ctrl | GUI  | Alt  | Esc  |  Spc | Tab  |Enter | Bksp | RAlt | Alt  |  GUI | Ctrl |
+ * |      |      |      | Nav  | Sym  | Num  | Num  | Sym  |  Fn  |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTY] = LAYOUT_planck_grid(
-    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC,
-    KC_CAPS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
-    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-    KC_LCTL, KC_LGUI, KC_LALT, _______, KC_SPC,  KC_NO,   KC_NO,   KC_BSPC, KC_LEFT, RALT_T(KC_DOWN), RGUI_T(KC_UP),   RCTL_T(KC_RGHT)
+    KC_NO,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_NO,
+    KC_NO,   LCTL_T(KC_A),    LGUI_T(KC_S),    LALT_T(KC_D),    LSFT_T(KC_F),    KC_G,    KC_H,    RSFT_T(KC_J),    LALT_T(KC_K),    RGUI_T(KC_L),    RCTL_T(KC_SCLN),    KC_NO,
+    KC_NO, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_NO,
+    KC_LCTL, KC_LGUI, KC_LALT, LT(NAV, KC_ESC), LT(SYM, KC_SPC),  LT(NUM, KC_TAB), LT(NUM, KC_ENT), LT(SYM, KC_BSPC), LT(FN, KC_RALT), OSM(MOD_LALT), OSM(MOD_RGUI), OSM(MOD_RCTL)
     ),
 
 /* Dvorak
