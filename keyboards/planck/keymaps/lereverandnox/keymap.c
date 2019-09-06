@@ -27,6 +27,7 @@ enum planck_layers {
   _NUM,
   _FN,
   _PLOVER,
+  _MUSIC,
   _ADJUST
 };
 
@@ -208,6 +209,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______
     )
 
+/* Music
+ * ,-----------------------------------------------------------------------------------
+ * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * | Rec  | Stop | Play |Speed-|Speed+|      |      |      |      |      |      |      |
+ * `-----------------------------------------------------------------------------------'
+ */
+[_MUSIC] = LAYOUT_planck_grid(
+    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+    KC_LCTL, KC_LALT, KC_LGUI, KC_DOWN, KC_UP,   ADJUST,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
+    ),
 };
 
 #ifdef AUDIO_ENABLE
@@ -295,6 +313,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
       break;
+    case MU_TOG:
+        if (record->event.pressed) {
+            if (!is_music_mode_on) {
+                is_music_mode_on = true;
+                layer_off(_FN);
+                layer_off(_ADJUST);
+                layer_on(_MUSIC);
+            } else {
+                is_music_mode_on = false;
+                layer_off(_MUSIC);
+            }
+        }
+        return true;
+        break;
   }
   return true;
 }
@@ -389,8 +421,7 @@ void matrix_scan_user(void) {
 
 bool music_mask_user(uint16_t keycode) {
   switch (keycode) {
-    case SYM:
-    case NUM:
+    case ADJUST:
       return false;
     default:
       return true;
