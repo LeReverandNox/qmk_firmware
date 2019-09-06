@@ -5,7 +5,6 @@
     // #define STARTUP_SONG SONG(NO_SOUND)
 
     #define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND), \
-                                  SONG(COLEMAK_SOUND), \
                                   SONG(DVORAK_SOUND) \
                                 }
      #define AUDIO_CLICKY
@@ -39,4 +38,4 @@
 #define ENCODER_RESOLUTION 4
 
 #define IGNORE_MOD_TAP_INTERRUPT
-#define TAPPING_TERM 150
+#define TAPPING_TERM 200
