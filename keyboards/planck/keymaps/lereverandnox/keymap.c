@@ -48,6 +48,7 @@ enum tap_dances {
 #define SYM MO(_SYM)
 #define NUM MO(_NUM)
 #define FN MO(_FN)
+#define ADJUST MO(_ADJUST)
 
 #define ALT_TAB_TRESHOLD 500
 
@@ -160,18 +161,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      | F12  |  F9  |  F8  |  F7  |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      | F11  |  F6  |  F5  |  F4  |      |      |      |      |      |      |      |
+ * |      |      |      |      |      |      |      |Shift |  Alt |  GUI | Ctrl |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      | F10  |  F3  |  F2  |  F1  |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * |      |      |      |      |      |      |      |Adjust|      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_FN] = LAYOUT_planck_grid(
     _______, KC_F12,  KC_F9,   KC_F8,   KC_F7,   _______, _______, KC_CUT,  KC_COPY, KC_PSTE, _______, _______,
     _______, KC_F11,  KC_F6,   KC_F5,   KC_F4,   _______, _______, LSFT_T(KC_NO),LALT_T(KC_NO), LGUI_T(KC_NO), LCTL_T(KC_NO), _______,
     _______, KC_F10,  KC_F3,   KC_F2,   KC_F1,   _______, _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+    _______, _______, _______, _______, _______, _______, _______, ADJUST, _______, _______, _______, _______
     ),
+
 /* Plover layer (http://opensteno.org)
  * ,-----------------------------------------------------------------------------------.
  * |   #  |   #  |   #  |   #  |   #  |   #  |   #  |   #  |   #  |   #  |   #  |   #  |
@@ -236,9 +239,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 bool is_alt_tab_active = false;
 uint16_t alt_tab_timer = 0;
 
-layer_state_t layer_state_set_user(layer_state_t state) {
-    return update_tri_layer_state(state, _SYM, _NUM, _ADJUST);
-}
+bool is_music_mode_on = false;
+
+/* layer_state_t layer_state_set_user(layer_state_t state) { */
+    /* return update_tri_layer_state(state, _SYM, _NUM, _ADJUST); */
+/* } */
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
