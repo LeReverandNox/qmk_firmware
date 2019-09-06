@@ -25,6 +25,7 @@ enum planck_layers {
   _NAV,
   _SYM,
   _NUM,
+  _FN,
   _PLOVER,
   _ADJUST
 };
@@ -45,6 +46,7 @@ enum tap_dances {
 #define NAV MO(_NAV)
 #define SYM MO(_SYM)
 #define NUM MO(_NUM)
+#define FN MO(_FN)
 
 #define ALT_TAB_TRESHOLD 500
 
@@ -86,14 +88,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |   ;  |   Q  |   J  |   K  |   X  |   B  |   M  |   W  |   V  |   Z  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Ctrl | GUI  | Alt  | Esc  |  Spc | Tab  |Enter | Bksp | RAlt | Alt  |  GUI | Ctrl |
- * |      |      |      | Nav  | Sym  | Num  | Num  | Sym  |      |      |      |      |
+ * |      |      |      | Nav  | Sym  | Num  | Num  | Sym  |  Fn  |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_DVORAK] = LAYOUT_planck_grid(
     KC_NO,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_NO,
     KC_NO,   LCTL_T(KC_A),    LGUI_T(KC_O),    LALT_T(KC_E),    LSFT_T(KC_U),    KC_I,    KC_D,    RSFT_T(KC_H),    LALT_T(KC_T),    RGUI_T(KC_N),    RCTL_T(KC_S),    KC_NO,
     KC_NO, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,    KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_NO,
-    KC_LCTL, KC_LGUI, KC_LALT, LT(NAV, KC_ESC), LT(SYM, KC_SPC),  LT(NUM, KC_TAB), LT(NUM, KC_ENT), LT(SYM, KC_BSPC), KC_RALT, OSM(MOD_LALT), OSM(MOD_RGUI), OSM(MOD_RCTL)
+    KC_LCTL, KC_LGUI, KC_LALT, LT(NAV, KC_ESC), LT(SYM, KC_SPC),  LT(NUM, KC_TAB), LT(NUM, KC_ENT), LT(SYM, KC_BSPC), LT(FN, KC_RALT), OSM(MOD_LALT), OSM(MOD_RGUI), OSM(MOD_RCTL)
     ),
 
 /* Left Nav
@@ -152,6 +154,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, _______, KC_0,    KC_COMM, TD(TD_DOT_COLN),  KC_EQL,  _______
         ),
 
+/* Fn
+ * ,-----------------------------------------------------------------------------------
+ * |      | F12  |  F9  |  F8  |  F7  |      |      |      |      |      |      |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      | F11  |  F6  |  F5  |  F4  |      |      |      |      |      |      |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      | F10  |  F3  |  F2  |  F1  |      |      |      |      |      |      |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * `-----------------------------------------------------------------------------------'
+ */
+[_FN] = LAYOUT_planck_grid(
+    _______, KC_F12,  KC_F9,   KC_F8,   KC_F7,   _______, _______, KC_CUT,  KC_COPY, KC_PSTE, _______, _______,
+    _______, KC_F11,  KC_F6,   KC_F5,   KC_F4,   _______, _______, LSFT_T(KC_NO),LALT_T(KC_NO), LGUI_T(KC_NO), LCTL_T(KC_NO), _______,
+    _______, KC_F10,  KC_F3,   KC_F2,   KC_F1,   _______, _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+    ),
 /* Plover layer (http://opensteno.org)
  * ,-----------------------------------------------------------------------------------.
  * |   #  |   #  |   #  |   #  |   #  |   #  |   #  |   #  |   #  |   #  |   #  |   #  |
