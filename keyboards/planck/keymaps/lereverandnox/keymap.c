@@ -28,6 +28,7 @@ enum planck_layers {
   _FN,
   _PLOVER,
   _MUSIC,
+  _MOUSE,
   _ADJUST
 };
 
@@ -231,6 +232,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
     KC_LCTL, KC_LALT, KC_LGUI, KC_DOWN, KC_UP,   ADJUST,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
     ),
+
+/* Mouse
+ * ,-----------------------------------------------------------------------------------
+ * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * `-----------------------------------------------------------------------------------'
+ */
+[_MOUSE] = LAYOUT_planck_grid(
+    _______, _______, _______, KC_WH_U, _______, KC_ACL0, _______, KC_BTN1, KC_MS_U, KC_BTN2, _______, _______,
+    _______, _______, KC_WH_L, KC_WH_D, KC_WH_R, KC_ACL1, _______, KC_MS_L, KC_MS_D, KC_MS_R, _______, _______,
+    _______, _______, _______, _______, _______, KC_ACL2, _______, KC_BTN4, KC_BTN3, KC_BTN5, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+    ),
 };
 
 #ifdef AUDIO_ENABLE
@@ -241,9 +260,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 bool is_alt_tab_active = false;
 uint16_t alt_tab_timer = 0;
 
-/* layer_state_t layer_state_set_user(layer_state_t state) { */
-    /* return update_tri_layer_state(state, _SYM, _NUM, _ADJUST); */
-/* } */
+layer_state_t layer_state_set_user(layer_state_t state) {
+    state = update_tri_layer_state(state, _SYM, _NUM, _MOUSE);
+    return state;
+}
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
