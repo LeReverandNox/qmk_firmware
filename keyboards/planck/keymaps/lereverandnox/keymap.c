@@ -50,6 +50,7 @@ enum tap_dances {
 #define NUM MO(_NUM)
 #define FN MO(_FN)
 #define ADJUST MO(_ADJUST)
+#define MOUSE_T TG(_MOUSE)
 
 #define ALT_TAB_TRESHOLD 500
 
@@ -65,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Qwerty
  * ,-----------------------------------------------------------------------------------.
- * |      |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  |      |
+ * |Mouse |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  |      |
  * |      | Ctrl | GUI  | Alt  |Shift |      |      |Shift |  Alt |  GUI | Ctrl |      |
@@ -77,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTY] = LAYOUT_planck_grid(
-    KC_NO,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_NO,
+    MOUSE_T,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_NO,
     KC_NO,   LCTL_T(KC_A),    LGUI_T(KC_S),    LALT_T(KC_D),    LSFT_T(KC_F),    KC_G,    KC_H,    RSFT_T(KC_J),    LALT_T(KC_K),    RGUI_T(KC_L),    RCTL_T(KC_SCLN),    KC_NO,
     KC_NO, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_NO,
     KC_LCTL, KC_LGUI, KC_LALT, LT(NAV, KC_ESC), LT(SYM, KC_SPC),  LT(NUM, KC_TAB), LT(NUM, KC_ENT), LT(SYM, KC_BSPC), LT(FN, KC_RALT), OSM(MOD_LALT), OSM(MOD_RGUI), OSM(MOD_RCTL)
@@ -97,7 +98,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_DVORAK] = LAYOUT_planck_grid(
-    TG(_MOUSE),  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_NO,
+    MOUSE_T,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_NO,
     KC_NO,   LCTL_T(KC_A),    LGUI_T(KC_O),    LALT_T(KC_E),    LSFT_T(KC_U),    KC_I,    KC_D,    RSFT_T(KC_H),    LALT_T(KC_T),    RGUI_T(KC_N),    RCTL_T(KC_S),    KC_NO,
     KC_NO, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,    KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_NO,
     KC_LCTL, KC_LGUI, KC_LALT, LT(NAV, KC_ESC), LT(SYM, KC_SPC),  LT(NUM, KC_TAB), LT(NUM, KC_ENT), LT(SYM, KC_BSPC), LT(FN, KC_RALT), OSM(MOD_LALT), OSM(MOD_RGUI), OSM(MOD_RCTL)
@@ -255,10 +256,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #ifdef AUDIO_ENABLE
   float plover_song[][2]     = SONG(PLOVER_SOUND);
   float plover_gb_song[][2]  = SONG(PLOVER_GOODBYE_SOUND);
+
+  float mouse_song[][2]    = SONG(STARTUP_SOUND);
+  float mouse_gb_song[][2] = SONG(GOODBYE_SOUND);
 #endif
 
 bool is_alt_tab_active = false;
 uint16_t alt_tab_timer = 0;
+
+bool is_mouse_active = false;
 
 layer_state_t layer_state_set_user(layer_state_t state) {
     /* state = update_tri_layer_state(state, _SYM, _NUM, _MOUSE); */
@@ -350,6 +356,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
         return true;
         break;
+    case MOUSE_T:
+      if (record->event.pressed) {
+          if (!is_mouse_active) {
+          #ifdef AUDIO_ENABLE
+            PLAY_SONG(mouse_song);
+          #endif
+          } else {
+          #ifdef AUDIO_ENABLE
+            PLAY_SONG(mouse_gb_song);
+          #endif
+          }
+          is_mouse_active = !is_mouse_active;
+      }
+      return true;
+      break;
   }
   return true;
 }
