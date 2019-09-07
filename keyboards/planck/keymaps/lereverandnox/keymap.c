@@ -267,6 +267,15 @@ uint16_t alt_tab_timer = 0;
 bool is_mouse_active = false;
 
 layer_state_t layer_state_set_user(layer_state_t state) {
+    switch (get_highest_layer(state)) {
+    case _ADJUST:
+      #ifdef AUDIO_ENABLE
+        if (is_music_on()) {
+          stop_all_notes();
+        }
+      #endif
+      break;
+    }
     /* state = update_tri_layer_state(state, _SYM, _NUM, _MOUSE); */
     return state;
 }
