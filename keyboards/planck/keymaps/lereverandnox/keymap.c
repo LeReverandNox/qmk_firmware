@@ -115,9 +115,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_NAV] = LAYOUT_planck_grid(
-    ALT_TAB, _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGUP,  _______, _______, _______,
+    ALT_TAB, _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGUP,  XXXXXXX, XXXXXXX, _______,
     _______, KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, _______, _______, KC_LEFT, KC_DOWN,  KC_UP,   KC_RGHT, _______,
-    _______, _______, _______, _______, _______, _______, _______, KC_END,  KC_PGDN,  _______, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, KC_END,  KC_PGDN,  XXXXXXX, XXXXXXX, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______
     ),
 
@@ -210,9 +210,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_ADJUST] = LAYOUT_planck_grid(
     MU_TOG, CK_TOGG, AU_TOG,  RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD,  RGB_VAI, RGB_VAD, RESET,
-    MU_MOD, CK_RST,  MI_TOG,  AG_TOGG, NKR_TOG, _______, _______, _______, _______,  _______, _______, DEBUG,
-    MUV_IN, CK_UP,   _______, _______, _______, _______, _______, _______, _______,  _______, _______, DVORAK,
-    MUV_DE, CK_DOWN, _______, _______, _______, _______, _______, _______, _______,  _______, PLOVER,  QWERTY
+    MU_MOD, CK_RST,  MI_TOG,  AG_TOGG, NKR_TOG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, DEBUG,
+    MUV_IN, CK_UP,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, DVORAK,
+    MUV_DE, CK_DOWN, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, PLOVER,  QWERTY
     ),
 
 /* Music
@@ -227,10 +227,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_MUSIC] = LAYOUT_planck_grid(
-    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-    KC_LCTL, KC_LALT, KC_LGUI, KC_DOWN, KC_UP,   ADJUST,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    KC_LCTL, KC_LALT, KC_LGUI, KC_DOWN, KC_UP,   ADJUST,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
     ),
 
 /* Mouse
