@@ -263,14 +263,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      | W Lt | W Dn | W Up | W Rt |      |      | W Lt | W Dn | W Up | W Rt |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      | Nav  | Acc0 | Acc1 | Acc2 |      |      |      |      |      |
+ * |      |      |      |      | Acc0 | Acc1 | Acc2 |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_MOUSE] = LAYOUT_planck_grid(
     _______, XXXXXXX, KC_BTN2, KC_BTN3, KC_BTN1, XXXXXXX, XXXXXXX, KC_BTN1, KC_BTN3, KC_BTN2, XXXXXXX, _______,
     KC_BTN4, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_BTN5, KC_BTN4, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_BTN5,
     _______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, XXXXXXX, XXXXXXX, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, _______,
-    _______, _______, _______, NAV,     KC_ACL0, KC_ACL1, KC_ACL2, _______, _______, _______, _______, _______
+    _______, _______, _______, _______,     KC_ACL0, KC_ACL1, KC_ACL2, _______, _______, _______, _______, _______
     ),
 };
 
