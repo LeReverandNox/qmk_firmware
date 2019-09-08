@@ -119,9 +119,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_NAV] = LAYOUT_planck_grid(
-    ALT_TAB, _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGUP,  XXXXXXX, XXXXXXX, _______,
-    _______, KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, _______, _______, KC_LEFT, KC_DOWN,  KC_UP,   KC_RGHT, _______,
-    _______, _______, _______, _______, _______, _______, _______, KC_END,  KC_PGDN,  XXXXXXX, XXXXXXX, _______,
+    ALT_TAB, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_HOME, KC_PGUP,  XXXXXXX, XXXXXXX, _______,
+    _______, KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN,  KC_UP,   KC_RGHT, _______,
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_END,  KC_PGDN,  XXXXXXX, XXXXXXX, _______,
     _______, _______, _______, _______, _______, _______, _______, KC_INS,  _______,  _______, _______, _______
     ),
 
@@ -137,9 +137,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_SYM] = LAYOUT_planck_grid(
-    KC_CAPS, KC_GRV,  KC_TILD, KC_ASTR, KC_AMPR, _______, _______, KC_LPRN, KC_RPRN, KC_SLSH, KC_QUES, _______,
-    _______, KC_MINS, KC_CIRC, KC_PERC, KC_DLR,  _______, _______, KC_LBRC, KC_RBRC, KC_BSLS, KC_PIPE, _______,
-    _______, KC_UNDS, KC_HASH, KC_AT,   KC_EXLM, _______, _______, KC_LCBR, KC_RCBR, KC_EQL,  KC_PLUS, _______,
+    KC_CAPS, KC_GRV,  KC_TILD, KC_ASTR, KC_AMPR, XXXXXXX, XXXXXXX, KC_LPRN, KC_RPRN, KC_SLSH, KC_QUES, _______,
+    _______, KC_MINS, KC_CIRC, KC_PERC, KC_DLR,  XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, KC_BSLS, KC_PIPE, _______,
+    _______, KC_UNDS, KC_HASH, KC_AT,   KC_EXLM, XXXXXXX, XXXXXXX, KC_LCBR, KC_RCBR, KC_EQL,  KC_PLUS, _______,
     _______, _______, _______, _______, _______, _______, _______, KC_DEL,  _______, _______, _______, _______
     ),
 
@@ -157,9 +157,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_NUM] = LAYOUT_planck_grid(
-    _______, _______, _______, _______, _______, _______, KC_SLSH, KC_7,    KC_8,    KC_9,    KC_ASTR, _______,
-    _______, LCTL_T(KC_NO), LGUI_T(KC_F), LALT_T(KC_E), LSFT_T(KC_D), _______, KC_HASH, RSFT_T(KC_4), LALT_T(KC_5), RGUI_T(KC_6), RCTL_T(KC_MINS), _______,
-    _______, _______, KC_C,    KC_B,    KC_A,    _______, KC_BSLS, KC_1,    KC_2,    KC_3,    KC_PLUS, _______,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_SLSH, KC_7,    KC_8,    KC_9,    KC_ASTR, _______,
+    _______, LCTL_T(KC_NO), LGUI_T(KC_F), LALT_T(KC_E), LSFT_T(KC_D), XXXXXXX, KC_HASH, RSFT_T(KC_4), LALT_T(KC_5), RGUI_T(KC_6), RCTL_T(KC_MINS), _______,
+    _______, XXXXXXX, KC_C,    KC_B,    KC_A,    XXXXXXX, KC_BSLS, KC_1,    KC_2,    KC_3,    KC_PLUS, _______,
     _______, _______, _______, _______, _______, _______, _______, KC_0,    KC_COMM, TD(TD_DOT_COLN),  KC_EQL,  _______
         ),
 
@@ -176,9 +176,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_FN] = LAYOUT_planck_grid(
-    _______, KC_F12,  KC_F9,   KC_F8,   KC_F7,   _______, _______, KC_PAUS, KC_SLCK, _______, _______, _______,
-    _______, KC_F11,  KC_F6,   KC_F5,   KC_F4,   _______, _______, LSFT_T(KC_NO),LALT_T(KC_NO), LGUI_T(KC_NO), LCTL_T(KC_NO), _______,
-    _______, KC_F10,  KC_F3,   KC_F2,   KC_F1,   _______, _______, _______, _______, _______, _______, _______,
+    XXXXXXX, KC_F12,  KC_F9,   KC_F8,   KC_F7,   XXXXXXX, XXXXXXX, KC_PAUS, KC_SLCK, XXXXXXX, XXXXXXX, _______,
+    _______, KC_F11,  KC_F6,   KC_F5,   KC_F4,   XXXXXXX, XXXXXXX, LSFT_T(KC_NO),LALT_T(KC_NO), LGUI_T(KC_NO), LCTL_T(KC_NO), _______,
+    _______, KC_F10,  KC_F3,   KC_F2,   KC_F1,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
     _______, _______, _______, _______, _______, _______, _______, ADJUST,  _______, _______, _______, _______
     ),
 
