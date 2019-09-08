@@ -29,6 +29,7 @@ enum planck_layers {
   _FN,
   _PLOVER,
   _MUSIC,
+  _MEDIA,
   _ADJUST
 };
 
@@ -52,6 +53,7 @@ enum tap_dances {
 #define FN MO(_FN)
 #define ADJUST MO(_ADJUST)
 #define MOUSE_T TG(_MOUSE)
+#define MEDIA MO(_MEDIA)
 
 #define ALT_TAB_TRESHOLD 500
 
@@ -100,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_DVORAK] = LAYOUT_planck_grid(
     MOUSE_T,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_NO,
-    KC_NO,   LCTL_T(KC_A),    LGUI_T(KC_O),    LALT_T(KC_E),    LSFT_T(KC_U),    KC_I,    KC_D,    RSFT_T(KC_H),    LALT_T(KC_T),    RGUI_T(KC_N),    RCTL_T(KC_S),    KC_NO,
+    MEDIA,    LCTL_T(KC_A),    LGUI_T(KC_O),    LALT_T(KC_E),    LSFT_T(KC_U),    KC_I,    KC_D,    RSFT_T(KC_H),    LALT_T(KC_T),    RGUI_T(KC_N),    RCTL_T(KC_S),    KC_NO,
     KC_NO, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,    KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_NO,
     KC_LCTL, KC_LGUI, KC_LALT, LT(NAV, KC_ESC), LT(SYM, KC_SPC),  LT(NUM, KC_TAB), LT(NUM, KC_ENT), LT(SYM, KC_BSPC), LT(FN, KC_RALT), OSM(MOD_LALT), OSM(MOD_RGUI), OSM(MOD_RCTL)
     ),
@@ -233,6 +235,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     KC_LCTL, KC_LALT, KC_LGUI, KC_DOWN, KC_UP,   ADJUST,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+    ),
+
+/* Media
+ * ,-----------------------------------------------------------------------------------
+ * |      |      |      |      |      |      |      |Brig- | Vol+ |Brig+ |      |PrtScr|
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |Track-| Play |Track+|      |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      | Mute | Vol- | Stop |      |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * `-----------------------------------------------------------------------------------'
+ */
+[_MEDIA] = LAYOUT_planck_grid(
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BRID, KC_VOLU, KC_BRIU, XXXXXXX, KC_PSCR,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_MUTE, KC_VOLD, KC_MSTP, XXXXXXX, XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
     ),
 
 /* Mouse
