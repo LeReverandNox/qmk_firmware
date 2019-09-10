@@ -565,14 +565,18 @@ uint16_t get_tapping_term(uint16_t keycode) {
     // case RSFT_T(KC_J):
     // case LSFT_T(KC_U):
     // case RSFT_T(KC_H):
-    case LGUI_T(KC_S):
-    case LALT_T(KC_D):
-    case LALT_T(KC_K):
-    case RGUI_T(KC_L):
-    case LGUI_T(KC_O):
-    case LALT_T(KC_E):
-    case LALT_T(KC_T):
-    case RGUI_T(KC_N):
+    case HOME_QS:
+    case HOME_D:
+    case HOME_K:
+    case HOME_L:
+    case HOME_SC:
+
+    case HOME_A:
+    case HOME_O:
+    case HOME_E:
+    case HOME_T:
+    case HOME_N:
+    case HOME_DS:
       return 250;
     default:
       return TAPPING_TERM;
