@@ -44,16 +44,46 @@ enum planck_keycodes {
 };
 
 enum tap_dances {
-  TD_DOT_COLN = 0
+  _DOT = 0
 };
 
-#define NAV MO(_NAV)
-#define SYM MO(_SYM)
-#define NUM MO(_NUM)
-#define FN MO(_FN)
-#define ADJUST MO(_ADJUST)
+#define NAV     MO(_NAV)
+#define SYM     MO(_SYM)
+#define NUM     MO(_NUM)
+#define FN      MO(_FN)
+#define ADJUST  MO(_ADJUST)
 #define MOUSE_T TG(_MOUSE)
-#define MEDIA MO(_MEDIA)
+#define MEDIA   MO(_MEDIA)
+
+#define HOME_A  CTL_T(KC_A)
+#define HOME_O  LGUI_T(KC_O)
+#define HOME_E  LALT_T(KC_E)
+#define HOME_U  LSFT_T(KC_U) 
+#define HOME_H  RSFT_T(KC_H)
+#define HOME_T  LALT_T(KC_T) 
+#define HOME_N  RGUI_T(KC_N)
+#define HOME_DS RCTL_T(KC_S)
+
+#define HOME_A  CTL_T(KC_A)
+#define HOME_QS LGUI_T(KC_S)
+#define HOME_D  LALT_T(KC_D)
+#define HOME_F  LSFT_T(KC_F) 
+#define HOME_J  RSFT_T(KC_J)
+#define HOME_K  LALT_T(KC_K) 
+#define HOME_L  RGUI_T(KC_L)
+#define HOME_SC RCTL_T(KC_SCLN)
+
+#define LT_ESC  LT(NAV, KC_ESC)
+#define LT_SPC  LT(SYM, KC_SPC)
+#define LT_TAB  LT(NUM, KC_TAB)
+#define LT_ENT  LT(NUM, KC_ENT)
+#define LT_BSPC LT(SYM, KC_BSPC)
+#define LT_RALT LT(FN,  KC_RALT)
+#define OS_LALT OSM(MOD_LALT)
+#define OS_RGUI OSM(MOD_RGUI)
+#define OS_RCTL OSM(MOD_RCTL)
+
+#define TD_DOT  TD(_DOT)
 
 #define ALT_TAB_TRESHOLD 500
 
@@ -62,7 +92,7 @@ enum tap_dances {
 //Tap Dance Definitions
 qk_tap_dance_action_t tap_dance_actions[] = {
   //Tap once for Dot, twice for Colon
-  [TD_DOT_COLN]  = ACTION_TAP_DANCE_DOUBLE(KC_DOT, KC_COLN)
+  [_DOT]  = ACTION_TAP_DANCE_DOUBLE(KC_DOT, KC_COLN)
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -81,10 +111,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTY] = LAYOUT_planck_grid(
-    MOUSE_T,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    MOUSE_T,
-    MEDIA,   LCTL_T(KC_A),    LGUI_T(KC_S),    LALT_T(KC_D),    LSFT_T(KC_F),    KC_G,    KC_H,    RSFT_T(KC_J),    LALT_T(KC_K),    RGUI_T(KC_L),    RCTL_T(KC_SCLN),    KC_NO,
-    KC_NO, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_NO,
-    KC_LCTL, KC_LGUI, KC_LALT, LT(NAV, KC_ESC), LT(SYM, KC_SPC),  LT(NUM, KC_TAB), LT(NUM, KC_ENT), LT(SYM, KC_BSPC), LT(FN, KC_RALT), OSM(MOD_LALT), OSM(MOD_RGUI), OSM(MOD_RCTL)
+    MOUSE_T, KC_Q,    KC_W,    KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,    KC_I,    KC_O,   KC_P,     MOUSE_T,
+    MEDIA,   HOME_A,  HOME_QS,  HOME_D, HOME_F, KC_G,   KC_H,   HOME_J,  HOME_K,  HOME_L, HOME_SC,  XXXXXXX,
+    XXXXXXX, KC_Z,    KC_X,    KC_C,   KC_V,   KC_B,   KC_N,   KC_M,    KC_COMM, KC_DOT, KC_SLSH,  XXXXXXX,
+    KC_LCTL, KC_LGUI, KC_LALT, LT_ESC, LT_SPC, LT_TAB, LT_ENT, LT_BSPC, LT_RALT, OS_LALT, OS_RGUI, OS_RCTL
     ),
 
 /* Dvorak
@@ -101,10 +131,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_DVORAK] = LAYOUT_planck_grid(
-    MOUSE_T,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    MOUSE_T,
-    MEDIA,    LCTL_T(KC_A),    LGUI_T(KC_O),    LALT_T(KC_E),    LSFT_T(KC_U),    KC_I,    KC_D,    RSFT_T(KC_H),    LALT_T(KC_T),    RGUI_T(KC_N),    RCTL_T(KC_S),    KC_NO,
-    KC_NO, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,    KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_NO,
-    KC_LCTL, KC_LGUI, KC_LALT, LT(NAV, KC_ESC), LT(SYM, KC_SPC),  LT(NUM, KC_TAB), LT(NUM, KC_ENT), LT(SYM, KC_BSPC), LT(FN, KC_RALT), OSM(MOD_LALT), OSM(MOD_RGUI), OSM(MOD_RCTL)
+    MOUSE_T, KC_QUOT, KC_COMM, KC_DOT, KC_P,   KC_Y,   KC_F,   KC_G,    KC_C,    KC_R,   KC_L,     MOUSE_T,
+    MEDIA,   HOME_A,  HOME_O,  HOME_E, HOME_U, KC_I,   KC_D,   HOME_H,  HOME_T,  HOME_N, HOME_DS,   XXXXXXX,
+    XXXXXXX, KC_SCLN, KC_Q,    KC_J,   KC_K,   KC_X,   KC_B,   KC_M,    KC_W,    KC_V,   KC_Z,     XXXXXXX,
+    KC_LCTL, KC_LGUI, KC_LALT, LT_ESC, LT_SPC, LT_TAB, LT_ENT, LT_BSPC, LT_RALT, OS_LALT, OS_RGUI, OS_RCTL
     ),
 
 /* Left Nav
@@ -157,10 +187,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_NUM] = LAYOUT_planck_grid(
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_SLSH, KC_7,    KC_8,    KC_9,    KC_ASTR, _______,
-    _______, LCTL_T(KC_NO), LGUI_T(KC_F), LALT_T(KC_E), LSFT_T(KC_D), XXXXXXX, KC_HASH, RSFT_T(KC_4), LALT_T(KC_5), RGUI_T(KC_6), RCTL_T(KC_MINS), _______,
-    _______, XXXXXXX, KC_C,    KC_B,    KC_A,    XXXXXXX, KC_BSLS, KC_1,    KC_2,    KC_3,    KC_PLUS, _______,
-    _______, _______, _______, _______, _______, _______, _______, KC_0,    KC_COMM, TD(TD_DOT_COLN),  KC_EQL,  _______
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_SLSH, KC_7, KC_8,    KC_9,   KC_ASTR, _______,
+    _______, XXXXXXX, KC_F,    KC_E,    KC_D,    XXXXXXX, KC_HASH, KC_4, KC_5,    KC_6,   KC_MINS, _______,
+    _______, XXXXXXX, KC_C,    KC_B,    KC_A,    XXXXXXX, KC_BSLS, KC_1, KC_2,    KC_3,   KC_PLUS, _______,
+    _______, _______, _______, _______, _______, _______, _______, KC_0, KC_COMM, TD_DOT, KC_EQL,  _______
         ),
 
 /* Fn
@@ -177,7 +207,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_FN] = LAYOUT_planck_grid(
     XXXXXXX, KC_F12,  KC_F9,   KC_F8,   KC_F7,   XXXXXXX, XXXXXXX, KC_PAUS, KC_SLCK, XXXXXXX, XXXXXXX, _______,
-    _______, KC_F11,  KC_F6,   KC_F5,   KC_F4,   XXXXXXX, XXXXXXX, LSFT_T(KC_NO),LALT_T(KC_NO), LGUI_T(KC_NO), LCTL_T(KC_NO), _______,
+    _______, KC_F11,  KC_F6,   KC_F5,   KC_F4,   XXXXXXX, XXXXXXX, KC_LSFT, KC_LALT, KC_LGUI, KC_LCTL, _______,
     _______, KC_F10,  KC_F3,   KC_F2,   KC_F1,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
     _______, _______, _______, _______, _______, _______, _______, ADJUST,  _______, _______, _______, _______
     ),
@@ -213,10 +243,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_ADJUST] = LAYOUT_planck_grid(
-    MU_TOG, CK_TOGG, AU_TOG,  RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD,  RGB_VAI, RGB_VAD, KC_MAKE,
-    MU_MOD, CK_RST,  MI_TOG,  AG_TOGG, NKR_TOG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, RESET,   EEP_RST,
-    MUV_IN, CK_UP,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, DEBUG,
-    MUV_DE, CK_DOWN, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  PLOVER,  QWERTY,  DVORAK
+    MU_TOG, CK_TOGG, AU_TOG,  RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, KC_MAKE,
+    MU_MOD, CK_RST,  MI_TOG,  AG_TOGG, NKR_TOG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RESET,   EEP_RST,
+    MUV_IN, CK_UP,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DEBUG,
+    MUV_DE, CK_DOWN, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, PLOVER,  QWERTY,  DVORAK
     ),
 
 /* Music
@@ -270,7 +300,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, XXXXXXX, KC_BTN2, KC_BTN3, KC_BTN1, XXXXXXX, XXXXXXX, KC_BTN1, KC_BTN3, KC_BTN2, XXXXXXX, _______,
     KC_BTN4, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_BTN5, KC_BTN4, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_BTN5,
     _______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, XXXXXXX, XXXXXXX, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, _______,
-    _______, _______, _______, _______,     KC_ACL0, KC_ACL1, KC_ACL2, _______, _______, _______, _______, _______
+    _______, _______, _______, _______, KC_ACL0, KC_ACL1, KC_ACL2, _______, _______, _______, _______, _______
     ),
 };
 
