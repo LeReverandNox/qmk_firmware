@@ -522,3 +522,29 @@ void keyboard_post_init_user(void) {
     clicky_off();
     #endif
 }
+
+uint16_t get_tapping_term(uint16_t keycode) {
+  switch (keycode) {
+    // case LT(NUM, KC_TAB):
+    // case LT(NUM, KC_ENT):
+    // case LT(SYM, KC_BSPC):
+    // case LT(FN, KC_RALT):
+    // case LT(NAV, KC_ESC):
+    // case LT(SYM, KC_SPC):
+    // case LSFT_T(KC_F):
+    // case RSFT_T(KC_J):
+    // case LSFT_T(KC_U):
+    // case RSFT_T(KC_H):
+    case LGUI_T(KC_S):
+    case LALT_T(KC_D):
+    case LALT_T(KC_K):
+    case RGUI_T(KC_L):
+    case LGUI_T(KC_O):
+    case LALT_T(KC_E):
+    case LALT_T(KC_T):
+    case RGUI_T(KC_N):
+      return 250;
+    default:
+      return TAPPING_TERM;
+  }
+}
