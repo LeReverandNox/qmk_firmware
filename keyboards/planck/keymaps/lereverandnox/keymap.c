@@ -308,14 +308,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   float plover_song[][2]     = SONG(PLOVER_SOUND);
   float plover_gb_song[][2]  = SONG(PLOVER_GOODBYE_SOUND);
 
-  float mouse_song[][2]    = SONG(STARTUP_SOUND);
-  float mouse_gb_song[][2] = SONG(GOODBYE_SOUND);
+  float mouse_song[][2]      = SONG(STARTUP_SOUND);
+  float mouse_gb_song[][2]   = SONG(GOODBYE_SOUND);
 #endif
 
 bool is_alt_tab_active = false;
 uint16_t alt_tab_timer = 0;
 
 bool is_mouse_active = false;
+bool is_caps_on = false;
 
 layer_state_t layer_state_set_user(layer_state_t state) {
     switch (get_highest_layer(state)) {
@@ -446,6 +447,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             set_mods(mods);
         }
         break;
+    case KC_CAPS:
+      if (record->event.pressed) {
+        if  (!is_caps_on) {
+          #ifdef AUDIO_ENABLE
+            PLAY_SONG(plover_song);
+          #endif
+        } else {
+          #ifdef AUDIO_ENABLE
+            PLAY_SONG(plover_gb_song);
+          #endif
+        }
+        is_caps_on =  !is_caps_on;
+      }
+      break;
   }
   return true;
 }
