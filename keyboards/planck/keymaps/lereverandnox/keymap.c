@@ -47,43 +47,43 @@ enum tap_dances {
   _DOT = 0
 };
 
-#define NAV     MO(_NAV)
-#define SYM     MO(_SYM)
-#define NUM     MO(_NUM)
-#define FN      MO(_FN)
-#define ADJUST  MO(_ADJUST)
-#define MOUSE_T TG(_MOUSE)
-#define MEDIA   MO(_MEDIA)
+#define NAV      MO(_NAV)
+#define SYM      MO(_SYM)
+#define NUM      MO(_NUM)
+#define FN       MO(_FN)
+#define ADJUST   MO(_ADJUST)
+#define MOUSE_T  TG(_MOUSE)
+#define MEDIA    MO(_MEDIA)
 
-#define HOME_A  CTL_T(KC_A)
-#define HOME_O  LGUI_T(KC_O)
-#define HOME_E  LALT_T(KC_E)
-#define HOME_U  LSFT_T(KC_U) 
-#define HOME_H  RSFT_T(KC_H)
-#define HOME_T  LALT_T(KC_T) 
-#define HOME_N  RGUI_T(KC_N)
-#define HOME_DS RCTL_T(KC_S)
+#define HOME_AD  CTL_T(KC_A)
+#define HOME_OD  LGUI_T(KC_O)
+#define HOME_ED  LALT_T(KC_E)
+#define HOME_UD  LSFT_T(KC_U)
+#define HOME_HD  RSFT_T(KC_H)
+#define HOME_TD  LALT_T(KC_T)
+#define HOME_ND  RGUI_T(KC_N)
+#define HOME_SD  RCTL_T(KC_S)
 
-#define HOME_A  CTL_T(KC_A)
-#define HOME_QS LGUI_T(KC_S)
-#define HOME_D  LALT_T(KC_D)
-#define HOME_F  LSFT_T(KC_F) 
-#define HOME_J  RSFT_T(KC_J)
-#define HOME_K  LALT_T(KC_K) 
-#define HOME_L  RGUI_T(KC_L)
-#define HOME_SC RCTL_T(KC_SCLN)
+#define HOME_AQ  CTL_T(KC_A)
+#define HOME_SQ  LGUI_T(KC_S)
+#define HOME_DQ  LALT_T(KC_D)
+#define HOME_FQ  LSFT_T(KC_F)
+#define HOME_JQ  RSFT_T(KC_J)
+#define HOME_KQ  LALT_T(KC_K)
+#define HOME_LQ  RGUI_T(KC_L)
+#define HOME_SC  RCTL_T(KC_SCLN)
 
-#define LT_ESC  LT(NAV, KC_ESC)
-#define LT_SPC  LT(SYM, KC_SPC)
-#define LT_TAB  LT(NUM, KC_TAB)
-#define LT_ENT  LT(NUM, KC_ENT)
-#define LT_BSPC LT(SYM, KC_BSPC)
-#define LT_RALT LT(FN,  KC_RALT)
-#define OS_LALT OSM(MOD_LALT)
-#define OS_RGUI OSM(MOD_RGUI)
-#define OS_RCTL OSM(MOD_RCTL)
+#define LT_ESC   LT(NAV, KC_ESC)
+#define LT_SPC   LT(SYM, KC_SPC)
+#define LT_TAB   LT(NUM, KC_TAB)
+#define LT_ENT   LT(NUM, KC_ENT)
+#define LT_BSPC  LT(SYM, KC_BSPC)
+#define LT_RALT  LT(FN,  KC_RALT)
+#define OS_LALT  OSM(MOD_LALT)
+#define OS_RGUI  OSM(MOD_RGUI)
+#define OS_RCTL  OSM(MOD_RCTL)
 
-#define TD_DOT  TD(_DOT)
+#define TD_DOT   TD(_DOT)
 
 #define ALT_TAB_TRESHOLD 500
 
@@ -111,10 +111,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTY] = LAYOUT_planck_grid(
-    MOUSE_T, KC_Q,    KC_W,    KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,    KC_I,    KC_O,   KC_P,     MOUSE_T,
-    MEDIA,   HOME_A,  HOME_QS,  HOME_D, HOME_F, KC_G,   KC_H,   HOME_J,  HOME_K,  HOME_L, HOME_SC,  XXXXXXX,
-    XXXXXXX, KC_Z,    KC_X,    KC_C,   KC_V,   KC_B,   KC_N,   KC_M,    KC_COMM, KC_DOT, KC_SLSH,  XXXXXXX,
-    KC_LCTL, KC_LGUI, KC_LALT, LT_ESC, LT_SPC, LT_TAB, LT_ENT, LT_BSPC, LT_RALT, OS_LALT, OS_RGUI, OS_RCTL
+    MOUSE_T, KC_Q,     KC_W,     KC_E,    KC_R,    KC_T,   KC_Y,   KC_U,     KC_I,     KC_O,    KC_P,     MOUSE_T,
+    MEDIA,   HOME_AQ,  HOME_SQ,  HOME_DQ, HOME_FQ, KC_G,   KC_H,   HOME_JQ,  HOME_KQ,  HOME_LQ, HOME_SC,  XXXXXXX,
+    XXXXXXX, KC_Z,     KC_X,     KC_C,    KC_V,    KC_B,   KC_N,   KC_M,     KC_COMM,  KC_DOT,  KC_SLSH,  XXXXXXX,
+    KC_LCTL, KC_LGUI,  KC_LALT,  LT_ESC,  LT_SPC,  LT_TAB, LT_ENT, LT_BSPC,  LT_RALT,  OS_LALT, OS_RGUI,  OS_RCTL
     ),
 
 /* Dvorak
@@ -131,10 +131,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_DVORAK] = LAYOUT_planck_grid(
-    MOUSE_T, KC_QUOT, KC_COMM, KC_DOT, KC_P,   KC_Y,   KC_F,   KC_G,    KC_C,    KC_R,   KC_L,     MOUSE_T,
-    MEDIA,   HOME_A,  HOME_O,  HOME_E, HOME_U, KC_I,   KC_D,   HOME_H,  HOME_T,  HOME_N, HOME_DS,   XXXXXXX,
-    XXXXXXX, KC_SCLN, KC_Q,    KC_J,   KC_K,   KC_X,   KC_B,   KC_M,    KC_W,    KC_V,   KC_Z,     XXXXXXX,
-    KC_LCTL, KC_LGUI, KC_LALT, LT_ESC, LT_SPC, LT_TAB, LT_ENT, LT_BSPC, LT_RALT, OS_LALT, OS_RGUI, OS_RCTL
+    MOUSE_T, KC_QUOT,  KC_COMM,  KC_DOT,  KC_P,    KC_Y,   KC_F,   KC_G,     KC_C,     KC_R,    KC_L,      MOUSE_T,
+    MEDIA,   HOME_AD,  HOME_OD,  HOME_ED, HOME_UD, KC_I,   KC_D,   HOME_HD,  HOME_TD,  HOME_ND, HOME_SD,   XXXXXXX,
+    XXXXXXX, KC_SCLN,  KC_Q,     KC_J,    KC_K,    KC_X,   KC_B,   KC_M,     KC_W,     KC_V,    KC_Z,      XXXXXXX,
+    KC_LCTL, KC_LGUI,  KC_LALT,  LT_ESC,  LT_SPC,  LT_TAB, LT_ENT, LT_BSPC,  LT_RALT,  OS_LALT, OS_RGUI,   OS_RCTL
     ),
 
 /* Left Nav
@@ -555,28 +555,18 @@ void keyboard_post_init_user(void) {
 
 uint16_t get_tapping_term(uint16_t keycode) {
   switch (keycode) {
-    // case LT(NUM, KC_TAB):
-    // case LT(NUM, KC_ENT):
-    // case LT(SYM, KC_BSPC):
-    // case LT(FN, KC_RALT):
-    // case LT(NAV, KC_ESC):
-    // case LT(SYM, KC_SPC):
-    // case LSFT_T(KC_F):
-    // case RSFT_T(KC_J):
-    // case LSFT_T(KC_U):
-    // case RSFT_T(KC_H):
-    case HOME_QS:
-    case HOME_D:
-    case HOME_K:
-    case HOME_L:
+    case HOME_SQ:
+    case HOME_DQ:
+    case HOME_KQ:
+    case HOME_LQ:
     case HOME_SC:
 
-    case HOME_A:
-    case HOME_O:
-    case HOME_E:
-    case HOME_T:
-    case HOME_N:
-    case HOME_DS:
+    case HOME_AD:
+    case HOME_OD:
+    case HOME_ED:
+    case HOME_TD:
+    case HOME_ND:
+    case HOME_SD:
       return 250;
     default:
       return TAPPING_TERM;
