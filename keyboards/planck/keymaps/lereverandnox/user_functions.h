@@ -15,131 +15,34 @@ uint16_t muse_tempo = 50;
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     case QWERTY:
-      if (record->event.pressed) {
-        print("mode just switched to qwerty and this is a huge string\n");
-        set_single_persistent_default_layer(_QWERTY);
-      }
-      return false;
+        return QWERTY_handler(record);
       break;
     case DVORAK:
-      if (record->event.pressed) {
-        set_single_persistent_default_layer(_DVORAK);
-      }
-      return false;
+        return DVORAK_handler(record);
       break;
     case BACKLIT:
-      if (record->event.pressed) {
-        register_code(KC_RSFT);
-        #ifdef BACKLIGHT_ENABLE
-          backlight_step();
-        #endif
-        #ifdef KEYBOARD_planck_rev5
-          PORTE &= ~(1<<6);
-        #endif
-      } else {
-        unregister_code(KC_RSFT);
-        #ifdef KEYBOARD_planck_rev5
-          PORTE |= (1<<6);
-        #endif
-      }
-      return false;
+        return BACKLIT_handler(record);
       break;
     case PLOVER:
-      if (record->event.pressed) {
-        #ifdef AUDIO_ENABLE
-          stop_all_notes();
-          PLAY_SONG(plover_song);
-        #endif
-        layer_off(_SYM);
-        layer_off(_NUM);
-        layer_off(_ADJUST);
-        layer_on(_PLOVER);
-        if (!eeconfig_is_enabled()) {
-            eeconfig_init();
-        }
-        keymap_config.raw = eeconfig_read_keymap();
-        keymap_config.nkro = 1;
-        eeconfig_update_keymap(keymap_config.raw);
-      }
-      return false;
+        return PLOVER_handler(record);
       break;
     case EXT_PLV:
-      if (record->event.pressed) {
-        #ifdef AUDIO_ENABLE
-          PLAY_SONG(plover_gb_song);
-        #endif
-        layer_off(_PLOVER);
-      }
-      return false;
+        return EXT_PLV_handler(record);
       break;
     case ALT_TAB:
-      if (record->event.pressed) {
-        if (!is_alt_tab_active) {
-          is_alt_tab_active = true;
-          register_code(KC_LALT);
-        }
-        alt_tab_timer = timer_read();
-        register_code(KC_TAB);
-      } else {
-        unregister_code(KC_TAB);
-      }
-      return false;
+        return ALT_TAB_handler(record);
       break;
     case MU_TOG:
-        if (record->event.pressed) {
-            if (!is_music_on()) {
-                layer_off(_FN);
-                layer_off(_ADJUST);
-                layer_on(_MUSIC);
-            } else {
-                layer_off(_MUSIC);
-            }
-        }
-        return true;
+        return MU_TOG_handler(record);
         break;
     case MOUSE_T:
-      if (record->event.pressed) {
-          if (!is_mouse_active) {
-          #ifdef AUDIO_ENABLE
-            PLAY_SONG(mouse_song);
-          #endif
-          } else {
-          #ifdef AUDIO_ENABLE
-            PLAY_SONG(mouse_gb_song);
-          #endif
-          }
-          is_mouse_active = !is_mouse_active;
-      }
-      return true;
+        return MOUSE_T_handler(record);
       break;
     case KC_MAKE:
-        if (!record->event.pressed) {
-            uint8_t mods = get_mods();
-            clear_mods();
-            send_string_with_delay_P(PSTR("ALLOW_WARNINGS=yes make " QMK_KEYBOARD ":" QMK_KEYMAP), 10);
-            if (mods & MOD_MASK_SHIFT) {
-                //RESET board for flashing if SHIFT held or tapped with KC_MAKE
-                send_string_with_delay_P(PSTR(":dfu-util"), 10);
-                send_string_with_delay_P(PSTR(SS_TAP(X_ENTER)), 10);
-                reset_keyboard();
-            }
-            send_string_with_delay_P(PSTR(SS_TAP(X_ENTER)), 10);
-            set_mods(mods);
-        }
+        return KC_MAKE_handler(record);
         break;
     case KC_CAPS:
-      if (record->event.pressed) {
-        if  (!is_caps_on) {
-          #ifdef AUDIO_ENABLE
-            PLAY_SONG(plover_song);
-          #endif
-        } else {
-          #ifdef AUDIO_ENABLE
-            PLAY_SONG(plover_gb_song);
-          #endif
-        }
-        is_caps_on =  !is_caps_on;
-      }
+        return KC_CAPS_handler(record);
       break;
   }
   return true;
