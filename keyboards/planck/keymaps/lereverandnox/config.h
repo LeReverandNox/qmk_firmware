@@ -46,3 +46,5 @@
 // Choose between OUTER_COLS (one additional column on each side)
 // or INNER_COLS (both columns in the middle)
 #define OUTER_COLS
+
+#define ALT_TAB_TRESHOLD 500
