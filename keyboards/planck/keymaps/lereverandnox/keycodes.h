@@ -18,12 +18,23 @@ enum planck_keycodes {
 #define MEDIA    MO(_MEDIA)
 
 // Layer Tap
+#ifdef INNER_COLS
 #define LT_ESC   LT(NAV, KC_ESC)
 #define LT_SPC   LT(SYM, KC_SPC)
 #define LT_TAB   LT(NUM, KC_TAB)
 #define LT_ENT   LT(NUM, KC_ENT)
 #define LT_BSPC  LT(SYM, KC_BSPC)
 #define LT_RALT  LT(FN,  KC_RALT)
+#endif
+
+#ifdef OUTER_COLS
+#define LT_SPC   LT(SYM, KC_SPC)
+#define LT_ESC   LT(NUM, KC_ESC)
+#define LT_TAB   LT(NAV, KC_TAB)
+#define LT_RALT  LT(FN,  KC_RALT)
+#define LT_ENT   LT(NUM, KC_ENT)
+#define LT_BSPC  LT(SYM, KC_BSPC)
+#endif
 
 // Home mods
 // DVORAK
