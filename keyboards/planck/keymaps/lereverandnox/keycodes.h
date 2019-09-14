@@ -37,6 +37,45 @@ enum planck_keycodes {
 #endif
 
 // Home mods
+#ifdef HOME_MODS
+// DVORAK
+#    define DM_A CTL_T(KC_A)
+#    define DM_O LGUI_T(KC_O)
+#    define DM_E LALT_T(KC_E)
+#    define DM_U LSFT_T(KC_U)
+#    define DM_H RSFT_T(KC_H)
+#    define DM_T LALT_T(KC_T)
+#    define DM_N RGUI_T(KC_N)
+#    define DM_S RCTL_T(KC_S)
+// QWERTY
+#    define QM_A CTL_T(KC_A)
+#    define QM_S LGUI_T(KC_S)
+#    define QM_D LALT_T(KC_D)
+#    define QM_F LSFT_T(KC_F)
+#    define QM_J RSFT_T(KC_J)
+#    define QM_K LALT_T(KC_K)
+#    define QM_L RGUI_T(KC_L)
+#    define QM_SCLN RCTL_T(KC_SCLN)
+#else
+#    define DM_A KC_A
+#    define DM_O KC_O
+#    define DM_E KC_E
+#    define DM_U KC_U
+#    define DM_H KC_H
+#    define DM_T KC_T
+#    define DM_N KC_N
+#    define DM_S KC_S
+// QWERTY
+#    define QM_A KC_A
+#    define QM_S KC_S
+#    define QM_D KC_D
+#    define QM_F KC_F
+#    define QM_J KC_J
+#    define QM_K KC_K
+#    define QM_L KC_L
+#    define QM_SCLN KC_SCLN
+#endif
+
 // DVORAK
 #define HOME_AD  CTL_T(KC_A)
 #define HOME_OD  LGUI_T(KC_O)
