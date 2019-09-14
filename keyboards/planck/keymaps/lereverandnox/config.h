@@ -47,4 +47,8 @@
 // or INNER_COLS (both columns in the middle)
 #define OUTER_COLS
 
+// If you want to have hold modifiers on the home row. Love the idea, sooo convenient, but it's not easy to work with in reality...
+// Either the TAPPING_TERM is too long, often getting "as" instead of "C-s"
+// or is too short, causing to trigger unwanted mods while typing normally, quite dangerous.
+#define HOME_MODS
 #define ALT_TAB_TRESHOLD 500
