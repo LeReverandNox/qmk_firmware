@@ -82,8 +82,8 @@ enum planck_keycodes {
 #    define DM_SCLN CTL_T(KC_SCLN)
 #    define DM_Q LGUI_T(KC_Q)
 #    define DM_J LALT_T(KC_J)
-#    define DM_D KC_D
-#    define DM_M KC_M
+#    define DM_K LSFT_T(KC_K)
+#    define DM_M RSFT_T(KC_M)
 #    define DM_W LALT_T(KC_W)
 #    define DM_V RGUI_T(KC_V)
 #    define DM_Z RCTL_T(KC_Z)
@@ -91,8 +91,8 @@ enum planck_keycodes {
 #    define QM_Z CTL_T(KC_Z)
 #    define QM_X LGUI_T(KC_X)
 #    define QM_C LALT_T(KC_C)
-#    define QM_V KC_V
-#    define QM_M KC_M
+#    define QM_V LSFT_T(KC_V)
+#    define QM_M RSFT_T(KC_M)
 #    define QM_COMM LALT_T(KC_COMM)
 #    define QM_DOT RGUI_T(KC_DOT)
 #    define QM_SLSH RCTL_T(KC_SLSH)
@@ -101,7 +101,7 @@ enum planck_keycodes {
 #    define DM_SCLN KC_SCLN
 #    define DM_Q KC_Q
 #    define DM_J KC_J
-#    define DM_D KC_D
+#    define DM_K KC_K
 #    define DM_M KC_M
 #    define DM_W KC_W
 #    define DM_V KC_V
