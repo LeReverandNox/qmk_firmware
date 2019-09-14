@@ -51,4 +51,9 @@
 // Either the TAPPING_TERM is too long, often getting "as" instead of "C-s"
 // or is too short, causing to trigger unwanted mods while typing normally, quite dangerous.
 #define HOME_MODS
+
+// This is an experiment, putting the mods one row below the home row.
+// This is the less used row, especially in Dvorak, so it might work better, less prone to unwanted mods with shorter TAPPING_TERM
+// #define BELOW_HOME_MODS
+
 #define ALT_TAB_TRESHOLD 500

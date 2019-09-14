@@ -76,24 +76,46 @@ enum planck_keycodes {
 #    define QM_SCLN KC_SCLN
 #endif
 
+// Below-Home mods
+#ifdef BELOW_HOME_MODS
 // DVORAK
-#define HOME_AD  CTL_T(KC_A)
-#define HOME_OD  LGUI_T(KC_O)
-#define HOME_ED  LALT_T(KC_E)
-#define HOME_UD  LSFT_T(KC_U)
-#define HOME_HD  RSFT_T(KC_H)
-#define HOME_TD  LALT_T(KC_T)
-#define HOME_ND  RGUI_T(KC_N)
-#define HOME_SD  RCTL_T(KC_S)
+#    define DM_SCLN CTL_T(KC_SCLN)
+#    define DM_Q LGUI_T(KC_Q)
+#    define DM_J LALT_T(KC_J)
+#    define DM_D KC_D
+#    define DM_M KC_M
+#    define DM_W LALT_T(KC_W)
+#    define DM_V RGUI_T(KC_V)
+#    define DM_Z RCTL_T(KC_Z)
 // QWERTY
-#define HOME_AQ  CTL_T(KC_A)
-#define HOME_SQ  LGUI_T(KC_S)
-#define HOME_DQ  LALT_T(KC_D)
-#define HOME_FQ  LSFT_T(KC_F)
-#define HOME_JQ  RSFT_T(KC_J)
-#define HOME_KQ  LALT_T(KC_K)
-#define HOME_LQ  RGUI_T(KC_L)
-#define HOME_SC  RCTL_T(KC_SCLN)
+#    define QM_Z CTL_T(KC_Z)
+#    define QM_X LGUI_T(KC_X)
+#    define QM_C LALT_T(KC_C)
+#    define QM_V KC_V
+#    define QM_M KC_M
+#    define QM_COMM LALT_T(KC_COMM)
+#    define QM_DOT RGUI_T(KC_DOT)
+#    define QM_SLSH RCTL_T(KC_SLSH)
+#else
+// DVORAK
+#    define DM_SCLN KC_SCLN
+#    define DM_Q KC_Q
+#    define DM_J KC_J
+#    define DM_D KC_D
+#    define DM_M KC_M
+#    define DM_W KC_W
+#    define DM_V KC_V
+#    define DM_Z KC_Z
+// QWERTY
+#    define QM_Z KC_Z
+#    define QM_X KC_X
+#    define QM_C KC_C
+#    define QM_V KC_V
+#    define QM_M KC_M
+#    define QM_COMM KC_COMM
+#    define QM_DOT KC_DOT
+#    define QM_SLSH KC_SLSH
+#endif
 
 // Ose-shot mods
 #define OS_LALT  OSM(MOD_LALT)
