@@ -118,9 +118,8 @@ enum planck_keycodes {
 #endif
 
 // Ose-shot mods
-#define OS_LALT  OSM(MOD_LALT)
-#define OS_RGUI  OSM(MOD_RGUI)
-#define OS_RCTL  OSM(MOD_RCTL)
+#define OS_LSFT OSM(MOD_LSFT)
+#define OS_RSFT OSM(MOD_RSFT)
 
 // Tapdances
 #define TD_DOT   TD(_DOT)
