@@ -80,21 +80,23 @@ void keyboard_post_init_user(void) {
 }
 
 uint16_t get_tapping_term(uint16_t keycode) {
-  switch (keycode) {
-    case QM_S:
-    case QM_D:
-    case QM_K:
-    case QM_L:
-    case QM_SCLN:
+    switch (keycode) {
+#ifdef HOME_MODS
+        case QM_S:
+        case QM_D:
+        case QM_K:
+        case QM_L:
+        case QM_SCLN:
 
-    case DM_A:
-    case DM_O:
-    case DM_E:
-    case DM_T:
-    case DM_N:
-    case DM_S:
-      return 250;
-    default:
-      return TAPPING_TERM;
-  }
+        case DM_A:
+        case DM_O:
+        case DM_E:
+        case DM_T:
+        case DM_N:
+        case DM_S:
+            return 250;
+#endif
+        default:
+            return TAPPING_TERM;
+    }
 }
