@@ -14,29 +14,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include QMK_KEYBOARD_H
-#include "muse.h"
+#include "lereverandnox.h"
 
 extern keymap_config_t keymap_config;
-
-enum planck_layers {
-  _QWERTY = 0,
-  _DVORAK,
-  _MOUSE,
-  _NAV,
-  _SYM,
-  _NUM,
-  _FN,
-  _PLOVER,
-  _MUSIC,
-  _MEDIA,
-  _ADJUST
-};
-
-#include "songs.h"
-#include "tapdances.h"
-#include "keycodes.h"
-#include "user_functions.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #include "layers/qwerty_layer.h"
