@@ -12,10 +12,10 @@
 // +-------+------+-----+-----+-------+-----+-------+-------+------+-----+------+-------+
 
 [_DVORAK] = LAYOUT_planck_grid(
-    MOUSE_T, KC_QUOT,  KC_COMM,  KC_DOT,  KC_P,    KC_Y,   KC_F,   KC_G,     KC_C,     KC_R,    KC_L,      MOUSE_T,
-    MEDIA,   DM_A,  DM_O,  DM_E, DM_U, KC_I,   KC_D,   DM_H,  DM_T,  DM_N, DM_S,   XXXXXXX,
-    XXXXXXX, KC_SCLN,  KC_Q,     KC_J,    KC_K,    KC_X,   KC_B,   KC_M,     KC_W,     KC_V,    KC_Z,      XXXXXXX,
-    KC_LCTL, KC_LGUI,  KC_LALT,  LT_ESC,  LT_SPC,  LT_TAB, LT_ENT, LT_BSPC,  LT_RALT,  OS_LALT, OS_RGUI,   OS_RCTL
+    MOUSE_T, KC_QUOT, KC_COMM, KC_DOT, KC_P,   KC_Y,   KC_F,   KC_G,    KC_C,    KC_R,    KC_L,    MOUSE_T,
+    MEDIA,   DM_A,    DM_O,    DM_E,   DM_U,   KC_I,   KC_D,   DM_H,    DM_T,    DM_N,    DM_S,    XXXXXXX,
+    XXXXXXX, KC_SCLN, KC_Q,    KC_J,   KC_K,   KC_X,   KC_B,   KC_M,    KC_W,    KC_V,    KC_Z,    XXXXXXX,
+    KC_LCTL, KC_LGUI, KC_LALT, LT_ESC, LT_SPC, LT_TAB, LT_ENT, LT_BSPC, LT_RALT, OS_LALT, OS_RGUI, OS_RCTL
     ),
 #endif
 
@@ -32,9 +32,30 @@
 // |      |     |     |  Sym  | Num | Nav   | Fn    |  Num  |  Sym  |     |     |      |
 // +------+-----+-----+-------+-----+-------+-------+-------+-------+-----+-----+------+
 [_DVORAK] = LAYOUT_planck_grid(
-    KC_QUOT,  KC_COMM,  KC_DOT,   KC_P,    KC_Y,    MOUSE_T, MOUSE_T, KC_F,     KC_G,     KC_C,     KC_R,      KC_L,
-    DM_A,  DM_O,  DM_E,  DM_U, KC_I,    MEDIA,   XXXXXXX, KC_D,     DM_H,  DM_T,  DM_N,   DM_S,
-    KC_SCLN,  KC_Q,     KC_J,     KC_K,    KC_X,    XXXXXXX, XXXXXXX, KC_B,     KC_M,     KC_W,     KC_V,      KC_Z,
-    KC_LCTL,  KC_LGUI,  KC_LALT,  LT_SPC,  LT_ESC,  LT_TAB,  LT_RALT,  LT_ENT,  LT_BSPC,  OS_LALT,  OS_RGUI,   OS_RCTL
+    KC_QUOT, KC_COMM, KC_DOT,  KC_P,   KC_Y,   MOUSE_T, MOUSE_T, KC_F,   KC_G,    KC_C,    KC_R,    KC_L,
+    DM_A,    DM_O,    DM_E,    DM_U,   KC_I,   MEDIA,   XXXXXXX, KC_D,   DM_H,    DM_T,    DM_N,    DM_S,
+    KC_SCLN, KC_Q,    KC_J,    KC_K,   KC_X,   XXXXXXX, XXXXXXX, KC_B,   KC_M,    KC_W,    KC_V,    KC_Z,
+    KC_LCTL, KC_LGUI, KC_LALT, LT_SPC, LT_ESC, LT_TAB,  LT_RALT, LT_ENT, LT_BSPC, OS_LALT, OS_RGUI, OS_RCTL
+    ),
+#endif
+
+#ifdef OUTER_CLASSICAL
+// +-------+------+-----+-----+-------+-----+-------+-------+------+-----+------+-------+
+// |   `   |   '  |  ,  |  .  |   P   |  Y  |   F   |   G   |   C  |  R  |   L  | Mouse |
+// +-------+------+-----+-----+-------+-----+-------+-------+------+-----+------+-------+
+// |  Tab  |   A  |  O  |  E  |   U   |  I  |   D   |   H   |  T   |  N  |   S  |       |
+// | Media |      |     |     |       |     |       |       |      |     |      |       |
+// +-------+------+-----+-----+-------+-----+-------+-------+------+-----+------+-------+
+// | Shift |   ;  |  Q  |  J  |   K   |  X  |   B   |   M   |   W  |  V  |   Z  | Shift |
+// |       | Ctrl | GUI | Alt | Shift |     |       | Shift |  Alt | GUI | Ctrl |       |
+// +-------+------+-----+-----+-------+-----+-------+-------+------+-----+------+-------+
+// |  Ctrl |  GUI | Alt | Tab | Space | Esc | Enter | Bkspc | RAlt | Alt |  GUI |  Ctrl |
+// |       |      |     | Nav |  Num  | Sym |  Num  |  Sym  |  Fn  |     |      |       |
+// +-------+------+-----+-----+-------+-----+-------+-------+------+-----+------+-------+
+[_DVORAK] = LAYOUT_planck_grid(
+    KC_GRV,  KC_QUOT, KC_COMM, KC_DOT, KC_P,   KC_Y,   KC_F,   KC_G,    KC_C,    KC_R,    KC_L,    MOUSE_T,
+    LT_TABG, DM_A,    DM_O,    DM_E,   DM_U,   KC_I,   KC_D,   DM_H,    DM_T,    DM_N,    DM_S,    KC_NO,
+    OS_LSFT, DM_SCLN, DM_Q,    DM_J,   DM_K,   KC_X,   KC_B,   DM_M,    DM_W,    DM_V,    DM_Z,    OS_RSFT,
+    KC_LCTL, KC_LGUI, KC_LALT, LT_TAB, LT_SPC, LT_ESC, LT_ENT, LT_BSPC, LT_RALT, OS_LALT, OS_RGUI, OS_RCTL
     ),
 #endif
