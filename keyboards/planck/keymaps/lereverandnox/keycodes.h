@@ -137,8 +137,4 @@ enum planck_keycodes {
 #define OS_LSFT OSM(MOD_LSFT)
 #define OS_RSFT OSM(MOD_RSFT)
 
-// Tapdances
-#define TD_DOT   TD(_DOT)
-#define TD_LBRC  TD(_LBRACE)
-
 #define NKR_TOG MAGIC_TOGGLE_NKRO
