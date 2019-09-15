@@ -1,3 +1,6 @@
+#pragma once
+#include "lereverandnox.h"
+
 enum planck_keycodes {
   QWERTY = SAFE_RANGE,
   DVORAK,
@@ -136,5 +139,6 @@ enum planck_keycodes {
 
 // Tapdances
 #define TD_DOT   TD(_DOT)
+#define TD_LBRC  TD(_LBRACE)
 
 #define NKR_TOG MAGIC_TOGGLE_NKRO
