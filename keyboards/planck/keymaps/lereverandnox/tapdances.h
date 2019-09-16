@@ -7,7 +7,11 @@ enum tap_dances {
   _LBRC,
   _RBRC,
   _LCBR,
-  _RCBR
+  _RCBR,
+  _LPRN,
+  _RPRN,
+  _QUOT,
+  _DQUO
 };
 
 #define TD_DOT   TD(_DOT)
@@ -15,3 +19,7 @@ enum tap_dances {
 #define TD_RBRC  TD(_RBRC)
 #define TD_LCBR  TD(_LCBR)
 #define TD_RCBR  TD(_RCBR)
+#define TD_LPRN  TD(_LPRN)
+#define TD_RPRN  TD(_RPRN)
+#define TD_QUOT  TD(_QUOT)
+#define TD_DQUO  TD(_DQUO)
