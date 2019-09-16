@@ -37,7 +37,7 @@ void quot_finish(qk_tap_dance_state_t *state, void *user_data)
 
 void dquo_finish(qk_tap_dance_state_t *state, void *user_data)
 {
-  tap_pair(state, SFT_YES, KC_QUOT, KC_QUOT, 0, CLOSE);
+  tap_pair(state, SFT_YES, KC_QUOT, KC_QUOT, 0, 0);
 }
 
 void sdqu_finish(qk_tap_dance_state_t *state, void *user_data)
@@ -54,4 +54,9 @@ void sdqu_finish(qk_tap_dance_state_t *state, void *user_data)
     }
     else
         quot_finish(state, user_data);
+}
+
+void grv_finish(qk_tap_dance_state_t *state, void *user_data)
+{
+  tap_pair(state, SFT_NO, KC_GRV, KC_GRV, 0, 0);
 }
