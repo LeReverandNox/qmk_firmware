@@ -40,3 +40,18 @@ void dquo_finish(qk_tap_dance_state_t *state, void *user_data)
   tap_pair(state, SFT_YES, KC_QUOT, KC_QUOT, 0, CLOSE);
 }
 
+void sdqu_finish(qk_tap_dance_state_t *state, void *user_data)
+{
+    uint8_t mods = get_mods();
+    uint8_t weak_mods = get_weak_mods();
+
+    if (mods & MOD_MASK_SHIFT)  {
+        clear_mods();
+        clear_weak_mods();
+        dquo_finish(state, user_data);
+        set_mods(mods);
+        set_weak_mods(weak_mods);
+    }
+    else
+        quot_finish(state, user_data);
+}
