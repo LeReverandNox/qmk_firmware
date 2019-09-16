@@ -32,7 +32,7 @@
  */
 [_SYM] = LAYOUT_planck_grid(
     KC_TILD, TD_DQUO, XXXXXXX, KC_ASTR, KC_AMPR, TD_LPRN, TD_RPRN, KC_PLUS, KC_UNDS, KC_PIPE, KC_QUES, XXXXXXX,
-    KC_GRV,  TD_QUOT, KC_CIRC, KC_PERC, KC_DLR,  TD_LBRC, TD_RBRC, KC_EQL,  KC_MINS, KC_BSLS, KC_SLSH, _______,
+    TD_GRV,  TD_QUOT, KC_CIRC, KC_PERC, KC_DLR,  TD_LBRC, TD_RBRC, KC_EQL,  KC_MINS, KC_BSLS, KC_SLSH, _______,
     _______, XXXXXXX, KC_HASH, KC_AT,   KC_EXLM, TD_LCBR, TD_RCBR, KC_LABK, KC_RABK, XXXXXXX, XXXXXXX, _______,
     KC_CAPS, _______, _______, _______, KC_DEL,  _______, _______, KC_DEL,  _______, _______, _______, _______
     ),

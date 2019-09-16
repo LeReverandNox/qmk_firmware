@@ -13,6 +13,8 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [_LPRN] = ACTION_TAP_DANCE_FN(lprn_finish),
   [_RPRN] = ACTION_TAP_DANCE_FN(rprn_finish),
   [_QUOT] = ACTION_TAP_DANCE_FN(quot_finish),
-  [_DQUO] = ACTION_TAP_DANCE_FN(dquo_finish)
-  ,[_SDQU] = ACTION_TAP_DANCE_FN(sdqu_finish)
+  [_DQUO] = ACTION_TAP_DANCE_FN(dquo_finish),
+  [_SDQU] = ACTION_TAP_DANCE_FN(sdqu_finish),
+  [_GRV] = ACTION_TAP_DANCE_FN(grv_finish)
+
 };
