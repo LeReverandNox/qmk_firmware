@@ -1,5 +1,7 @@
 #include "helpers.h"
 
+bool is_caps_on = false;
+
 // register simple key press
 void tap_key(uint16_t keycode)
 {
@@ -65,4 +67,25 @@ void symbol_pair(uint8_t shift, uint16_t left, uint16_t right)
     tap_key(left);
     tap_key(right);
   }
+}
+
+void tap_shift_caps(qk_tap_dance_state_t *state, uint16_t shift, uint16_t mod) {
+    // double tap: toggle Capslock
+    if (state->count >= 2) {
+        tap_key(KC_CAPS);
+        is_caps_on = !is_caps_on;
+    // pressed: hold Shift
+    } else if (state->pressed) {
+        register_code(shift);
+    // single tap
+    } else {
+        //  if enable, turn Capslock off
+        if (is_caps_on) {
+            tap_key(KC_CAPS);
+            is_caps_on = false;
+        // oneshot Shift
+        } else {
+            set_oneshot_mods(mod);
+        }
+    }
 }
