@@ -14,6 +14,8 @@ enum tap_dances {
   _DQUO,
   _SDQU,
   _GRV,
+  _LABK,
+  _RABK,
   _LSFT,
   _RSFT
 };
@@ -28,6 +30,9 @@ enum tap_dances {
 #define TD_QUOT  TD(_QUOT)
 #define TD_DQUO  TD(_DQUO)
 #define TD_SDQU  TD(_SDQU)
+#define TD_GRV   TD(_GRV)
+#define TD_LABK  TD(_LABK)
+#define TD_RABK  TD(_RABK)
 #define TD_GRV   TD(_GRV)
 #define TD_LSFT  TD(_LSFT)
 #define TD_RSFT  TD(_RSFT)
