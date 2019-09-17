@@ -61,6 +61,16 @@ void grv_finish(qk_tap_dance_state_t *state, void *user_data)
   tap_pair(state, SFT_NO, KC_GRV, KC_GRV, 0, 0);
 }
 
+void labk_finish(qk_tap_dance_state_t *state, void *user_data)
+{
+  tap_pair(state, SFT_YES, KC_COMM, KC_DOT, 0, 0);
+}
+
+void rabk_finish(qk_tap_dance_state_t *state, void *user_data)
+{
+  tap_pair(state, SFT_YES, KC_COMM, KC_DOT, 0, CLOSE);
+}
+
 void lsft_finish(qk_tap_dance_state_t *state, void *user_data)
 {
     tap_shift_caps(state, KC_LSFT);
