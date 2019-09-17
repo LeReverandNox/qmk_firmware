@@ -17,6 +17,15 @@ void shift_key(uint16_t keycode)
 // tap dance symbol pairs
 void tap_pair(qk_tap_dance_state_t *state, uint8_t shift, uint16_t left, uint16_t right, uint16_t modifier, uint8_t close)
 {
+    // send the symbol if the tap dance is interrupted, otherwise it's considered pressed...
+    if (state->interrupted) {
+        if (shift == SFT_YES) {
+        shift_key(close ? right : left);
+        }
+        else {
+        tap_key(close ? right : left);
+        }
+    }
   // triple tap: left right with cursor between symbol pair a la vim :-)
   if (state->count > 2) {
     symbol_pair(shift, left, right);
