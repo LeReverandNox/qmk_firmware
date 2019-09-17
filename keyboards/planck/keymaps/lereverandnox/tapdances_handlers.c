@@ -60,3 +60,23 @@ void grv_finish(qk_tap_dance_state_t *state, void *user_data)
 {
   tap_pair(state, SFT_NO, KC_GRV, KC_GRV, 0, 0);
 }
+
+void lsft_finish(qk_tap_dance_state_t *state, void *user_data)
+{
+    tap_shift_caps(state, KC_LSFT, MOD_LSFT);
+}
+
+void lsft_reset(qk_tap_dance_state_t *state, void *user_data)
+{
+    unregister_code(KC_LSFT);
+}
+
+void rsft_finish(qk_tap_dance_state_t *state, void *user_data)
+{
+    tap_shift_caps(state, KC_RSFT, MOD_RSFT);
+}
+
+void rsft_reset(qk_tap_dance_state_t *state, void *user_data)
+{
+    unregister_code(KC_RSFT);
+}
