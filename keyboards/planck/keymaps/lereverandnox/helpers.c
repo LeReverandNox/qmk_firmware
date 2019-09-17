@@ -69,7 +69,7 @@ void symbol_pair(uint8_t shift, uint16_t left, uint16_t right)
   }
 }
 
-void tap_shift_caps(qk_tap_dance_state_t *state, uint16_t shift, uint16_t mod) {
+void tap_shift_caps(qk_tap_dance_state_t *state, uint8_t shift) {
     // double tap: toggle Capslock
     if (state->count >= 2) {
         tap_key(KC_CAPS);
@@ -83,9 +83,9 @@ void tap_shift_caps(qk_tap_dance_state_t *state, uint16_t shift, uint16_t mod) {
         if (is_caps_on) {
             tap_key(KC_CAPS);
             is_caps_on = false;
-        // oneshot Shift
+        // oneshot Shift (don't know why it doesn't work with MOD_RSFT...)
         } else {
-            set_oneshot_mods(mod);
+            set_oneshot_mods(MOD_LSFT);
         }
     }
 }
