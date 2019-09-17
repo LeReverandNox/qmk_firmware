@@ -1,7 +1,7 @@
 #include "process_record_handlers.h"
 
 bool is_mouse_active = false;
-bool is_caps_on = false;
+bool extern is_caps_on;
 extern bool is_alt_tab_active;
 extern  uint16_t alt_tab_timer;
 
