@@ -63,12 +63,22 @@ void grv_finish(qk_tap_dance_state_t *state, void *user_data)
 
 void labk_finish(qk_tap_dance_state_t *state, void *user_data)
 {
-  tap_pair(state, SFT_YES, KC_COMM, KC_DOT, 0, 0);
+    if (state->count ==  2) {
+        shift_key(KC_COMM);
+        tap_key(KC_MINS);
+    } else {
+        tap_pair(state, SFT_YES, KC_COMM, KC_DOT, 0, 0);
+    }
 }
 
 void rabk_finish(qk_tap_dance_state_t *state, void *user_data)
 {
-  tap_pair(state, SFT_YES, KC_COMM, KC_DOT, 0, CLOSE);
+    if (state->count ==  2) {
+        tap_key(KC_MINS);
+        shift_key(KC_DOT);
+    } else {
+        tap_pair(state, SFT_YES, KC_COMM, KC_DOT, 0, CLOSE);
+    }
 }
 
 void lsft_finish(qk_tap_dance_state_t *state, void *user_data)
