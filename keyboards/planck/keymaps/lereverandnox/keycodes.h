@@ -4,9 +4,11 @@
 enum planck_keycodes {
   QWERTY = SAFE_RANGE,
   DVORAK,
+  GAMING,
   PLOVER,
   BACKLIT,
   EXT_PLV,
+  EXT_GAM,
   ALT_TAB,
   KC_MAKE
 };
@@ -19,6 +21,8 @@ enum planck_keycodes {
 #define ADJUST   MO(_ADJUST)
 #define MOUSE_T  TG(_MOUSE)
 #define MEDIA    MO(_MEDIA)
+#define G_RAISE   MO(_GAMING_RAISE)
+#define G_LOWER   MO(_GAMING_LOWER)
 
 // Layer Tap
 #ifdef OUTER_COLS
