@@ -58,3 +58,6 @@
 #define BELOW_HOME_MODS
 
 #define ALT_TAB_TRESHOLD 500
+
+// Choose the layout for the gaming layer. For now DVORAK is the only option ^^'
+#define GAMING_DVORAK
