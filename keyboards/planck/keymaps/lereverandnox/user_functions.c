@@ -11,6 +11,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case DVORAK:
         return DVORAK_handler(record);
       break;
+    case GAMING:
+        return GAMING_handler(record);
+      break;
     case BACKLIT:
         return BACKLIT_handler(record);
       break;
@@ -19,6 +22,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
     case EXT_PLV:
         return EXT_PLV_handler(record);
+      break;
+    case EXT_GAM:
+        return EXT_GAM_handler(record);
       break;
     case ALT_TAB:
         return ALT_TAB_handler(record);
