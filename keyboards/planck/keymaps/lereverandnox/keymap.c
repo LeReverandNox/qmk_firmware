@@ -21,6 +21,7 @@ extern keymap_config_t keymap_config;
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #include "layers/qwerty_layer.h"
 #include "layers/dvorak_layer.h"
+#include "layers/gaming_layer.h"
 #include "layers/nav_layer.h"
 #include "layers/sym_layer.h"
 #include "layers/num_layer.h"
