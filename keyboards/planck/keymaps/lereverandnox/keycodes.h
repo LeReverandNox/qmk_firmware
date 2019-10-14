@@ -45,11 +45,12 @@ enum planck_keycodes {
 
 #ifdef OUTER_CLASSICAL
 #    define LT_TABG LT(MEDIA, KC_TAB)
+#    define LT_ESCG LT(MEDIA, KC_ESC)
 #    define LT_TAB LT(NAV, KC_TAB)
-#    define LT_SPC LT(NUM, KC_SPC)
+#    define LT_SPC LT(SYM, KC_SPC)
 #    define LT_ESC LT(SYM, KC_ESC)
 #    define LT_ENT LT(NUM, KC_ENT)
-#    define LT_BSPC LT(SYM, KC_BSPC)
+#    define LT_BSPC LT(NUM, KC_BSPC)
 #    define LT_RALT LT(FN, KC_RALT)
 #endif
 
