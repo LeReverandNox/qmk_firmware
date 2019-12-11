@@ -56,6 +56,6 @@
     TD_GRV,  TD_SDQU, KC_COMM, KC_DOT, KC_P,   KC_Y,   KC_F,   KC_G,    KC_C,    KC_R,    KC_L,    MOUSE_T,
     LT_ESCG, DM_A,    DM_O,    DM_E,   DM_U,   KC_I,   KC_D,   DM_H,    DM_T,    DM_N,    DM_S,    KC_ENT,
     TD_LSFT, DM_SCLN, DM_Q,    DM_J,   DM_K,   KC_X,   KC_B,   DM_M,    DM_W,    DM_V,    DM_Z,    TD_RSFT,
-    KC_LCTL, KC_LGUI, KC_LALT, LT_TAB, LT_SPC, NUM,    SYM,    LT_BSPC, LT_RALT, OS_LALT, OS_RGUI, OS_RCTL
+    KC_LCTL, KC_LGUI, KC_LALT, LT_TAB, KC_SPC, NUM,    SYM,    KC_BSPC, LT_RALT, OS_LALT, OS_RGUI, OS_RCTL
     ),
 #endif
