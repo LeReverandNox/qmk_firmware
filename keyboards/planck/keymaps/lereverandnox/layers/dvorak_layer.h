@@ -50,7 +50,7 @@
 // |       | Ctrl | GUI | Alt | Shift |     |       | Shift |  Alt | GUI | Ctrl |       |
 // +-------+------+-----+-----+-------+-----+-------+-------+------+-----+------+-------+
 // |  Ctrl |  GUI | Alt | Tab | Space |     |       | Bkspc | RAlt | Alt |  GUI |  Ctrl |
-// |       |      |     | Nav |  Sym  | Num |  Sym  |  Num  |  Fn  |     |      |       |
+// |       |      |     | Nav |       | Num |  Sym  |       |  Fn  |     |      |       |
 // +-------+------+-----+-----+-------+-----+-------+-------+------+-----+------+-------+
 [_DVORAK] = LAYOUT_planck_grid(
     TD_GRV,  TD_SDQU, KC_COMM, KC_DOT, KC_P,   KC_Y,   KC_F,   KC_G,    KC_C,    KC_R,    KC_L,    MOUSE_T,
