@@ -1,3 +1,4 @@
+// clang-format off
 #ifdef OUTER_COLS
 /* Nav
  * ,-----------------------------------------------------------------------------------
@@ -14,7 +15,7 @@
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_HOME, KC_PGUP,  XXXXXXX, XXXXXXX, _______,
     _______, KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN,  KC_UP,   KC_RGHT, _______,
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_END,  KC_PGDN,  XXXXXXX, XXXXXXX, _______,
-    _______, _______, _______, _______, KC_INS,  _______),
+                               _______, _______, _______, _______, KC_INS,  _______),
 #endif
 
 #ifdef INNER_COLS
@@ -31,7 +32,7 @@
 	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, XXXXXXX, KC_HOME, KC_PGUP, XXXXXXX, XXXXXXX,
 	KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, XXXXXXX, _______, _______, XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
 	_______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, XXXXXXX, KC_END,  KC_PGDN, XXXXXXX, XXXXXXX,
-	_______, _______, _______, _______, _______, KC_INS),
+	                           _______, _______, _______, _______, _______, KC_INS),
 #endif
 
 #ifdef OUTER_CLASSICAL
@@ -50,5 +51,5 @@
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_HOME, KC_PGUP,  XXXXXXX, XXXXXXX, _______,
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN,  KC_UP,   KC_RGHT, _______,
     _______, KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, XXXXXXX, XXXXXXX, KC_END,  KC_PGDN,  XXXXXXX, XXXXXXX, _______,
-    _______, _______, _______, _______, KC_INS,  _______),
+                               _______, _______, _______, _______, KC_INS,  _______),
 #endif
