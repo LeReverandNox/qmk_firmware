@@ -23,3 +23,6 @@ SRC += tapdances_handlers.c
 
 # Firmware size reduction
 EXTRAFLAGS += -flto
+
+# For RESET to work, thanks @Drashna (https://www.reddit.com/r/olkb/comments/agua1r/reset/eea8z3i)
+BOOTLOADER = atmel-dfu
