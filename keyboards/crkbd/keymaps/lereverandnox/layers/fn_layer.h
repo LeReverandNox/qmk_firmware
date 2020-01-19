@@ -1,3 +1,4 @@
+// clang-format off
 #ifdef OUTER_COLS
 /* Fn
  * ,-----------------------------------------------------------------------------------
@@ -15,7 +16,7 @@
     XXXXXXX, KC_F12,  KC_F9,   KC_F8,   KC_F7,   XXXXXXX, XXXXXXX, KC_PAUS, KC_SLCK, XXXXXXX, XXXXXXX, _______,
     _______, KC_F11,  KC_F6,   KC_F5,   KC_F4,   XXXXXXX, XXXXXXX, KC_LSFT, KC_LALT, KC_LGUI, KC_LCTL, _______,
     _______, KC_F10,  KC_F3,   KC_F2,   KC_F1,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
-    _______, _______, _______, _______, ADJUST,  _______),
+                               _______, _______, _______, _______, ADJUST,  _______),
 #endif
 
 #ifdef OUTER_CLASSICAL
@@ -34,5 +35,5 @@
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PAUS, KC_SLCK, XXXXXXX, XXXXXXX, _______,
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
-    _______, _______, _______, _______, ADJUST,  _______),
+                               _______, _______, _______, _______, ADJUST,  _______),
 #endif

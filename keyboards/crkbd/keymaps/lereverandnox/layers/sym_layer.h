@@ -1,3 +1,4 @@
+// clang-format off
 #ifdef OUTER_COLS
 /* Symbols
  * ,-----------------------------------------------------------------------------------
@@ -14,7 +15,7 @@
     XXXXXXX, KC_GRV,  KC_TILD, KC_ASTR, KC_AMPR, XXXXXXX, XXXXXXX, KC_LPRN, KC_RPRN, KC_SLSH, KC_QUES, _______,
     _______, KC_MINS, KC_CIRC, KC_PERC, KC_DLR,  XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, KC_BSLS, KC_PIPE, _______,
     _______, KC_UNDS, KC_HASH, KC_AT,   KC_EXLM, XXXXXXX, XXXXXXX, KC_LCBR, KC_RCBR, KC_EQL,  KC_PLUS, _______,
-    _______, _______, _______, _______, KC_DEL,  _______),
+	                           _______, _______, _______, _______, KC_DEL,  _______),
 #endif
 
 #ifdef OUTER_CLASSICAL
@@ -26,12 +27,12 @@
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |   :  |  #   |  @   |  !   |  {   |  }   |   <  |   >  |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Caps |      |      |      | Del  |      |      | Del  |      |      |      |      |
+ * |      |      |      |      | Del  |      |      | Del  |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_SYM] = LAYOUT(
     KC_TILD, TD_DQUO, XXXXXXX, KC_ASTR, KC_AMPR, TD_LPRN, TD_RPRN, KC_PLUS, KC_UNDS, KC_PIPE, KC_QUES, XXXXXXX,
     TD_GRV,  TD_QUOT, KC_CIRC, KC_PERC, KC_DLR,  TD_LBRC, TD_RBRC, KC_EQL,  KC_MINS, KC_BSLS, KC_SLSH, _______,
     _______, KC_COLN, KC_HASH, KC_AT,   KC_EXLM, TD_LCBR, TD_RCBR, TD_LABK, TD_RABK, XXXXXXX, XXXXXXX, _______,
-    _______, KC_DEL,  _______, _______, KC_DEL,  _______),
+                               _______, KC_DEL,  _______, _______, KC_DEL,  _______),
 #endif
