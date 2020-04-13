@@ -15,7 +15,7 @@
     MOUSE_T, KC_QUOT, KC_COMM, KC_DOT, KC_P,   KC_Y,   KC_F,   KC_G,    KC_C,    KC_R,    KC_L,    MOUSE_T,
     MEDIA,   DM_A,    DM_O,    DM_E,   DM_U,   KC_I,   KC_D,   DM_H,    DM_T,    DM_N,    DM_S,    XXXXXXX,
     XXXXXXX, KC_SCLN, KC_Q,    KC_J,   KC_K,   KC_X,   KC_B,   KC_M,    KC_W,    KC_V,    KC_Z,    XXXXXXX,
-    KC_LCTL, KC_LGUI, KC_LALT, LT_ESC, LT_SPC, LT_TAB, LT_ENT, LT_BSPC, LT_RALT, OS_LALT, OS_RGUI, OS_RCTL
+    KC_LCTL, KC_LGUI, KC_LALT, LT_ESC, LT_SPC, LT_TAB, LT_ENT, LT_BSPC, KC_RALT, OS_LALT, OS_RGUI, OS_RCTL
     ),
 #endif
 
@@ -35,7 +35,7 @@
     KC_QUOT, KC_COMM, KC_DOT,  KC_P,   KC_Y,   MOUSE_T, MOUSE_T, KC_F,   KC_G,    KC_C,    KC_R,    KC_L,
     DM_A,    DM_O,    DM_E,    DM_U,   KC_I,   MEDIA,   XXXXXXX, KC_D,   DM_H,    DM_T,    DM_N,    DM_S,
     KC_SCLN, KC_Q,    KC_J,    KC_K,   KC_X,   XXXXXXX, XXXXXXX, KC_B,   KC_M,    KC_W,    KC_V,    KC_Z,
-    KC_LCTL, KC_LGUI, KC_LALT, LT_SPC, LT_ESC, LT_TAB,  LT_RALT, LT_ENT, LT_BSPC, OS_LALT, OS_RGUI, OS_RCTL
+    KC_LCTL, KC_LGUI, KC_LALT, LT_SPC, LT_ESC, LT_TAB,  KC_RALT, LT_ENT, LT_BSPC, OS_LALT, OS_RGUI, OS_RCTL
     ),
 #endif
 
