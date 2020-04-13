@@ -64,7 +64,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
       #endif
       break;
     }
-    /* state = update_tri_layer_state(state, _SYM, _NUM, _MOUSE); */
+    state = update_tri_layer_state(state, _SYM, _NUM, _ADJUST);
     return state;
 }
 
