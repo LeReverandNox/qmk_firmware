@@ -9,6 +9,9 @@ extern  uint16_t alt_tab_timer;
   float plover_song[][2]     = SONG(PLOVER_SOUND);
   float plover_gb_song[][2]  = SONG(PLOVER_GOODBYE_SOUND);
 
+  float gaming_song[][2]     = SONG(ONE_UP_SOUND);
+  float gaming_gb_song[][2]  = SONG(GOODBYE_SOUND);
+
   float mouse_song[][2]      = SONG(STARTUP_SOUND);
   float mouse_gb_song[][2]   = SONG(GOODBYE_SOUND);
 #endif
@@ -32,9 +35,10 @@ bool GAMING_handler(keyrecord_t *record) {
     if (record->event.pressed) {
 #ifdef AUDIO_ENABLE
         stop_all_notes();
-        PLAY_SONG(plover_song);
+        PLAY_SONG(gaming_song);
 #endif
-        layer_off(_FN);
+        layer_off(_SYM);
+        layer_off(_NUM);
         layer_off(_ADJUST);
         layer_on(_GAMING);
     }
@@ -44,7 +48,7 @@ bool GAMING_handler(keyrecord_t *record) {
 bool EXT_GAM_handler(keyrecord_t *record) {
     if (record->event.pressed) {
 #ifdef AUDIO_ENABLE
-        PLAY_SONG(plover_gb_song);
+        PLAY_SONG(gaming_gb_song);
 #endif
         layer_off(_GAMING);
     }
@@ -75,7 +79,8 @@ bool PLOVER_handler(keyrecord_t *record) {
         stop_all_notes();
         PLAY_SONG(plover_song);
 #endif
-        layer_off(_FN);
+        layer_off(_SYM);
+        layer_off(_NUM);
         layer_off(_ADJUST);
         layer_on(_PLOVER);
         if (!eeconfig_is_enabled()) {
@@ -115,7 +120,8 @@ bool ALT_TAB_handler(keyrecord_t *record) {
 bool MU_TOG_handler(keyrecord_t *record) {
     if (record->event.pressed) {
         if (!is_music_on()) {
-            layer_off(_FN);
+			layer_off(_SYM);
+			layer_off(_NUM);
             layer_off(_ADJUST);
             layer_on(_MUSIC);
         } else {
@@ -170,6 +176,23 @@ bool KC_CAPS_handler(keyrecord_t *record) {
 #endif
         }
         is_caps_on = !is_caps_on;
+    }
+    return true;
+}
+bool GUI_OFF_handler(keyrecord_t *record) {
+    if (record->event.pressed) {
+#ifdef AUDIO_ENABLE
+		PLAY_SONG(mouse_gb_song);
+#endif
+    }
+    return true;
+}
+
+bool GUI_ON_handler(keyrecord_t *record) {
+    if (record->event.pressed) {
+#ifdef AUDIO_ENABLE
+		PLAY_SONG(mouse_song);
+#endif
     }
     return true;
 }
