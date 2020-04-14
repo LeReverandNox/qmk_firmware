@@ -86,7 +86,9 @@ void tap_shift_caps(qk_tap_dance_state_t *state, uint8_t shift) {
         set_weak_mods(weak_mods);
     // pressed: hold Shift
     } else if (state->pressed) {
+		#ifndef HOME_PINKY_SHIFTS
         register_code(shift);
+		#endif
     // single tap
     } else {
         //  if enable, turn Capslock off. Prevent Shift + Caps
@@ -99,10 +101,12 @@ void tap_shift_caps(qk_tap_dance_state_t *state, uint8_t shift) {
             set_mods(mods);
             set_oneshot_mods(os_mods);
             set_weak_mods(weak_mods);
+		#ifndef HOME_PINKY_SHIFTS
         } else if (os_mods & MOD_MASK_SHIFT) { // Disable OS Shift if enable
             set_oneshot_mods(os_mods ^ MOD_LSFT);
         } else { // oneshot Shift (don't know why it doesn't work with MOD_RSFT...)
             set_oneshot_mods(MOD_LSFT);
+		#endif
         }
     }
 }

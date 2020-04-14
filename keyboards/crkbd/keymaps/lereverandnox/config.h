@@ -138,6 +138,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // This is the less used row, especially in Dvorak, so it might work better, less prone to unwanted mods with shorter TAPPING_TERM
 #    define BELOW_HOME_MODS
 
+// Works only with BELOW_HOME_MODS, to have the Shift key on the home row pinky.
+// Incompatible with HOME_MODS, since the pinky keys are already used.
+#    define HOME_PINKY_SHIFTS
+
 // Firmware size reduction (https://thomasbaart.nl/2018/12/01/reducing-firmware-size-in-qmk/)
 #ifndef NO_DEBUG
 #    define NO_DEBUG
