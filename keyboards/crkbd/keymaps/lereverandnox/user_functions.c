@@ -1,4 +1,5 @@
 #include "user_functions.h"
+#include "crkbd/keymaps/lereverandnox/keycodes.h"
 
 extern uint8_t is_master;
 
@@ -43,22 +44,52 @@ void matrix_init_user(void) {
 uint16_t get_tapping_term(uint16_t keycode) {
     switch (keycode) {
 #ifdef HOME_MODS
-        case QM_S:
-        case QM_D:
-        case QM_K:
-        case QM_L:
-        case QM_SCLN:
-
-        case DM_A:
-        case DM_O:
-        case DM_E:
-        case DM_T:
-        case DM_N:
-        case DM_S:
-            return 250;
+    // Qwerty
+	case QM_S:
+	case QM_D:
+	case QM_K:
+	case QM_L:
+	case QM_SCLN:
+	// Dvorak
+	case DM_A:
+	case DM_O:
+	case DM_E:
+	case DM_T:
+	case DM_N:
+	case DM_S:
+		return 250;
 #endif
-        default:
-            return TAPPING_TERM;
+#ifdef BELOW_HOME_MODS
+	// Dvorak
+	case DM_SCLN:
+	case DM_Q:
+	case DM_J:
+	case DM_W:
+	case DM_V:
+	case DM_Z:
+	// Qwerty
+	case QM_Z:
+	case QM_X:
+	case QM_C:
+	case QM_COMM:
+	case QM_DOT:
+	case QM_SLSH:
+        return 200;
+	// Dvorak
+	#ifdef HOME_PINKY_SHIFTS
+	case DM_A:
+	case DM_S:
+	#else
+    case DM_K:
+	case DM_M:
+    #endif
+	// Qwerty
+	case QM_V:
+	case QM_M:
+        return 175;
+#endif
+	default:
+		return TAPPING_TERM;
     }
 }
 
@@ -74,9 +105,9 @@ void matrix_render_user(struct CharacterMatrix *matrix) {
 	if (is_master) {
 		// If you want to change the display of OLED, you need to change here
 		/* matrix_write_ln(matrix, read_layer_state()); */
-		matrix_write_ln(matrix, read_rgb_info());
-		/* matrix_write_ln(matrix, read_keylog()); */
-		matrix_write_ln(matrix, read_keylogs());
+		/* matrix_write_ln(matrix, read_rgb_info()); */
+		matrix_write_ln(matrix, read_keylog());
+		/* matrix_write_ln(matrix, read_keylogs()); */
 		/* matrix_write_ln(matrix, read_mode_icon(keymap_config.swap_lalt_lgui)); */
 		//matrix_write_ln(matrix, read_host_led_state());
 		/* matrix_write_ln(matrix, read_timelog()); */
