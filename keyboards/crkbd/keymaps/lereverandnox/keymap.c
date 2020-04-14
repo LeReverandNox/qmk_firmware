@@ -8,7 +8,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #include "layers/nav_layer.h"
 #include "layers/num_layer.h"
 #include "layers/sym_layer.h"
-#include "layers/fn_layer.h"
 #include "layers/adjust_layer.h"
 #include "layers/media_layer.h"
 #ifdef MOUSEKEY_ENABLE
