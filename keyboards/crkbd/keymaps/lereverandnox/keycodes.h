@@ -7,7 +7,6 @@ enum crkbd_keycodes { QWERTY = SAFE_RANGE, DVORAK, BACKLIT, KC_MAKE };
 #define NAV MO(_NAV)
 #define SYM      MO(_SYM)
 #define NUM      MO(_NUM)
-#define FN       MO(_FN)
 #define ADJUST   MO(_ADJUST)
 #ifdef MOUSEKEY_ENABLE
 #define MOUSE_T  TG(_MOUSE)
@@ -24,14 +23,12 @@ enum crkbd_keycodes { QWERTY = SAFE_RANGE, DVORAK, BACKLIT, KC_MAKE };
 #    define LT_TAB LT(NUM, KC_TAB)
 #    define LT_ENT LT(NUM, KC_ENT)
 #    define LT_BSPC LT(SYM, KC_BSPC)
-#    define LT_RALT LT(FN, KC_RALT)
 #endif
 
 #ifdef INNER_COLS
 #    define LT_SPC LT(SYM, KC_SPC)
 #    define LT_ESC LT(NUM, KC_ESC)
 #    define LT_TAB LT(NAV, KC_TAB)
-#    define LT_RALT LT(FN, KC_RALT)
 #    define LT_ENT LT(NUM, KC_ENT)
 #    define LT_BSPC LT(SYM, KC_BSPC)
 #endif
@@ -44,7 +41,6 @@ enum crkbd_keycodes { QWERTY = SAFE_RANGE, DVORAK, BACKLIT, KC_MAKE };
 #    define LT_ESC LT(SYM, KC_ESC)
 #    define LT_ENT LT(NUM, KC_ENT)
 #    define LT_BSPC LT(NUM, KC_BSPC)
-#    define LT_RALT LT(FN, KC_RALT)
 #endif
 
 // Home mods
@@ -107,6 +103,27 @@ enum crkbd_keycodes { QWERTY = SAFE_RANGE, DVORAK, BACKLIT, KC_MAKE };
 #    define QM_COMM LALT_T(KC_COMM)
 #    define QM_DOT RGUI_T(KC_DOT)
 #    define QM_SLSH RCTL_T(KC_SLSH)
+
+#    ifdef HOME_PINKY_SHIFTS
+// DVORAK
+#        undef DM_A
+#        undef DM_S
+// #        undef DM_K
+// #        undef DM_M
+#        define DM_A LSFT_T(KC_A)
+#        define DM_S RSFT_T(KC_S)
+// #        define DM_K KC_K
+// #        define DM_M KC_M
+// QWERTY
+#        undef QM_A
+#        undef QM_SCLN
+// #        undef QM_V
+// #        undef QM_M
+#        define QM_A LSFT_T(KC_A)
+#        define QM_SCLN RSFT_T(KC_SCLN)
+// #        define QM_V KC_V
+// #        define QM_M KC_M
+#    endif
 #else
 // DVORAK
 #    define DM_SCLN KC_SCLN

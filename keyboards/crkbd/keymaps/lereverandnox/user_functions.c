@@ -62,6 +62,11 @@ uint16_t get_tapping_term(uint16_t keycode) {
     }
 }
 
+layer_state_t layer_state_set_user(layer_state_t state) {
+    state = update_tri_layer_state(state, _SYM, _NUM, _ADJUST);
+    return state;
+}
+
 //SSD1306 OLED update loop, make sure to add #define SSD1306OLED in config.h
 #ifdef SSD1306OLED
 
