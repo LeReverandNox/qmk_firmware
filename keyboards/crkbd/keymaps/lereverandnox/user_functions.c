@@ -1,5 +1,4 @@
 #include "user_functions.h"
-#include "crkbd/keymaps/lereverandnox/keycodes.h"
 
 extern uint8_t is_master;
 
@@ -35,6 +34,21 @@ void matrix_scan_user(void) {
 	iota_gfx_task();
 #endif
 }
+
+#ifdef RGB_MATRIX_ENABLE
+void rgb_matrix_indicators_user(void) {
+    if (rgb_matrix_config.enable) {
+		switch (get_highest_layer(layer_state)) {
+		case _ADJUST:
+			rgb_matrix_set_color_all(RGB_BLUE);
+			break;
+		case _MOUSE:
+			rgb_matrix_set_color_all(RGB_RED);
+			break;
+		}
+	}
+}
+#endif
 
 void matrix_init_user(void) {
 	// SSD1306 OLED init, make sure to add #define SSD1306OLED in config.h
