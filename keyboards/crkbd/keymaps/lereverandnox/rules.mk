@@ -11,7 +11,7 @@ SRC +=  ./lib/glcdfont.c \
 
 # PERSO
 TAP_DANCE_ENABLE = yes      # Tap dances (+1060)
-MOUSEKEY_ENABLE = no       # Mouse keys(+4700)
+MOUSEKEY_ENABLE = yes       # Mouse keys(+4700)
 EXTRAKEY_ENABLE = yes       # Audio control and System control(+450)
 RGBLIGHT_ENABLE = no       # Enable WS2812 RGB underlight.(+1764)
 RGB_MATRIX_ENABLE = WS2812
