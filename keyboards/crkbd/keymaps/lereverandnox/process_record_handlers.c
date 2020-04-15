@@ -1,4 +1,5 @@
 #include "process_record_handlers.h"
+#include "rgb_matrix.h"
 
 bool is_mouse_active = false;
 
@@ -38,4 +39,13 @@ bool KC_MAKE_handler(keyrecord_t *record) {
         set_mods(mods);
     }
     return true;
+}
+
+bool RESET_handler(keyrecord_t *record) {
+	/* #ifdef RGB_MATRIX_ENABLE */
+	/* rgb_matrix_set_color_all(RGB_PINK); */
+	/* wait_us(200); */
+	/* #endif */
+	reset_keyboard();
+	return false;
 }
