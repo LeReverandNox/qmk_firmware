@@ -1,6 +1,12 @@
 #pragma once
 
 #ifdef AUDIO_ENABLE
+#    if __GNUC__ > 5
+#        if __has_include("lrn_song_list.h")
+#            include "lrn_song_list.h"
+#        endif  // if file exists
+#    endif      // __GNUC__
+
     #define STARTUP_SONG SONG(PLANCK_SOUND)
     // #define STARTUP_SONG SONG(NO_SOUND)
 
