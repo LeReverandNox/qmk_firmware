@@ -17,22 +17,6 @@ enum crkbd_keycodes { QWERTY = SAFE_RANGE, DVORAK, BACKLIT, KC_MAKE };
 #define MEDIA    MO(_MEDIA)
 
 // Layer Tap
-#ifdef OUTER_COLS
-#    define LT_ESC LT(NAV, KC_ESC)
-#    define LT_SPC LT(SYM, KC_SPC)
-#    define LT_TAB LT(NUM, KC_TAB)
-#    define LT_ENT LT(NUM, KC_ENT)
-#    define LT_BSPC LT(SYM, KC_BSPC)
-#endif
-
-#ifdef INNER_COLS
-#    define LT_SPC LT(SYM, KC_SPC)
-#    define LT_ESC LT(NUM, KC_ESC)
-#    define LT_TAB LT(NAV, KC_TAB)
-#    define LT_ENT LT(NUM, KC_ENT)
-#    define LT_BSPC LT(SYM, KC_BSPC)
-#endif
-
 #ifdef OUTER_CLASSICAL
 #    define LT_TABG LT(MEDIA, KC_TAB)
 #    define LT_ESCG LT(MEDIA, KC_ESC)
