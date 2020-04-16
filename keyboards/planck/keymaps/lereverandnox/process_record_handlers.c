@@ -119,6 +119,7 @@ bool ALT_TAB_handler(keyrecord_t *record) {
 
 bool MU_TOG_handler(keyrecord_t *record) {
     if (record->event.pressed) {
+		#ifdef AUDIO_ENABLE
         if (!is_music_on()) {
 			layer_off(_SYM);
 			layer_off(_NUM);
@@ -127,6 +128,7 @@ bool MU_TOG_handler(keyrecord_t *record) {
         } else {
             layer_off(_MUSIC);
         }
+		#endif
     }
     return true;
 }
