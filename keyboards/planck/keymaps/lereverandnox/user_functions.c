@@ -46,6 +46,35 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case GUI_ON:
         return GUI_ON_handler(record);
       break;
+  case TIMBR_1:
+	  set_timbre(TIMBRE_12);
+	  return false;
+	  break;
+  case TIMBR_2:
+	  set_timbre(TIMBRE_25);
+	  return false;
+	  break;
+  case TIMBR_3:
+	  set_timbre(TIMBRE_50);
+	  return false;
+	  break;
+  case TIMBR_4:
+	  set_timbre(TIMBRE_75);
+	  return false;
+	  break;
+  case TEMP_UP:
+	  increase_tempo(10);
+	  return false;
+	  break;
+  case TEMP_DN:
+	  decrease_tempo(10);
+	  return false;
+	  break;
+  case TEMP_DF:
+	  set_tempo(TEMPO_DEFAULT);
+	  set_timbre(TIMBRE_DEFAULT);
+	  return false;
+	  break;
   }
   return true;
 }
