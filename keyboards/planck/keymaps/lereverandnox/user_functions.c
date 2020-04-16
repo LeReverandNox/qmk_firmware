@@ -47,6 +47,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case GUI_ON:
             return GUI_ON_handler(record);
             break;
+#ifdef AUDIO_ENABLE
         case TIMBR_1:
             set_timbre(TIMBRE_12);
             return false;
@@ -76,6 +77,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             set_timbre(TIMBRE_DEFAULT);
             return false;
             break;
+#endif
     }
     return true;
 }
@@ -113,7 +115,11 @@ bool music_mask_user(uint16_t keycode) {
     }
 }
 
-void matrix_init_user(void) { set_tempo(150); }
+void matrix_init_user(void) {
+#ifdef AUDIO_ENABLE
+    set_tempo(150);
+#endif
+}
 
 void keyboard_post_init_user(void) {
 #ifdef AUDIO_CLICKY
