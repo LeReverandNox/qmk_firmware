@@ -10,7 +10,14 @@ enum planck_keycodes {
   EXT_PLV,
   EXT_GAM,
   ALT_TAB,
-  KC_MAKE
+  KC_MAKE,
+  TIMBR_1,
+  TIMBR_2,
+  TIMBR_3,
+  TIMBR_4,
+  TEMP_UP,
+  TEMP_DN,
+  TEMP_DF,
 };
 
 // Layers
