@@ -2,18 +2,18 @@
 
 bool is_mouse_active = false;
 bool extern is_caps_on;
-extern bool is_alt_tab_active;
-extern  uint16_t alt_tab_timer;
+extern bool     is_alt_tab_active;
+extern uint16_t alt_tab_timer;
 
 #ifdef AUDIO_ENABLE
-  float plover_song[][2]     = SONG(PLOVER_SOUND);
-  float plover_gb_song[][2]  = SONG(PLOVER_GOODBYE_SOUND);
+float plover_song[][2]    = SONG(PLOVER_SOUND);
+float plover_gb_song[][2] = SONG(PLOVER_GOODBYE_SOUND);
 
-  float gaming_song[][2]     = SONG(ONE_UP_SOUND);
-  float gaming_gb_song[][2]  = SONG(GOODBYE_SOUND);
+float gaming_song[][2]    = SONG(ONE_UP_SOUND);
+float gaming_gb_song[][2] = SONG(GOODBYE_SOUND);
 
-  float mouse_song[][2]      = SONG(STARTUP_SOUND);
-  float mouse_gb_song[][2]   = SONG(GOODBYE_SOUND);
+float mouse_song[][2]    = SONG(STARTUP_SOUND);
+float mouse_gb_song[][2] = SONG(GOODBYE_SOUND);
 #endif
 
 bool QWERTY_handler(keyrecord_t *record) {
@@ -119,16 +119,16 @@ bool ALT_TAB_handler(keyrecord_t *record) {
 
 bool MU_TOG_handler(keyrecord_t *record) {
     if (record->event.pressed) {
-		#ifdef AUDIO_ENABLE
+#ifdef AUDIO_ENABLE
         if (!is_music_on()) {
-			layer_off(_SYM);
-			layer_off(_NUM);
+            layer_off(_SYM);
+            layer_off(_NUM);
             layer_off(_ADJUST);
             layer_on(_MUSIC);
         } else {
             layer_off(_MUSIC);
         }
-		#endif
+#endif
     }
     return true;
 }
@@ -184,7 +184,7 @@ bool KC_CAPS_handler(keyrecord_t *record) {
 bool GUI_OFF_handler(keyrecord_t *record) {
     if (record->event.pressed) {
 #ifdef AUDIO_ENABLE
-		PLAY_SONG(mouse_gb_song);
+        PLAY_SONG(mouse_gb_song);
 #endif
     }
     return true;
@@ -193,7 +193,7 @@ bool GUI_OFF_handler(keyrecord_t *record) {
 bool GUI_ON_handler(keyrecord_t *record) {
     if (record->event.pressed) {
 #ifdef AUDIO_ENABLE
-		PLAY_SONG(mouse_song);
+        PLAY_SONG(mouse_song);
 #endif
     }
     return true;
