@@ -1,5 +1,6 @@
 #pragma once
 
+// clang-format off
 enum planck_layers {
   _QWERTY = 0,
   _DVORAK,
