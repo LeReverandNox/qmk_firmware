@@ -2,6 +2,7 @@
 
 #include "tapdances_handlers.h"
 
+// clang-format off
 //Tap Dance Definitions
 qk_tap_dance_action_t tap_dance_actions[] = {
   //Tap once for Dot, twice for Colon
