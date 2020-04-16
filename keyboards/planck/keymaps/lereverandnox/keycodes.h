@@ -2,33 +2,33 @@
 #include "lereverandnox.h"
 
 enum planck_keycodes {
-  QWERTY = SAFE_RANGE,
-  DVORAK,
-  GAMING,
-  PLOVER,
-  BACKLIT,
-  EXT_PLV,
-  EXT_GAM,
-  ALT_TAB,
-  KC_MAKE,
-  TIMBR_1,
-  TIMBR_2,
-  TIMBR_3,
-  TIMBR_4,
-  TEMP_UP,
-  TEMP_DN,
-  TEMP_DF,
+    QWERTY = SAFE_RANGE,
+    DVORAK,
+    GAMING,
+    PLOVER,
+    BACKLIT,
+    EXT_PLV,
+    EXT_GAM,
+    ALT_TAB,
+    KC_MAKE,
+    TIMBR_1,
+    TIMBR_2,
+    TIMBR_3,
+    TIMBR_4,
+    TEMP_UP,
+    TEMP_DN,
+    TEMP_DF,
 };
 
 // Layers
-#define NAV      MO(_NAV)
-#define SYM      MO(_SYM)
-#define NUM      MO(_NUM)
-#define ADJUST   MO(_ADJUST)
-#define MOUSE_T  TG(_MOUSE)
-#define MEDIA    MO(_MEDIA)
-#define G_RAISE   MO(_GAMING_RAISE)
-#define G_LOWER   MO(_GAMING_LOWER)
+#define NAV MO(_NAV)
+#define SYM MO(_SYM)
+#define NUM MO(_NUM)
+#define ADJUST MO(_ADJUST)
+#define MOUSE_T TG(_MOUSE)
+#define MEDIA MO(_MEDIA)
+#define G_RAISE MO(_GAMING_RAISE)
+#define G_LOWER MO(_GAMING_LOWER)
 
 // Layer Tap
 #ifdef OUTER_COLS
