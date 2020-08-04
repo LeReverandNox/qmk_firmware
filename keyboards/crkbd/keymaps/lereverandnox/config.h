@@ -59,8 +59,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #    define RGB_MATRIX_VAL_STEP 8
 #    define RGB_MATRIX_SPD_STEP 10
 
-#    define RGB_MATRIX_FRAMEBUFFER_EFFECT // enable TYPING_HEATMAP and DIGITAL_RAIN
-#    define RGB_MATRIX_KEYPRESSES  // reacts to keypresses
+/* #    define RGB_MATRIX_FRAMEBUFFER_EFFECT // enable TYPING_HEATMAP and DIGITAL_RAIN */
+/* #    define RGB_MATRIX_KEYPRESSES  // reacts to keypresses */
 /* #    define RGB_MATRIX_KEYRELEASES // reacts to keyreleases (instead of keypresses) */
 /* #    define RGB_DISABLE_AFTER_TIMEOUT 10 // number of ticks to wait until disabling effects */
 #    define RGB_DISABLE_WHEN_USB_SUSPENDED true // turn off effects when suspended
