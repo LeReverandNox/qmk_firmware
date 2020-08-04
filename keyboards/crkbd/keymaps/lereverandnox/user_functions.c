@@ -33,19 +33,54 @@ void matrix_scan_user(void) {
 #ifdef SSD1306OLED
 	iota_gfx_task();
 #endif
+#ifdef RGBLIGHT_ENABLE
+
+	static uint8_t old_layer = 255;
+	uint8_t new_layer = biton32(layer_state);
+
+	if (old_layer != new_layer) {
+		switch (new_layer) {
+		case _ADJUST:
+			rgblight_setrgb(0x00, 0x00, 0xFF);
+			break;
+		case _MOUSE:
+			rgblight_setrgb(0x00, 0xA0, 0xFF);
+			break;
+		}
+
+		old_layer = new_layer;
+	}
+
+#endif //RGBLIGHT_ENABLE
 }
 
 #ifdef RGB_MATRIX_ENABLE
+void check_default_layer(uint8_t mode, uint8_t type) {
+    switch (get_highest_layer(default_layer_state)) {
+        case _QWERTY:
+            rgb_matrix_layer_helper(HSV_CYAN, mode, rgb_matrix_config.speed, type);
+            break;
+        case _DVORAK:
+            rgb_matrix_layer_helper(HSV_PURPLE, mode, rgb_matrix_config.speed, type);
+            break;
+    }
+}
+
 void rgb_matrix_indicators_user(void) {
     if (rgb_matrix_config.enable) {
 		switch (get_highest_layer(layer_state)) {
-		case _ADJUST:
-			rgb_matrix_set_color_all(RGB_BLUE);
-			break;
 		case _MOUSE:
-			rgb_matrix_set_color_all(RGB_RED);
+			rgb_matrix_layer_helper(HSV_RED, 0, rgb_matrix_config.speed, LED_FLAG_UNDERGLOW);
+			break;
+		case _ADJUST:
+			rgb_matrix_layer_helper(HSV_BLUE, 0, rgb_matrix_config.speed, LED_FLAG_UNDERGLOW);
+			break;
+		default: {
+			check_default_layer(1, LED_FLAG_UNDERGLOW);
 			break;
 		}
+        }
+        /* check_default_layer(0, LED_FLAG_MODIFIER); */
 	}
 }
 #endif
