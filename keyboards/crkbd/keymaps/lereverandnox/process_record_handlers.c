@@ -1,5 +1,4 @@
 #include "process_record_handlers.h"
-#include "rgb_matrix.h"
 
 bool is_mouse_active = false;
 
