@@ -2,7 +2,7 @@
 #ifdef OUTER_CLASSICAL
 /* Nav
  * ,-----------------------------------------------------------------------------------
- * | ATab |      |      |      |      |      |      | Home |Pg Up |      |      |      |
+ * | ATab |      |      |      |      |      |      | Home |Pg Up |      |      |Mouse |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      | Left | Down |  Up  |Right |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -12,7 +12,7 @@
  * `-----------------------------------------------------------------------------------'
  */
 [_NAV] = LAYOUT(
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_HOME, KC_PGUP,  XXXXXXX, XXXXXXX, _______,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_HOME, KC_PGUP,  XXXXXXX, XXXXXXX, MOUSE_T,
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN,  KC_UP,   KC_RGHT, _______,
     _______, KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, XXXXXXX, XXXXXXX, KC_END,  KC_PGDN,  XXXXXXX, XXXXXXX, _______,
                                _______, _______, _______, _______, KC_INS,  _______),
