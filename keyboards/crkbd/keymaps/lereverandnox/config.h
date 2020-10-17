@@ -119,7 +119,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // PERSO
 #    define IGNORE_MOD_TAP_INTERRUPT  // (-12)
-#    define TAPPING_TERM 150
+#    define TAPPING_TERM 200
 #    define TAPPING_TERM_PER_KEY
 // #    define RETRO_TAPPING
 // #    define PERMISSIVE_HOLD
@@ -140,7 +140,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Works only with BELOW_HOME_MODS, to have the Shift key on the home row pinky.
 // Incompatible with HOME_MODS, since the pinky keys are already used.
-#    define HOME_PINKY_SHIFTS
+// #    define HOME_PINKY_SHIFTS
 
 // Firmware size reduction (https://thomasbaart.nl/2018/12/01/reducing-firmware-size-in-qmk/)
 #ifndef NO_DEBUG
