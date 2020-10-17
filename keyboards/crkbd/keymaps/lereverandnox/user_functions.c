@@ -94,53 +94,31 @@ void matrix_init_user(void) {
 
 uint16_t get_tapping_term(uint16_t keycode) {
     switch (keycode) {
-#ifdef HOME_MODS
-    // Qwerty
-	case QM_S:
-	case QM_D:
-	case QM_K:
-	case QM_L:
-	case QM_SCLN:
-	// Dvorak
-	case DM_A:
-	case DM_O:
-	case DM_E:
-	case DM_T:
-	case DM_N:
-	case DM_S:
-		return 250;
+#ifdef OUTER_CLASSICAL
+        case LT_TAB:
+        case LT_ESCG:
+            return 150;
 #endif
 #ifdef BELOW_HOME_MODS
-	// Dvorak
-	case DM_SCLN:
-	case DM_Q:
-	case DM_J:
-	case DM_W:
-	case DM_V:
-	case DM_Z:
-	// Qwerty
-	case QM_Z:
-	case QM_X:
-	case QM_C:
-	case QM_COMM:
-	case QM_DOT:
-	case QM_SLSH:
-        return 200;
-	// Dvorak
-	#ifdef HOME_PINKY_SHIFTS
-	case DM_A:
-	case DM_S:
-	#else
-    case DM_K:
-	case DM_M:
-    #endif
-	// Qwerty
-	case QM_V:
-	case QM_M:
-        return 175;
+        // Shorter tapping_term for Shift
+        #ifdef HOME_PINKY_SHIFTS
+        // Works for QM_A too, since it's the same define
+        case DM_A:
+        // Dvorak
+        case DM_S:
+        // Qwerty
+        case QM_SCLN:
+        #endif
+        // Dvorak
+        case DM_K:
+        // Works for QM_M too, since it's the same define
+        case DM_M:
+        // Qwerty
+        case QM_V:
+            return 120;
 #endif
-	default:
-		return TAPPING_TERM;
+        default:
+            return TAPPING_TERM;
     }
 }
 
