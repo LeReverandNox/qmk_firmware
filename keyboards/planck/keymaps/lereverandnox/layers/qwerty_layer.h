@@ -23,7 +23,7 @@
 
 #ifdef OUTER_CLASSICAL
 // +-------+------+-----+-----+-------+-----+-------+-------+------+-----+------+-------+
-// |   `   |   Q  |  W  |  E  |   R   |  T  |   Y   |   U   |   I  |  O  |   P  |       |
+// |   `   |   Q  |  W  |  E  |   R   |  T  |   Y   |   U   |   I  |  O  |   P  |   '   |
 // +-------+------+-----+-----+-------+-----+-------+-------+------+-----+------+-------+
 // |  Esc  |   A  |  S  |  D  |   F   |  G  |   H   |   J   |  K   |  L  |   ;  | Enter |
 // | Media |      |     |     |       |     |       |       |      |     |      |       |
@@ -35,7 +35,7 @@
 // |       |      |     | Nav |       | Sym |  Num  |       |  Fn  |     |      |       |
 // +-------+------+-----+-----+-------+-----+-------+-------+------+-----+------+-------+
 [_QWERTY] = LAYOUT_planck_grid(
-    KC_GRV,  KC_Q,    KC_W,    KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,    KC_I,    KC_O,    KC_P,    XXXXXXX,
+    KC_GRV,  KC_Q,    KC_W,    KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,    KC_I,    KC_O,    KC_P,    KC_QUOT,
     LT_ESCG, QM_A,    QM_S,    QM_D,   QM_F,   KC_G,   KC_H,   QM_J,    QM_K,    QM_L,    QM_SCLN, KC_ENT,
     TD_LSFT, QM_Z,    QM_X,    QM_C,   QM_V,   KC_B,   KC_N,   QM_M,    QM_COMM, QM_DOT,  QM_SLSH, TD_RSFT,
     KC_LCTL, KC_LGUI, KC_LALT, LT_TAB, KC_SPC, NUM,    SYM,    KC_BSPC, KC_RALT, OS_LALT, OS_RGUI, OS_RCTL
