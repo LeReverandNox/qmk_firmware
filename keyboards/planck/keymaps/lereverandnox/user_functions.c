@@ -129,20 +129,20 @@ void keyboard_post_init_user(void) {
 
 uint16_t get_tapping_term(uint16_t keycode) {
     switch (keycode) {
-#ifdef HOME_MODS
-        case QM_S:
-        case QM_D:
-        case QM_K:
-        case QM_L:
-        case QM_SCLN:
-
-        case DM_A:
-        case DM_O:
-        case DM_E:
-        case DM_T:
-        case DM_N:
-        case DM_S:
-            return 250;
+#ifdef OUTER_CLASSICAL
+        case LT_TAB:
+        case LT_ESCG:
+            return 150;
+#endif
+#ifdef BELOW_HOME_MODS
+        // Shorter tapping_term for Shift
+        // Dvorak
+        case DM_K:
+        // Works for QM_M too, since it's the same define
+        case DM_M:
+        // Qwerty
+        case QM_V:
+            return 120;
 #endif
         default:
             return TAPPING_TERM;
