@@ -6,7 +6,6 @@ enum planck_keycodes {
     DVORAK,
     GAMING,
     PLOVER,
-    BACKLIT,
     EXT_PLV,
     EXT_GAM,
     KC_MAKE,

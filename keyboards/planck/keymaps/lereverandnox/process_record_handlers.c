@@ -53,24 +53,6 @@ bool EXT_GAM_handler(keyrecord_t *record) {
     return false;
 }
 
-bool BACKLIT_handler(keyrecord_t *record) {
-    if (record->event.pressed) {
-        register_code(KC_RSFT);
-#ifdef BACKLIGHT_ENABLE
-        backlight_step();
-#endif
-#ifdef KEYBOARD_planck_rev5
-        PORTE &= ~(1 << 6);
-#endif
-    } else {
-        unregister_code(KC_RSFT);
-#ifdef KEYBOARD_planck_rev5
-        PORTE |= (1 << 6);
-#endif
-    }
-    return false;
-}
-
 bool PLOVER_handler(keyrecord_t *record) {
     if (record->event.pressed) {
 #ifdef AUDIO_ENABLE
