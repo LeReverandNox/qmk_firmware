@@ -65,6 +65,9 @@
 // Choose the layout for the gaming layer. For now DVORAK is the only option ^^'
 #define GAMING_DVORAK
 
+// Force enable NKRO
+#define FORCE_NKRO
+
 // Mouse key speed and acceleration.
 #undef MOUSEKEY_DELAY
 #define MOUSEKEY_DELAY          0
