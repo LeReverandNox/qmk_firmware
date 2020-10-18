@@ -2,8 +2,6 @@
 
 bool is_mouse_active = false;
 bool extern is_caps_on;
-extern bool     is_alt_tab_active;
-extern uint16_t alt_tab_timer;
 
 #ifdef AUDIO_ENABLE
 float plover_song[][2]    = SONG(PLOVER_SOUND);
@@ -99,20 +97,6 @@ bool EXT_PLV_handler(keyrecord_t *record) {
         PLAY_SONG(plover_gb_song);
 #endif
         layer_off(_PLOVER);
-    }
-    return false;
-}
-
-bool ALT_TAB_handler(keyrecord_t *record) {
-    if (record->event.pressed) {
-        if (!is_alt_tab_active) {
-            is_alt_tab_active = true;
-            register_code(KC_LALT);
-        }
-        alt_tab_timer = timer_read();
-        register_code(KC_TAB);
-    } else {
-        unregister_code(KC_TAB);
     }
     return false;
 }
