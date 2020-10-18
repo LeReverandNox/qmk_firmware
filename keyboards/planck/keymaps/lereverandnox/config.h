@@ -62,8 +62,6 @@
 // This is the less used row, especially in Dvorak, so it might work better, less prone to unwanted mods with shorter TAPPING_TERM
 #define BELOW_HOME_MODS
 
-#define ALT_TAB_TRESHOLD 500
-
 // Choose the layout for the gaming layer. For now DVORAK is the only option ^^'
 #define GAMING_DVORAK
 

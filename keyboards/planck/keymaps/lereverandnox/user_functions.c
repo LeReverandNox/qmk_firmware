@@ -1,8 +1,5 @@
 #include "user_functions.h"
 
-bool     is_alt_tab_active = false;
-uint16_t alt_tab_timer     = 0;
-
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case QWERTY:
@@ -25,9 +22,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
         case EXT_GAM:
             return EXT_GAM_handler(record);
-            break;
-        case ALT_TAB:
-            return ALT_TAB_handler(record);
             break;
         case MU_TOG:
             return MU_TOG_handler(record);
@@ -83,12 +77,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 void matrix_scan_user(void) {
-    if (is_alt_tab_active) {
-        if (timer_elapsed(alt_tab_timer) > ALT_TAB_TRESHOLD) {
-            unregister_code(KC_LALT);
-            is_alt_tab_active = false;
-        }
-    }
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {

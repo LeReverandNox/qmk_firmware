@@ -9,7 +9,6 @@ enum planck_keycodes {
     BACKLIT,
     EXT_PLV,
     EXT_GAM,
-    ALT_TAB,
     KC_MAKE,
     TIMBR_1,
     TIMBR_2,
