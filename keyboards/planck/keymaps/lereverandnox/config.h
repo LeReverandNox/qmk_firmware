@@ -66,3 +66,16 @@
 
 // Choose the layout for the gaming layer. For now DVORAK is the only option ^^'
 #define GAMING_DVORAK
+
+// Mouse key speed and acceleration.
+#undef MOUSEKEY_DELAY
+#define MOUSEKEY_DELAY          0
+#undef MOUSEKEY_INTERVAL
+#define MOUSEKEY_INTERVAL       16
+#undef MOUSEKEY_MAX_SPEED
+#define MOUSEKEY_MAX_SPEED      3
+#undef MOUSEKEY_TIME_TO_MAX
+#define MOUSEKEY_TIME_TO_MAX    40
+// Mouse wheel
+#undef MOUSEKEY_WHEEL_DELAY
+#define MOUSEKEY_WHEEL_DELAY    0
