@@ -11,8 +11,8 @@
  * `-----------------------------------------------------------------------------------'
  */
 [_MOUSE] = LAYOUT_planck_grid(
-    XXXXXXX, XXXXXXX, KC_BTN2, KC_BTN3, KC_BTN1, XXXXXXX, XXXXXXX, KC_BTN1, KC_BTN3, KC_BTN2, XXXXXXX, XXXXXXX,
+    XXXXXXX, XXXXXXX, KC_BTN2, KC_BTN3, KC_BTN1, XXXXXXX, XXXXXXX, KC_BTN1, KC_BTN3, KC_BTN2, XXXXXXX, MOUSE_T,
     KC_BTN4, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_BTN5, KC_BTN4, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_BTN5,
     XXXXXXX, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, XXXXXXX, XXXXXXX, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, XXXXXXX,
-    _______, _______, _______, _______, KC_ACL0, KC_ACL1, KC_ACL2, XXXXXXX, XXXXXXX, _______, _______, _______
+    MOU_ENC, _______, _______, _______, KC_ACL0, KC_ACL1, KC_ACL2, XXXXXXX, XXXXXXX, _______, _______, _______
     ),

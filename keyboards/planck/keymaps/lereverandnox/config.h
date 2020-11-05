@@ -80,3 +80,7 @@
 // Mouse wheel
 #undef MOUSEKEY_WHEEL_DELAY
 #define MOUSEKEY_WHEEL_DELAY    0
+
+// From https://www.reddit.com/r/olkb/comments/c0y085/rotary_encoder_general_help_request/
+// The default value of 100 doesn't work to handle VOLU/VOLD with an encoder
+#define TAP_CODE_DELAY 10
