@@ -133,3 +133,66 @@ uint16_t get_tapping_term(uint16_t keycode) {
             return TAPPING_TERM;
     }
 }
+
+const uint16_t PROGMEM encoder_actions[][9];
+void encoder_update_user(uint8_t index, bool clockwise) {
+    static uint8_t kc;
+    uint8_t temp_mod = get_mods();
+    if (clockwise) {
+        //if (temp_mod & MOD_BIT(KC_HYPR)){ // TODO: not how this works, only registers CTRL
+        if ((temp_mod & MOD_MASK_CTRL) && (temp_mod & MOD_MASK_SHIFT) && (temp_mod & MOD_MASK_ALT) && (temp_mod & MOD_MASK_GUI)) { // HYPER
+            kc = encoder_actions[0][8];
+        } else if ( (temp_mod & MOD_MASK_SHIFT) && (temp_mod & MOD_MASK_ALT) ) {  // ALT+SHIFT
+            kc = encoder_actions[0][7];
+        } else if ( (temp_mod & MOD_MASK_SHIFT) && (temp_mod & MOD_MASK_CTRL) ) { // CTRL+SHIFT
+            kc = encoder_actions[0][6];
+        } else if ( (temp_mod & MOD_MASK_CTRL) && (temp_mod & MOD_MASK_ALT) ) {   // CTRL+ALT
+            kc = encoder_actions[0][5];
+        } else if (temp_mod & MOD_MASK_GUI) {   // GUI
+            kc = encoder_actions[0][4];
+        } else if (temp_mod & MOD_MASK_SHIFT) { // SHIFT
+            kc = encoder_actions[0][3];
+        } else if (temp_mod & MOD_MASK_ALT) {   // ALT
+            kc = encoder_actions[0][2];
+        } else if (temp_mod & MOD_MASK_CTRL) {  // CTRL
+            kc = encoder_actions[0][1];
+        } else {                                // None
+            kc = encoder_actions[0][0];
+        }
+    } else { // Counter Clockwise
+        if ((temp_mod & MOD_MASK_CTRL) && (temp_mod & MOD_MASK_SHIFT) && (temp_mod & MOD_MASK_ALT) && (temp_mod & MOD_MASK_GUI)) { // HYPER
+            kc = encoder_actions[1][8];
+        } else if ( (temp_mod & MOD_MASK_SHIFT) && (temp_mod & MOD_MASK_ALT) ) {  // ALT+SHIFT
+            kc = encoder_actions[1][7];
+        } else if ( (temp_mod & MOD_MASK_SHIFT) && (temp_mod & MOD_MASK_CTRL) ) { // CTRL+SHIFT
+            kc = encoder_actions[1][6];
+        } else if ( (temp_mod & MOD_MASK_CTRL) && (temp_mod & MOD_MASK_ALT) ) {   // CTRL+ALT
+            kc = encoder_actions[1][5];
+        } else if (temp_mod & MOD_MASK_GUI) {   // GUI
+            kc = encoder_actions[1][4];
+        } else if (temp_mod & MOD_MASK_SHIFT) { // SHIFT
+            kc = encoder_actions[1][3];
+        } else if (temp_mod & MOD_MASK_ALT) {   // ALT
+            kc = encoder_actions[1][2];
+        } else if (temp_mod & MOD_MASK_CTRL) {  // CTRL
+            kc = encoder_actions[1][1];
+        } else {                                // None
+            kc = encoder_actions[1][0];
+        }
+    }
+
+    clear_mods();
+    unregister_code(KC_LALT);
+    unregister_code(KC_RALT);
+    unregister_code(KC_LGUI);
+    unregister_code(KC_RGUI);
+
+    tap_code16(kc);
+    /* wait_ms(TAP_CODE_DELAY); */
+    set_mods(temp_mod);
+}
+const uint16_t PROGMEM encoder_actions[][9] = { \
+    //  None     CTRL     ALT    SHIFT    GUI             CTRL+ALT             CTRL+SHFT ALT+SHFT      HYPER
+    { KC_PGDN, KC_DOWN, KC_VOLU, KC_END,  KC_WWW_FORWARD, KC_AUDIO_MUTE,       KC_RIGHT, LSFT(KC_TAB), KC_MEDIA_NEXT_TRACK}, \
+    { KC_PGUP, KC_UP,   KC_VOLD, KC_HOME, KC_WWW_BACK,    KC_MEDIA_PLAY_PAUSE, KC_LEFT,  KC_TAB,       KC_MEDIA_PREV_TRACK}
+};

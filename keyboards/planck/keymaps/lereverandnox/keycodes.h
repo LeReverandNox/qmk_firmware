@@ -144,3 +144,11 @@ enum planck_keycodes {
 #define OS_RSFT OSM(MOD_RSFT)
 
 #define NKR_TOG MAGIC_TOGGLE_NKRO
+
+// Encoder button
+#define BAS_ENC KC_MPLY
+#define NUM_ENC XXXXXXX
+#define SYM_ENC KC_MUTE
+#define MOU_ENC XXXXXXX
+#define MED_ENC XXXXXXX
+#define NAV_ENC XXXXXXX
