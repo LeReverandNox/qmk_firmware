@@ -46,3 +46,22 @@ void tap_shift_caps(qk_tap_dance_state_t *state, uint8_t shift) {
         }
     }
 }
+
+void unregister_code_mods(uint8_t mods) {
+    if (mods & MOD_MASK_CTRL) {
+        unregister_code(KC_LCTL);
+        unregister_code(KC_RCTL);
+    }
+    if (mods & MOD_MASK_ALT) {
+        unregister_code(KC_LALT);
+        unregister_code(KC_RALT);
+    }
+    if (mods & MOD_MASK_SHIFT) {
+        unregister_code(KC_LSFT);
+        unregister_code(KC_RSFT);
+    }
+    if (mods & MOD_MASK_GUI) {
+        unregister_code(KC_LGUI);
+        unregister_code(KC_RGUI);
+    }
+}
