@@ -62,19 +62,19 @@ enum planck_keycodes {
 #    define DM_O LGUI_T(KC_O)
 #    define DM_E LALT_T(KC_E)
 #    define DM_U LSFT_T(KC_U)
-#    define DM_H RSFT_T(KC_H)
+#    define DM_H LSFT_T(KC_H)
 #    define DM_T LALT_T(KC_T)
-#    define DM_N RGUI_T(KC_N)
-#    define DM_S RCTL_T(KC_S)
+#    define DM_N LGUI_T(KC_N)
+#    define DM_S LCTL_T(KC_S)
 // QWERTY
 #    define QM_A CTL_T(KC_A)
 #    define QM_S LGUI_T(KC_S)
 #    define QM_D LALT_T(KC_D)
 #    define QM_F LSFT_T(KC_F)
-#    define QM_J RSFT_T(KC_J)
+#    define QM_J LSFT_T(KC_J)
 #    define QM_K LALT_T(KC_K)
-#    define QM_L RGUI_T(KC_L)
-#    define QM_SCLN RCTL_T(KC_SCLN)
+#    define QM_L LGUI_T(KC_L)
+#    define QM_SCLN LCTL_T(KC_SCLN)
 #else
 #    define DM_A KC_A
 #    define DM_O KC_O
@@ -102,19 +102,19 @@ enum planck_keycodes {
 #    define DM_Q LGUI_T(KC_Q)
 #    define DM_J LALT_T(KC_J)
 #    define DM_K LSFT_T(KC_K)
-#    define DM_M RSFT_T(KC_M)
+#    define DM_M LSFT_T(KC_M)
 #    define DM_W LALT_T(KC_W)
-#    define DM_V RGUI_T(KC_V)
-#    define DM_Z RCTL_T(KC_Z)
+#    define DM_V LGUI_T(KC_V)
+#    define DM_Z LCTL_T(KC_Z)
 // QWERTY
 #    define QM_Z CTL_T(KC_Z)
 #    define QM_X LGUI_T(KC_X)
 #    define QM_C LALT_T(KC_C)
 #    define QM_V LSFT_T(KC_V)
-#    define QM_M RSFT_T(KC_M)
+#    define QM_M LSFT_T(KC_M)
 #    define QM_COMM LALT_T(KC_COMM)
-#    define QM_DOT RGUI_T(KC_DOT)
-#    define QM_SLSH RCTL_T(KC_SLSH)
+#    define QM_DOT LGUI_T(KC_DOT)
+#    define QM_SLSH LCTL_T(KC_SLSH)
 #else
 // DVORAK
 #    define DM_SCLN KC_SCLN
