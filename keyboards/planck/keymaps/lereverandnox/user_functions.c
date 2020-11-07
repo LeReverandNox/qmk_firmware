@@ -215,6 +215,6 @@ void encoder_update_user(uint8_t index, bool clockwise) {
 const uint16_t PROGMEM encoder_actions[][15] = { \
     /* None    CTRL     GUI      ALT      SHIFT    C+G      C+A      C+S      G+A      G+S      A+S      C+G+A    C+A+S    G+A+S    C+G+A+S    */
     /* 0       1        2        3        4        5        6        7        8        9        10       11       12       13       14         */
-    { KC_PGDN, KC_DOWN, KC_WFWD, KC_VOLU, XXXXXXX, XXXXXXX, XXXXXXX, KC_RGHT, KC_MUTE, XXXXXXX, KC_MNXT, XXXXXXX, XXXXXXX, KC_MUTE, KC_BRIU }, // Clockwise
-    { KC_PGUP, KC_UP,   KC_WBAK, KC_VOLD, XXXXXXX, XXXXXXX, XXXXXXX, KC_LEFT, KC_MPLY, XXXXXXX, KC_MPRV, XXXXXXX, XXXXXXX, KC_MPLY, KC_BRID }  // Anti-Clockwise
+    { KC_PGDN, KC_DOWN, XXXXXXX, KC_VOLU, KC_WFWD, TABNEXT, XXXXXXX, KC_RGHT, KC_MUTE, XXXXXXX, KC_MNXT, XXXXXXX, XXXXXXX, KC_MUTE, KC_BRIU }, // Clockwise
+    { KC_PGUP, KC_UP,   XXXXXXX, KC_VOLD, KC_WBAK, TABPREV, XXXXXXX, KC_LEFT, KC_MPLY, XXXXXXX, KC_MPRV, XXXXXXX, XXXXXXX, KC_MPLY, KC_BRID }  // Anti-Clockwise
 };
