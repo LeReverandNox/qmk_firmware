@@ -152,3 +152,6 @@ enum planck_keycodes {
 #define MOU_ENC XXXXXXX
 #define MED_ENC XXXXXXX
 #define NAV_ENC XXXXXXX
+
+#define TABPREV LCTL(KC_PGUP)
+#define TABNEXT LCTL(KC_PGDN)
