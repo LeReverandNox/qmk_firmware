@@ -92,7 +92,7 @@ void matrix_init_user(void) {
 #endif
 }
 
-uint16_t get_tapping_term(uint16_t keycode) {
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
 #ifdef OUTER_CLASSICAL
         case LT_TAB:
