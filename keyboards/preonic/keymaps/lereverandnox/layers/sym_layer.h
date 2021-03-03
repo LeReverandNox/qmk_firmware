@@ -1,5 +1,4 @@
 // clang-format off
-#ifdef OUTER_CLASSICAL
 /* Symbols
  * ,-----------------------------------------------------------------------------------------------.
  * |SYM_ENC|       |       |       |       |       |       |       |       |       |       |       |
@@ -25,4 +24,3 @@
     _______, KC_COLN, KC_HASH, KC_AT,   KC_EXLM, KC_LCBR, KC_RCBR, KC_LABK, KC_RABK, XXXXXXX, XXXXXXX, _______,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_DEL,  _______, _______, KC_DEL,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 ),
-#endif
