@@ -2,8 +2,8 @@
 
 // clang-format off
 enum preonic_layers {
-  _QWERTY = 0,
-  _DVORAK,
+  _DVORAK = 0,
+  _QWERTY,
   _GAMING,
   _GAMING_RAISE,
   _GAMING_LOWER,
