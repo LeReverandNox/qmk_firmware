@@ -116,12 +116,9 @@ void keyboard_post_init_user(void) {
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-#ifdef OUTER_CLASSICAL
         case LT_TAB:
         case LT_ESCG:
             return 150;
-#endif
-#ifdef BELOW_HOME_MODS
         // Shorter tapping_term for Shift
         // Dvorak
         case DM_K:
@@ -130,7 +127,6 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         // Qwerty
         case QM_V:
             return 175;
-#endif
         default:
             return TAPPING_TERM;
     }

@@ -1,5 +1,4 @@
 // clang-format off
-#ifdef OUTER_CLASSICAL
 /* Nav
  * ,-----------------------------------------------------------------------------------------------.
  * |NAV_ENC|       |       |       |       |       |       |       |       |       |       |       |
@@ -25,4 +24,3 @@
     _______, KC_UNDO, KC_CUT,  KC_COPY, KC_PSTE, XXXXXXX, XXXXXXX, KC_END,  KC_PGDN,  XXXXXXX, XXXXXXX, _______,
     _______, _______, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_INS,  XXXXXXX,  _______, _______, _______
 ),
-#endif
