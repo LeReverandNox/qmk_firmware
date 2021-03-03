@@ -1,0 +1,11 @@
+TAP_DANCE_ENABLE = yes
+RGBLIGHT_ENABLE = no        # Enable WS2812 RGB underlight.
+MOUSEKEY_ENABLE = yes
+AUDIO_ENABLE = yes           # Audio output on port C6
+MIDI_ENABLE = no            # MIDI controls
+ENCODER_ENABLE = yes
+SRC += helpers.c
+SRC += process_record_handlers.c
+SRC += user_functions.c
+SRC += tapdances.c
+SRC += tapdances_handlers.c
