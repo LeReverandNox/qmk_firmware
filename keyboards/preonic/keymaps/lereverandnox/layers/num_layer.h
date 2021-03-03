@@ -1,5 +1,4 @@
 // clang-format off
-#ifdef OUTER_CLASSICAL
 /* Numbers
  * ,-----------------------------------------------------------------------------------------------.
  * |NUM_ENC|       |       |       |       |       |       |       |       |       |       |       |
@@ -25,4 +24,3 @@
     _______, KC_F10,  KC_F3,   KC_F2,   KC_F1,   XXXXXXX, XXXXXXX, KC_1,    KC_2,    KC_3,    XXXXXXX, _______,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, XXXXXXX, KC_0,    XXXXXXX, XXXXXXX, XXXXXXX
 ),
-#endif
