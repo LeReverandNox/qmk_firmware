@@ -93,18 +93,9 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     return state;
 }
 
-bool music_mask_user(uint16_t keycode) {
-    switch (keycode) {
-        case ADJUST:
-            return false;
-        default:
-            return true;
-    }
-}
-
 void matrix_init_user(void) {
 #ifdef AUDIO_ENABLE
-    set_tempo(150);
+    set_tempo(180);
 #endif
 }
 
