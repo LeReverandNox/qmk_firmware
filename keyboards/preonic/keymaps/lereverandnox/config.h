@@ -12,6 +12,10 @@
 #    define DEFAULT_LAYER_SONGS \
         { SONG(QWERTY_SOUND), SONG(DVORAK_SOUND) }
 #    define AUDIO_CLICKY
+
+// Lower the volume
+#    define AUDIO_DAC_SAMPLE_MAX 750U
+
 #endif
 
 // Most tactile encoders have detents every 4 stages
