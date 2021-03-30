@@ -25,7 +25,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #include "layers/nav_layer.h"
 #include "layers/sym_layer.h"
 #include "layers/num_layer.h"
+#ifdef PLOVER_ENABLED
 #include "layers/plover_layer.h"
+#endif
 #include "layers/adjust_layer.h"
 #include "layers/music_layer.h"
 #include "layers/media_layer.h"
