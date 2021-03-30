@@ -12,7 +12,9 @@ enum planck_layers {
   _NAV,
   _SYM,
   _NUM,
+#ifdef PLOVER_ENABLED
   _PLOVER,
+#endif
   _MUSIC,
   _MEDIA,
   _ADJUST
