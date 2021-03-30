@@ -11,12 +11,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case GAMING:
             return GAMING_handler(record);
             break;
+#ifdef PLOVER_ENABLED
         case PLOVER:
             return PLOVER_handler(record);
             break;
         case EXT_PLV:
             return EXT_PLV_handler(record);
             break;
+#endif
         case EXT_GAM:
             return EXT_GAM_handler(record);
             break;
@@ -114,12 +116,9 @@ void keyboard_post_init_user(void) {
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-#ifdef OUTER_CLASSICAL
         case LT_TAB:
         case LT_ESCG:
             return 150;
-#endif
-#ifdef BELOW_HOME_MODS
         // Shorter tapping_term for Shift
         // Dvorak
         case DM_K:
@@ -127,8 +126,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case DM_M:
         // Qwerty
         case QM_V:
-            return 120;
-#endif
+            return 175;
         default:
             return TAPPING_TERM;
     }
