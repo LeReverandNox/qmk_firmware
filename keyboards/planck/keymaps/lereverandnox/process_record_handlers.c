@@ -53,6 +53,7 @@ bool EXT_GAM_handler(keyrecord_t *record) {
     return false;
 }
 
+#ifdef PLOVER_ENABLED
 bool PLOVER_handler(keyrecord_t *record) {
     if (record->event.pressed) {
 #ifdef AUDIO_ENABLE
@@ -82,6 +83,7 @@ bool EXT_PLV_handler(keyrecord_t *record) {
     }
     return false;
 }
+#endif
 
 bool MU_TOG_handler(keyrecord_t *record) {
     if (record->event.pressed) {
