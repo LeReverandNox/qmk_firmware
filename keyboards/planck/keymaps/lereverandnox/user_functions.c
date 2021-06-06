@@ -132,7 +132,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
-void encoder_update_user(uint8_t index, bool clockwise) {
+bool encoder_update_user(uint8_t index, bool clockwise) {
     static uint16_t kc;
     uint8_t mods = get_mods();
     if (clockwise) {
@@ -208,6 +208,8 @@ void encoder_update_user(uint8_t index, bool clockwise) {
 
     tap_code16(kc);
     set_mods(mods);
+
+    return true;
 }
 
 const uint16_t PROGMEM encoder_actions[][15] = { \
