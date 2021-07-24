@@ -1,7 +1,7 @@
 #pragma once
 #include "lereverandnox.h"
 
-enum crkbd_keycodes { QWERTY = SAFE_RANGE, DVORAK, BACKLIT, KC_MAKE };
+enum crkbd_keycodes { QWERTY = SAFE_RANGE, DVORAK, BACKLIT, KC_MAKE, KC_SEC1, KC_SEC2, KC_SEC3, KC_SEC4, KC_SEC5};
 
 // Layers
 #define NAV MO(_NAV)
