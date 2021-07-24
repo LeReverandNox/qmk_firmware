@@ -18,6 +18,11 @@ enum planck_keycodes {
     TEMP_UP,
     TEMP_DN,
     TEMP_DF,
+    KC_SEC1,
+    KC_SEC2,
+    KC_SEC3,
+    KC_SEC4,
+    KC_SEC5,
 };
 
 // Layers
