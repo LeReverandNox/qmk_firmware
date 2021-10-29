@@ -72,7 +72,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
 #endif
     }
-    return true;
+    return process_record_secrets(keycode, record);
+}
+
+__attribute__ ((weak))
+bool process_record_secrets(uint16_t keycode, keyrecord_t *record) {
+  return true;
 }
 
 void matrix_scan_user(void) {
