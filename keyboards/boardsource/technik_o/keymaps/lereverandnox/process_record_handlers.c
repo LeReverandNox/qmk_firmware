@@ -118,6 +118,15 @@ bool KC_MAKE_handler(keyrecord_t *record) {
     return true;
 }
 
+bool KC_SHRG_handler(keyrecord_t *record) {
+    if (!record->event.pressed) {
+        clear_oneshot_layer_state(ONESHOT_OTHER_KEY_PRESSED);
+        send_unicode_string( "¯\\_(ツ)_/¯" );
+        return false;
+    }
+    return true;
+}
+
 bool KC_CAPS_handler(keyrecord_t *record) {
     if (record->event.pressed) {
         if (!is_caps_on) {
