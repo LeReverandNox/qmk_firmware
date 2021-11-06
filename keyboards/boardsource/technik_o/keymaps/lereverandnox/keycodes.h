@@ -23,6 +23,7 @@ enum keycodes {
     KC_SEC3,
     KC_SEC4,
     KC_SEC5,
+    KC_SHRG
 };
 
 // Layers
@@ -75,3 +76,4 @@ enum keycodes {
 
 #define TABPREV LCTL(KC_PGUP)
 #define TABNEXT LCTL(KC_PGDN)
+
