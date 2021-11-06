@@ -112,3 +112,5 @@
 /* #    define NO_ACTION_LAYER	// (-1368) */
 /* #    define NO_ACTION_ONESHOT // (-382) */
 /* #    define NO_ACTION_TAPPING // (-2186) */
+
+#define UNICODE_SELECTED_MODES UC_LNX
