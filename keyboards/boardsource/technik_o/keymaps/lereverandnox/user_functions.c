@@ -31,6 +31,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_CAPS:
             return KC_CAPS_handler(record);
             break;
+        case KC_SHRG:
+            return KC_SHRG_handler(record);
+            break;
         case GUI_OFF:
             return GUI_OFF_handler(record);
             break;
