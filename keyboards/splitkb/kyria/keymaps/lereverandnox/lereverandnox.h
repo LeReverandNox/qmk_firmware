@@ -4,5 +4,7 @@
 
 #include "layers.h"
 #include "keycodes.h"
-#include "tapdances.h"
+#ifdef TAP_DANCE_ENABLE
+#    include "tapdances.h"
+#endif
 #include "helpers.h"
