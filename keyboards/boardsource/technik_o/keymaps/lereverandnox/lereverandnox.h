@@ -1,6 +1,6 @@
 #pragma once
 
-#include "technik_o.h"
+#include QMK_KEYBOARD_H
 
 #include "layers.h"
 #include "keycodes.h"
