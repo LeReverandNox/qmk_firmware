@@ -17,12 +17,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_CAPS:
             return KC_CAPS_handler(record);
             break;
-        case GUI_OFF:
-            return GUI_OFF_handler(record);
-            break;
-        case GUI_ON:
-            return GUI_ON_handler(record);
-            break;
     }
     return process_record_secrets(keycode, record);
 }
@@ -32,9 +26,6 @@ bool process_record_secrets(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
-void matrix_scan_user(void) {
-}
-
 layer_state_t layer_state_set_user(layer_state_t state) {
     switch (get_highest_layer(state)) {
         case _ADJUST:
@@ -42,12 +33,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     }
     state = update_tri_layer_state(state, _SYM, _NUM, _ADJUST);
     return state;
-}
-
-void matrix_init_user(void) {
-}
-
-void keyboard_post_init_user(void) {
 }
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {

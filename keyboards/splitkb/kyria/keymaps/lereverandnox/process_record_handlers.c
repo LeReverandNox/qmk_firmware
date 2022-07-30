@@ -21,13 +21,7 @@ bool DVORAK_handler(keyrecord_t *record) {
 bool MOUSE_T_handler(keyrecord_t *record) {
     if (record->event.pressed) {
         if (!is_mouse_active) {
-#ifdef AUDIO_ENABLE
-            PLAY_SONG(mouse_song);
-#endif
         } else {
-#ifdef AUDIO_ENABLE
-            PLAY_SONG(mouse_gb_song);
-#endif
         }
         is_mouse_active = !is_mouse_active;
     }
@@ -54,32 +48,9 @@ bool KC_MAKE_handler(keyrecord_t *record) {
 bool KC_CAPS_handler(keyrecord_t *record) {
     if (record->event.pressed) {
         if (!is_caps_on) {
-#ifdef AUDIO_ENABLE
-            PLAY_SONG(plover_song);
-#endif
         } else {
-#ifdef AUDIO_ENABLE
-            PLAY_SONG(plover_gb_song);
-#endif
         }
         is_caps_on = !is_caps_on;
-    }
-    return true;
-}
-bool GUI_OFF_handler(keyrecord_t *record) {
-    if (record->event.pressed) {
-#ifdef AUDIO_ENABLE
-        PLAY_SONG(mouse_gb_song);
-#endif
-    }
-    return true;
-}
-
-bool GUI_ON_handler(keyrecord_t *record) {
-    if (record->event.pressed) {
-#ifdef AUDIO_ENABLE
-        PLAY_SONG(mouse_song);
-#endif
     }
     return true;
 }
