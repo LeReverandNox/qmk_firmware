@@ -26,6 +26,20 @@
 // The default value of 100 doesn't work to handle VOLU/VOLD with an encoder
 #define TAP_CODE_DELAY 10
 
+#ifdef RGBLIGHT_ENABLE
+/* #    define RGBLIGHT_ANIMATIONS             // Enable all additional animation modes. */
+/* #    define RGBLIGHT_EFFECT_ALTERNATING     // Enable alternating animation mode. */
+/* #    define RGBLIGHT_EFFECT_BREATHING       // Enable breathing animation mode. */
+/* #    define RGBLIGHT_EFFECT_CHRISTMAS       // Enable christmas animation mode. */
+/* #    define RGBLIGHT_EFFECT_KNIGHT          // Enable knight animation mode. */
+/* #    define RGBLIGHT_EFFECT_RAINBOW_MOOD    // Enable rainbow mood animation mode. */
+#    define RGBLIGHT_EFFECT_RAINBOW_SWIRL   // Enable rainbow swirl animation mode.
+/* #    define RGBLIGHT_EFFECT_RGB_TEST        // Enable RGB test animation mode. */
+/* #    define RGBLIGHT_EFFECT_SNAKE           // Enable snake animation mode. */
+/* #    define RGBLIGHT_EFFECT_STATIC_GRADIENT // Enable static gradient mode. */
+/* #    define RGBLIGHT_EFFECT_TWINKLE         // Enable twinkle animation mode. */
+#endif
+
 // Firmware size reduction (https://thomasbaart.nl/2018/12/01/reducing-firmware-size-in-qmk/)
 #ifndef NO_DEBUG
 #    define NO_DEBUG
