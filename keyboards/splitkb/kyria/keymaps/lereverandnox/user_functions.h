@@ -7,5 +7,7 @@ bool          process_record_user(uint16_t keycode, keyrecord_t *record);
 bool          process_record_secrets(uint16_t keycode, keyrecord_t *record);
 layer_state_t layer_state_set_user(layer_state_t state);
 uint16_t      get_tapping_term(uint16_t keycode, keyrecord_t *record);
+bool          encoder_update_user(uint8_t index, bool clockwise);
+bool          oled_task_user(void);
 
 const uint16_t PROGMEM encoder_actions[][15];
