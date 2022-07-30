@@ -53,6 +53,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
+#ifdef ENCODER_ENABLE
 bool encoder_update_user(uint8_t index, bool clockwise) {
     static uint16_t kc;
     uint8_t mods = get_mods();
@@ -130,7 +131,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     tap_code16(kc);
     set_mods(mods);
 
-    return true;
+    return false;
 }
 
 const uint16_t PROGMEM encoder_actions[][15] = { \
@@ -139,3 +140,4 @@ const uint16_t PROGMEM encoder_actions[][15] = { \
     { KC_PGDN, KC_DOWN, XXXXXXX, KC_VOLU, KC_WFWD, TABNEXT, XXXXXXX, KC_RGHT, KC_MUTE, XXXXXXX, KC_MNXT, XXXXXXX, XXXXXXX, KC_MUTE, KC_BRIU }, // Clockwise
     { KC_PGUP, KC_UP,   XXXXXXX, KC_VOLD, KC_WBAK, TABPREV, XXXXXXX, KC_LEFT, KC_MPLY, XXXXXXX, KC_MPRV, XXXXXXX, XXXXXXX, KC_MPLY, KC_BRID }  // Anti-Clockwise
 };
+#endif
