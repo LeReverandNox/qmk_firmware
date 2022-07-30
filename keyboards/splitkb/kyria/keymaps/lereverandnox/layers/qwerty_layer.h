@@ -21,7 +21,8 @@
     LT_ESCG, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                                           KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
 #ifdef TAP_DANCE_ENABLE
     TD_LSFT, QM_Z,    QM_X,    QM_C,    QM_V,    KC_B,    XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, KC_N,    QM_M,    QM_COMM, QM_DOT,  QM_SLSH, TD_RSFT,
-#endif
+#else
     KC_LSFT, QM_Z,    QM_X,    QM_C,    QM_V,    KC_B,    XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, KC_N,    QM_M,    QM_COMM, QM_DOT,  QM_SLSH, KC_RSFT,
+#endif
                                BAS_EN1, LT_TAB,  KC_SPC,  NUM,     XXXXXXX,    XXXXXXX, SYM,     KC_BSPC, KC_RALT, BAS_EN2
 ),
