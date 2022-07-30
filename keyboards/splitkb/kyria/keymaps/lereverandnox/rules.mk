@@ -11,3 +11,6 @@ ifeq ($(strip $(TAP_DANCE_ENABLE)), true)
 SRC += tapdances.c
 SRC += tapdances_handlers.c
 endif
+
+# Firmware size reduction
+EXTRAFLAGS += -flto
