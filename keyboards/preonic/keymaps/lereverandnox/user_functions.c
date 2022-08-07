@@ -8,6 +8,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case DVORAK:
             return DVORAK_handler(record);
             break;
+        case CLMKDH:
+            return COLEMAKDH_handler(record);
+            break;
         case GAMING:
             return GAMING_handler(record);
             break;
@@ -122,6 +125,9 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case DM_M:
         // Qwerty
         case QM_V:
+        // Colemak-DH
+        case CM_D:
+        case CM_H:
             return 175;
         default:
             return TAPPING_TERM;

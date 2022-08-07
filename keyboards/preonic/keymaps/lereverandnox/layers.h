@@ -4,6 +4,7 @@
 enum preonic_layers {
   _DVORAK = 0,
   _QWERTY,
+  _COLEMAKDH,
   _GAMING,
   _GAMING_RAISE,
   _GAMING_LOWER,
