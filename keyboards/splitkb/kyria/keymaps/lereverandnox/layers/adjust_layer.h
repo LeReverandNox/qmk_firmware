@@ -13,7 +13,7 @@
  * |        |        |        |        |        |        |        |        |  |        |        |        |        |        |        |        |        |
  * |        |        |        |        |        |        |        |        |  |        |        |        |        |        |        |        |        |
  * `--------+--------+--------+--------+--------+--------|--------|--------|  |--------|--------|--------+--------+--------+--------+--------+--------'
- *                            |ADJ_EN1 |        |        |        |        |  |        |        | Qwerty | Dvorak |ADJ_EN2 |
+ *                            |ADJ_EN1 |        |        |        |        |  |Colemak |        | Qwerty | Dvorak |ADJ_EN2 |
  *                            |        |        |        |        |        |  |        |        |        |        |        |
  *                            `--------------------------------------------'  `--------------------------------------------'
  */
@@ -21,5 +21,5 @@
     RGB_TOG, RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, RGB_SPI,                                        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_MAKE,
     XXXXXXX, RGB_RMOD,RGB_HUD, RGB_SAD, RGB_VAD, RGB_SPD,                                        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT, EE_CLR,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, NKR_TOG, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                               ADJ_EN1, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, QWERTY,  DVORAK,  ADJ_EN2
+                               ADJ_EN1, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    CLMKDH,  XXXXXXX, QWERTY,  DVORAK,  ADJ_EN2
 ),
