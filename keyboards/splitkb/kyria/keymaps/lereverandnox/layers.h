@@ -4,6 +4,7 @@
 enum layers {
   _QWERTY = 0,
   _DVORAK,
+  _COLEMAKDH,
   _MOUSE,
   _NAV,
   _SYM,
