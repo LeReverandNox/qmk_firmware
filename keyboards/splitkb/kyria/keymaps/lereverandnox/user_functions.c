@@ -8,6 +8,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case DVORAK:
             return DVORAK_handler(record);
             break;
+        case CLMKDH:
+            return COLEMAKDH_handler(record);
+            break;
         case MOUSE_T:
             return MOUSE_T_handler(record);
             break;
@@ -166,6 +169,9 @@ bool oled_task_user(void) {
                 break;
             case _DVORAK:
                 oled_write_P(PSTR("Dvorak\n"), false);
+                break;
+            case _COLEMAKDH:
+                oled_write_P(PSTR("ColemakDH\n"), false);
                 break;
             case _MOUSE:
                 oled_write_P(PSTR("Mouse\n"), false);

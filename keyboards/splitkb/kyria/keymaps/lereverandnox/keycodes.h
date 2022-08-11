@@ -4,6 +4,7 @@
 enum keycodes {
     QWERTY = SAFE_RANGE,
     DVORAK,
+    CLMKDH,
     KC_MAKE,
     KC_SEC1,
     KC_SEC2,
@@ -48,6 +49,15 @@ enum keycodes {
 #define QM_COMM LALT_T(KC_COMM)
 #define QM_DOT LGUI_T(KC_DOT)
 #define QM_SLSH LCTL_T(KC_SLSH)
+// COLEMAK-DH
+#define CM_Z CTL_T(KC_Z)
+#define CM_X LGUI_T(KC_X)
+#define CM_C LALT_T(KC_C)
+#define CM_D LSFT_T(KC_D)
+#define CM_H LSFT_T(KC_H)
+#define CM_COMM LALT_T(KC_COMM)
+#define CM_DOT LGUI_T(KC_DOT)
+#define CM_SLSH LCTL_T(KC_SLSH)
 
 #define NKR_TOG MAGIC_TOGGLE_NKRO
 

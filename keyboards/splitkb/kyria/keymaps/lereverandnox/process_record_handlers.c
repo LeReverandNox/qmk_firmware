@@ -17,6 +17,12 @@ bool DVORAK_handler(keyrecord_t *record) {
     return false;
 }
 
+bool COLEMAKDH_handler(keyrecord_t *record) {
+    if (record->event.pressed) {
+        set_single_persistent_default_layer(_COLEMAKDH);
+    }
+    return false;
+}
 
 bool MOUSE_T_handler(keyrecord_t *record) {
     if (record->event.pressed) {
