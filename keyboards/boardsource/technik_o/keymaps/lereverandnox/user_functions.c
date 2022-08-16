@@ -8,6 +8,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case DVORAK:
             return DVORAK_handler(record);
             break;
+        case CLMKDH:
+            return COLEMAKDH_handler(record);
+            break;
         case GAMING:
             return GAMING_handler(record);
             break;
