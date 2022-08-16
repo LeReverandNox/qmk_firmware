@@ -29,6 +29,13 @@ bool DVORAK_handler(keyrecord_t *record) {
     return false;
 }
 
+bool COLEMAKDH_handler(keyrecord_t *record) {
+    if (record->event.pressed) {
+        set_single_persistent_default_layer(_COLEMAKDH);
+    }
+    return false;
+}
+
 bool GAMING_handler(keyrecord_t *record) {
     if (record->event.pressed) {
 #ifdef AUDIO_ENABLE
@@ -108,7 +115,7 @@ bool KC_MAKE_handler(keyrecord_t *record) {
         send_string_with_delay_P(PSTR("qmk_build " QMK_KEYBOARD ":" QMK_KEYMAP), 10);
         if (mods & MOD_MASK_SHIFT) {
             // RESET board for flashing if SHIFT held or tapped with KC_MAKE
-            send_string_with_delay_P(PSTR(":dfu-util"), 10);
+            send_string_with_delay_P(PSTR(":flash"), 10);
             send_string_with_delay_P(PSTR(SS_TAP(X_ENTER)), 10);
             reset_keyboard();
         }
