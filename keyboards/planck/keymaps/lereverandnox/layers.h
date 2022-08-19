@@ -4,6 +4,7 @@
 enum planck_layers {
   _QWERTY = 0,
   _DVORAK,
+  _COLEMAKDH,
   _GAMING,
   _GAMING_RAISE,
   _GAMING_LOWER,
