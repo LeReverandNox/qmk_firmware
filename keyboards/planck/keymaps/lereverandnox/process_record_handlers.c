@@ -29,6 +29,13 @@ bool DVORAK_handler(keyrecord_t *record) {
     return false;
 }
 
+bool COLEMAKDH_handler(keyrecord_t *record) {
+    if (record->event.pressed) {
+        set_single_persistent_default_layer(_COLEMAKDH);
+    }
+    return false;
+}
+
 bool GAMING_handler(keyrecord_t *record) {
     if (record->event.pressed) {
 #ifdef AUDIO_ENABLE
