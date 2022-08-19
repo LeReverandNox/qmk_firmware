@@ -4,6 +4,7 @@
 
 bool QWERTY_handler(keyrecord_t *record);
 bool DVORAK_handler(keyrecord_t *record);
+bool COLEMAKDH_handler(keyrecord_t *record);
 bool GAMING_handler(keyrecord_t *record);
 bool EXT_GAM_handler(keyrecord_t *record);
 bool PLOVER_handler(keyrecord_t *record);
