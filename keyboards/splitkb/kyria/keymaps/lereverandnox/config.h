@@ -25,6 +25,7 @@
 // From https://www.reddit.com/r/olkb/comments/c0y085/rotary_encoder_general_help_request/
 // The default value of 100 doesn't work to handle VOLU/VOLD with an encoder
 #define TAP_CODE_DELAY 10
+#define ENCODER_RESOLUTION 2
 
 #ifdef RGBLIGHT_ENABLE
 /* #    define RGBLIGHT_ANIMATIONS             // Enable all additional animation modes. */
