@@ -46,12 +46,3 @@ bool KC_MAKE_handler(keyrecord_t *record) {
     }
     return true;
 }
-
-bool RESET_handler(keyrecord_t *record) {
-	/* #ifdef RGB_MATRIX_ENABLE */
-	/* rgb_matrix_set_color_all(RGB_PINK); */
-	/* wait_us(200); */
-	/* #endif */
-	reset_keyboard();
-	return false;
-}
