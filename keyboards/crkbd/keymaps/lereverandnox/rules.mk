@@ -6,6 +6,8 @@ RGB_MATRIX_ENABLE = yes
 OLED_ENABLE     = yes
 OLED_DRIVER     = SSD1306
 LTO_ENABLE      = yes
+# Because of Elite-C's
+BOOTLOADER      = atmel-dfu
 SRC += helpers.c
 SRC += process_record_handlers.c
 SRC += user_functions.c
