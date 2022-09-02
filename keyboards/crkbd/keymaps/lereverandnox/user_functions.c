@@ -23,8 +23,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case KC_MAKE:
         return KC_MAKE_handler(record);
         break;
-    case RESET:
-        return RESET_handler(record);
     }
     return process_record_secrets(keycode, record);
 }
