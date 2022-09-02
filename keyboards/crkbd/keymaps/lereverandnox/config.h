@@ -130,24 +130,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #    define RETRO_TAPPING
 // #    define PERMISSIVE_HOLD
 
-// Choose between OUTER_COLS (one additional column on each side filled with mods)
-// or INNER_COLS (both columns in the middle)
-// or OUTER_CLASSICAL (no mods column, everthing is used)
-#    define OUTER_CLASSICAL
-
-// If you want to have hold modifiers on the home row. Love the idea, sooo convenient, but it's not easy to work with in reality...
-// Either the TAPPING_TERM is too long, often getting "as" instead of "C-s"
-// or is too short, causing to trigger unwanted mods while typing normally, quite dangerous.
-// #    define HOME_MODS
-
-// This is an experiment, putting the mods one row below the home row.
-// This is the less used row, especially in Dvorak, so it might work better, less prone to unwanted mods with shorter TAPPING_TERM
-#    define BELOW_HOME_MODS
-
-// Works only with BELOW_HOME_MODS, to have the Shift key on the home row pinky.
-// Incompatible with HOME_MODS, since the pinky keys are already used.
-// #    define HOME_PINKY_SHIFTS
-
 // Force enable NKRO
 #define FORCE_NKRO
 
