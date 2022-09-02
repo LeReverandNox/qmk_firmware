@@ -9,6 +9,7 @@ void tap_key(uint16_t keycode)
   unregister_code(keycode);
 }
 
+#ifdef TAP_DANCE_ENABLE
 void tap_shift_caps(qk_tap_dance_state_t *state, uint8_t shift) {
     uint8_t mods = get_mods();
     uint8_t os_mods = get_oneshot_mods();
@@ -27,9 +28,7 @@ void tap_shift_caps(qk_tap_dance_state_t *state, uint8_t shift) {
         set_weak_mods(weak_mods);
     // pressed: hold Shift
     } else if (state->pressed) {
-		#ifndef HOME_PINKY_SHIFTS
         register_code(shift);
-		#endif
     // single tap
     } else {
         //  if enable, turn Capslock off. Prevent Shift + Caps
@@ -42,44 +41,43 @@ void tap_shift_caps(qk_tap_dance_state_t *state, uint8_t shift) {
             set_mods(mods);
             set_oneshot_mods(os_mods);
             set_weak_mods(weak_mods);
-		#ifndef HOME_PINKY_SHIFTS
         } else if (os_mods & MOD_MASK_SHIFT) { // Disable OS Shift if enable
             set_oneshot_mods(os_mods ^ MOD_LSFT);
         } else { // oneshot Shift (don't know why it doesn't work with MOD_RSFT...)
             set_oneshot_mods(MOD_LSFT);
-		#endif
         }
     }
 }
+#endif
 
-void rgb_matrix_layer_helper(uint8_t hue, uint8_t sat, uint8_t val, uint8_t mode, uint8_t speed, uint8_t led_type) {
-    HSV hsv = {hue, sat, val};
-    if (hsv.v > rgb_matrix_config.hsv.v) {
-        hsv.v = rgb_matrix_config.hsv.v;
-    }
+/* void rgb_matrix_layer_helper(uint8_t hue, uint8_t sat, uint8_t val, uint8_t mode, uint8_t speed, uint8_t led_type) { */
+/*     HSV hsv = {hue, sat, val}; */
+/*     if (hsv.v > rgb_matrix_config.hsv.v) { */
+/*         hsv.v = rgb_matrix_config.hsv.v; */
+/*     } */
 
-    switch (mode) {
-        case 1:  // breathing
-        {
-            uint16_t time = scale16by8(g_rgb_counters.tick, speed / 8);
-            hsv.v         = scale8(abs8(sin8(time) - 128) * 2, hsv.v);
-            RGB rgb       = hsv_to_rgb(hsv);
-            for (uint8_t i = 0; i < DRIVER_LED_TOTAL; i++) {
-                if (HAS_FLAGS(g_led_config.flags[i], led_type)) {
-                    rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b);
-                }
-            }
-            break;
-        }
-        default:  // Solid Color
-        {
-            RGB rgb = hsv_to_rgb(hsv);
-            for (uint8_t i = 0; i < DRIVER_LED_TOTAL; i++) {
-                if (HAS_FLAGS(g_led_config.flags[i], led_type)) {
-                    rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b);
-                }
-            }
-            break;
-        }
-    }
-}
+/*     switch (mode) { */
+/*         case 1:  // breathing */
+/*         { */
+/*             uint16_t time = scale16by8(g_rgb_counters.tick, speed / 8); */
+/*             hsv.v         = scale8(abs8(sin8(time) - 128) * 2, hsv.v); */
+/*             RGB rgb       = hsv_to_rgb(hsv); */
+/*             for (uint8_t i = 0; i < DRIVER_LED_TOTAL; i++) { */
+/*                 if (HAS_FLAGS(g_led_config.flags[i], led_type)) { */
+/*                     rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b); */
+/*                 } */
+/*             } */
+/*             break; */
+/*         } */
+/*         default:  // Solid Color */
+/*         { */
+/*             RGB rgb = hsv_to_rgb(hsv); */
+/*             for (uint8_t i = 0; i < DRIVER_LED_TOTAL; i++) { */
+/*                 if (HAS_FLAGS(g_led_config.flags[i], led_type)) { */
+/*                     rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b); */
+/*                 } */
+/*             } */
+/*             break; */
+/*         } */
+/*     } */
+/* } */
