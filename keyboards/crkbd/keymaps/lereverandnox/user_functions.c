@@ -17,9 +17,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case CLMKDH:
         return COLEMAKDH_handler(record);
         break;
+#ifdef MOUSEKEY_ENABLE
     case MOUSE_T:
         return MOUSE_T_handler(record);
       break;
+#endif
     case KC_MAKE:
         return KC_MAKE_handler(record);
         break;
@@ -43,9 +45,11 @@ void matrix_scan_user(void) {
         case _ADJUST:
             rgblight_setrgb(0x00, 0x00, 0xFF);
             break;
+#ifdef MOUSEKEY_ENABLE
         case _MOUSE:
             rgblight_setrgb(0x00, 0xA0, 0xFF);
             break;
+#endif
         }
 
         old_layer = new_layer;
@@ -140,9 +144,11 @@ void oled_render_layer_state(void) {
         case _COLEMAKDH:
             oled_write_P(PSTR("ColemakDH\n"), false);
             break;
+#ifdef MOUSEKEY_ENABLE
         case _MOUSE:
             oled_write_P(PSTR("Mouse\n"), false);
             break;
+#endif
         case _NAV:
             oled_write_P(PSTR("Nav\n"), false);
             break;
