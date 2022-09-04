@@ -11,9 +11,6 @@ enum crkbd_keycodes { QWERTY = SAFE_RANGE, DVORAK, CLMKDH, KC_MAKE, KC_SEC1, KC_
 #ifdef MOUSEKEY_ENABLE
 #define MOUSE_T  TG(_MOUSE)
 #endif
-#ifndef MOUSEKEY_ENABLE
-#define MOUSE_T  XXXXXXX
-#endif
 #define MEDIA    MO(_MEDIA)
 
 // Layer Tap
