@@ -8,17 +8,10 @@ enum keycodes {
     GAMING,
 #ifdef PLOVER_ENABLED
     PLOVER,
-#endif
     EXT_PLV,
+#endif
     EXT_GAM,
     KC_MAKE,
-    TIMBR_1,
-    TIMBR_2,
-    TIMBR_3,
-    TIMBR_4,
-    TEMP_UP,
-    TEMP_DN,
-    TEMP_DF,
     KC_SEC1,
     KC_SEC2,
     KC_SEC3,
@@ -38,13 +31,8 @@ enum keycodes {
 #define G_LOWER MO(_GAMING_LOWER)
 
 // Layer Tap
-#define LT_TABG LT(MEDIA, KC_TAB)
 #define LT_ESCG LT(MEDIA, KC_ESC)
-#define LT_TAB LT(NAV, KC_TAB)
-#define LT_SPC LT(SYM, KC_SPC)
-#define LT_ESC LT(SYM, KC_ESC)
-#define LT_ENT LT(NUM, KC_ENT)
-#define LT_BSPC LT(NUM, KC_BSPC)
+#define LT_TAB KC_TAB
 
 // Below-Home mods
 // DVORAK
@@ -83,7 +71,3 @@ enum keycodes {
 #define OS_RSFT OSM(MOD_RSFT)
 
 #define NKR_TOG MAGIC_TOGGLE_NKRO
-
-#define TABPREV LCTL(KC_PGUP)
-#define TABNEXT LCTL(KC_PGDN)
-
