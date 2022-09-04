@@ -7,16 +7,16 @@
  * |  Esc  |   A   |   R   |   S   |   T   |   G   |   M   |   N   |   E   |   I   |   O   | Enter |
  * | Media |       |       |       |       |       |       |       |       |       |       |       |
  * |-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------|
- * | Shift |   Z   |   X   |   C   |   D   |   V   |   K   |   H   |   ,   |   .   |   /   | Shift |
+ * |  Tab  |   Z   |   X   |   C   |   D   |   V   |   K   |   H   |   ,   |   .   |   /   | Shift |
  * |       | Ctrl  |  GUI  |  Alt  | Shift |       |       | Shift |  Alt  |  GUI  | Ctrl  |       |
  * |-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------|
- * |BAS_ENC|  GUI  |  Alt  |  Tab  | Space |       |       | Bkspc | RAlt  |  Alt  |  GUI  | Ctrl  |
- * |       |       |       |  Nav  |       |  Num  |  Sym  |       |       |       |       |       |
+ * |BAS_ENC|  GUI  |  Alt  |  Nav  | Space |       |       | Bkspc | RAlt  |  Alt  |  GUI  | Ctrl  |
+ * |       |       |       |       |       |  Num  |  Sym  |       |       |       |       |       |
  * `-----------------------------------------------------------------------------------------------'
  */
 [_COLEMAKDH] = LAYOUT_ortho_4x12(
     KC_GRV,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_QUOT,
     LT_ESCG, KC_A,    KC_R,    KC_S,    KC_T,    KC_G,    KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_ENT,
-    TD_LSFT, CM_Z,    CM_X,    CM_C,    CM_D,    KC_V,    KC_K,    CM_H,    CM_COMM, CM_DOT,  CM_SLSH, TD_RSFT,
-    BAS_ENC, KC_LGUI, KC_LALT, LT_TAB,  KC_SPC,  NUM,     SYM,     KC_BSPC, KC_RALT, OS_LALT, OS_RGUI, OS_RCTL
+    LT_TAB,  CM_Z,    CM_X,    CM_C,    CM_D,    KC_V,    KC_K,    CM_H,    CM_COMM, CM_DOT,  CM_SLSH, TD_RSFT,
+    BAS_ENC, KC_LGUI, KC_LALT, NAV,     KC_SPC,  NUM,     SYM,     KC_BSPC, KC_RALT, OS_LALT, OS_RGUI, OS_RCTL
 ),
