@@ -11,9 +11,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case CLMKDH:
             return COLEMAKDH_handler(record);
             break;
+#ifdef MOUSEKEY_ENABLE
         case MOUSE_T:
             return MOUSE_T_handler(record);
             break;
+#endif
         case KC_MAKE:
             return KC_MAKE_handler(record);
             break;
@@ -173,9 +175,11 @@ bool oled_task_user(void) {
             case _COLEMAKDH:
                 oled_write_P(PSTR("ColemakDH\n"), false);
                 break;
+#ifdef MOUSEKEY_ENABLE
             case _MOUSE:
                 oled_write_P(PSTR("Mouse\n"), false);
                 break;
+#endif
             case _NAV:
                 oled_write_P(PSTR("Nav\n"), false);
                 break;
