@@ -18,17 +18,14 @@ enum keycodes {
 #define SYM MO(_SYM)
 #define NUM MO(_NUM)
 #define ADJUST MO(_ADJUST)
+#ifdef MOUSEKEY_ENABLE
 #define MOUSE_T TG(_MOUSE)
+#endif
 #define MEDIA MO(_MEDIA)
 
 // Layer Tap
-#define LT_TABG LT(MEDIA, KC_TAB)
 #define LT_ESCG LT(MEDIA, KC_ESC)
-#define LT_TAB LT(NAV, KC_TAB)
-#define LT_SPC LT(SYM, KC_SPC)
-#define LT_ESC LT(SYM, KC_ESC)
-#define LT_ENT LT(NUM, KC_ENT)
-#define LT_BSPC LT(NUM, KC_BSPC)
+#define LT_TAB KC_TAB
 
 // Below-Home mods
 // DVORAK

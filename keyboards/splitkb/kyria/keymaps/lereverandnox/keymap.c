@@ -25,5 +25,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #include "layers/num_layer.h"
 #include "layers/adjust_layer.h"
 #include "layers/media_layer.h"
+#ifdef MOUSEKEY_ENABLE
 #include "layers/mouse_layer.h"
+#endif
 };
