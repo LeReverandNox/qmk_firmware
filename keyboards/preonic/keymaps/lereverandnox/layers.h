@@ -1,7 +1,7 @@
 #pragma once
 
 // clang-format off
-enum preonic_layers {
+enum layers {
   _DVORAK = 0,
   _QWERTY,
   _COLEMAKDH,

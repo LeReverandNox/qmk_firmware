@@ -1,7 +1,7 @@
 #pragma once
 #include "lereverandnox.h"
 
-enum preonic_keycodes {
+enum keycodes {
     QWERTY = SAFE_RANGE,
     DVORAK,
     CLMKDH,
@@ -37,13 +37,8 @@ enum preonic_keycodes {
 #define G_LOWER MO(_GAMING_LOWER)
 
 // Layer Tap
-#define LT_TABG LT(MEDIA, KC_TAB)
 #define LT_ESCG LT(MEDIA, KC_ESC)
-#define LT_TAB LT(NAV, KC_TAB)
-#define LT_SPC LT(SYM, KC_SPC)
-#define LT_ESC LT(SYM, KC_ESC)
-#define LT_ENT LT(NUM, KC_ENT)
-#define LT_BSPC LT(NUM, KC_BSPC)
+#define LT_TAB KC_TAB
 
 // Below-Home mods
 // DVORAK
