@@ -1,7 +1,17 @@
 #pragma once
 #include "lereverandnox.h"
 
-enum crkbd_keycodes { QWERTY = SAFE_RANGE, DVORAK, CLMKDH, KC_MAKE, KC_SEC1, KC_SEC2, KC_SEC3, KC_SEC4, KC_SEC5};
+enum keycodes {
+    QWERTY = SAFE_RANGE,
+    DVORAK,
+    CLMKDH,
+    KC_MAKE,
+    KC_SEC1,
+    KC_SEC2,
+    KC_SEC3,
+    KC_SEC4,
+    KC_SEC5
+};
 
 // Layers
 #define NAV      MO(_NAV)
@@ -14,13 +24,8 @@ enum crkbd_keycodes { QWERTY = SAFE_RANGE, DVORAK, CLMKDH, KC_MAKE, KC_SEC1, KC_
 #define MEDIA    MO(_MEDIA)
 
 // Layer Tap
-#define LT_TABG LT(MEDIA, KC_TAB)
 #define LT_ESCG LT(MEDIA, KC_ESC)
 #define LT_TAB LT(NAV, KC_TAB)
-#define LT_SPC LT(SYM, KC_SPC)
-#define LT_ESC LT(SYM, KC_ESC)
-#define LT_ENT LT(NUM, KC_ENT)
-#define LT_BSPC LT(NUM, KC_BSPC)
 
 // Below-Home mods
 // DVORAK
