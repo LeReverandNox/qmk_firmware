@@ -2,9 +2,9 @@
 
 /* Select hand configuration */
 
-#    define MASTER_LEFT
+// #    define MASTER_LEFT
 // #    define MASTER_RIGHT
-// #    define EE_HANDS
+#    define EE_HANDS
 
 #    define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
 
