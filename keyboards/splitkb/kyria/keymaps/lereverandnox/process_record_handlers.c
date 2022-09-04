@@ -24,6 +24,7 @@ bool COLEMAKDH_handler(keyrecord_t *record) {
     return false;
 }
 
+#ifdef MOUSEKEY_ENABLE
 bool MOUSE_T_handler(keyrecord_t *record) {
     if (record->event.pressed) {
         if (!is_mouse_active) {
@@ -33,6 +34,7 @@ bool MOUSE_T_handler(keyrecord_t *record) {
     }
     return true;
 }
+#endif
 
 bool KC_MAKE_handler(keyrecord_t *record) {
     if (!record->event.pressed) {
