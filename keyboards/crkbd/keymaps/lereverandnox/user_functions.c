@@ -4,7 +4,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
 #ifdef OLED_ENABLE
         set_keylog(keycode, record);
-#endif
+#endif // OLED_ENABLE
     }
 
     switch (keycode) {
@@ -21,7 +21,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case MOUSE_T:
         return MOUSE_T_handler(record);
       break;
-#endif
+#endif // MOUSEKEY_ENABLE
     case KC_MAKE:
         return KC_MAKE_handler(record);
         break;
@@ -49,7 +49,7 @@ void matrix_scan_user(void) {
         case _MOUSE:
             rgblight_setrgb(0x00, 0xA0, 0xFF);
             break;
-#endif
+#endif // MOUSEKEY_ENABLE
         }
 
         old_layer = new_layer;
@@ -87,25 +87,14 @@ void matrix_scan_user(void) {
 /*         /\* check_default_layer(0, LED_FLAG_MODIFIER); *\/ */
 /*     } */
 /* } */
-#endif
+#endif // RGB_MATRIX_ENABLE
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-#ifdef OUTER_CLASSICAL
         case LT_TAB:
         case LT_ESCG:
             return 150;
-#endif
-#ifdef BELOW_HOME_MODS
         // Shorter tapping_term for Shift
-        #ifdef HOME_PINKY_SHIFTS
-        // Works for QM_A too, since it's the same define
-        case DM_A:
-        // Dvorak
-        case DM_S:
-        // Qwerty
-        case QM_SCLN:
-        #endif
         // Dvorak
         case DM_K:
         // Works for QM_M too, since it's the same define
@@ -113,7 +102,6 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         // Qwerty
         case QM_V:
             return 120;
-#endif
         default:
             return TAPPING_TERM;
     }
@@ -150,7 +138,7 @@ void oled_render_layer_state(void) {
         case _MOUSE:
             oled_write_ln_P(PSTR(" MOU"), false);
             break;
-#endif
+#endif // MOUSEKEY_ENABLE
         case _NAV:
             oled_write_ln_P(PSTR(" NAV"), false);
             break;
@@ -177,7 +165,7 @@ void oled_render_layer_state(void) {
     oled_write_ln_P(is_caps_word_on()         ? PSTR("CAPWD") : PSTR("     "), false);
 #else
     oled_write_ln_P(led_usb_state.num_lock    ? PSTR("NUMLK") : PSTR("     "), false);
-#endif
+#endif // CAPS_WORD_ENABLE
     oled_write_ln_P(led_usb_state.caps_lock   ? PSTR("CAPLK ") : PSTR("     "), false);
     oled_write_ln_P(led_usb_state.scroll_lock ? PSTR("SCRLK ") : PSTR("     "), false);
     oled_write_ln_P(PSTR("-----"), false);

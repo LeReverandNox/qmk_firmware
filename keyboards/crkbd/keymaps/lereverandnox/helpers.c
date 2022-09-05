@@ -48,7 +48,7 @@ void tap_shift_caps(qk_tap_dance_state_t *state, uint8_t shift) {
         }
     }
 }
-#endif
+#endif // TAP_DANCE_ENABLE
 
 /* void rgb_matrix_layer_helper(uint8_t hue, uint8_t sat, uint8_t val, uint8_t mode, uint8_t speed, uint8_t led_type) { */
 /*     HSV hsv = {hue, sat, val}; */

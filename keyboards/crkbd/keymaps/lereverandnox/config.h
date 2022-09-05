@@ -25,7 +25,7 @@
 /* #    define RGBLIGHT_EFFECT_RGB_TEST */
 /* #    define RGBLIGHT_EFFECT_SNAKE */
 /* #    define RGBLIGHT_EFFECT_STATIC_GRADIENT */
-#endif
+#endif // RGBLIGHT_ENABLE
 
 #ifdef RGB_MATRIX_ENABLE
 #    define RGB_MATRIX_HUE_STEP 8
@@ -97,7 +97,7 @@
 // #    define ENABLE_RGB_MATRIX_MULTISPLASH                 // Full gradient & value pulse away from multiple key hits then fades value out
 // #    define ENABLE_RGB_MATRIX_SOLID_SPLASH                // Hue & value pulse away from a single key hit then fades value out
 // #    define ENABLE_RGB_MATRIX_SOLID_MULTISPLASH           // Hue & value pulse away from multiple key hits then fades value out
-#endif
+#endif // RGB_MATRIX_ENABLE
 
 // PERSO
 #    define IGNORE_MOD_TAP_INTERRUPT  // (-12)
@@ -110,7 +110,7 @@
 #define FORCE_NKRO
 
 // Mouse key speed and acceleration.
-#    ifdef MOUSEKEY_ENABLE
+#ifdef MOUSEKEY_ENABLE
 #    undef MOUSEKEY_DELAY
 #    define MOUSEKEY_DELAY          0
 #    undef MOUSEKEY_INTERVAL
@@ -122,7 +122,7 @@
 // Mouse wheel
 #    undef MOUSEKEY_WHEEL_DELAY
 #    define MOUSEKEY_WHEEL_DELAY    0
-#endif
+#endif // MOUSEKEY_ENABLE
 
 // Firmware size reduction (https://thomasbaart.nl/2018/12/01/reducing-firmware-size-in-qmk/)
 #ifndef NO_DEBUG
