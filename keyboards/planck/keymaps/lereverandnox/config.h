@@ -53,3 +53,5 @@
 
 // Enable or disable Plover layer (to save space, ~256)
 // #define PLOVER_ENABLED
+
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
