@@ -201,7 +201,11 @@ bool oled_task_user(void) {
 
         // Write host Keyboard LED Status to OLEDs
         led_t led_usb_state = host_keyboard_led_state();
+#ifdef CAPS_WORD_ENABLE
+        oled_write_P(is_caps_word_on()         ? PSTR("CAPWRD ") : PSTR("       "), false);
+#else
         oled_write_P(led_usb_state.num_lock    ? PSTR("NUMLCK ") : PSTR("       "), false);
+#endif
         oled_write_P(led_usb_state.caps_lock   ? PSTR("CAPLCK ") : PSTR("       "), false);
         oled_write_P(led_usb_state.scroll_lock ? PSTR("SCRLCK ") : PSTR("       "), false);
     } else {
