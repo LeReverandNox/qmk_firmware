@@ -23,6 +23,6 @@
     LT_TAB,  QM_Z,    QM_X,    QM_C,    QM_V,    KC_B,    XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, KC_N,    QM_M,    QM_COMM, QM_DOT,  QM_SLSH, TD_RSFT,
 #else
     LT_TAB,  QM_Z,    QM_X,    QM_C,    QM_V,    KC_B,    XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, KC_N,    QM_M,    QM_COMM, QM_DOT,  QM_SLSH, KC_RSFT,
-#endif
+#endif // TAP_DANCE_ENABLE
                                BAS_EN1, NAV,     KC_SPC,  NUM,     XXXXXXX,    XXXXXXX, SYM,     KC_BSPC, KC_RALT, BAS_EN2
 ),
