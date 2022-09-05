@@ -126,53 +126,61 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
 #ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
-  if (!is_keyboard_master()) {
+  if (is_keyboard_master()) {
+    return OLED_ROTATION_270;
+  } else {
     return OLED_ROTATION_180;  // flips the display 180 degrees if offhand
   }
   return rotation;
 }
 
 void oled_render_layer_state(void) {
-    oled_write_P(PSTR("Layer: "), false);
+    oled_write_ln_P(PSTR("Layer"), false);
     switch (get_highest_layer(layer_state|default_layer_state)) {
         case _QWERTY:
-            oled_write_P(PSTR("QWERTY\n"), false);
+            oled_write_ln_P(PSTR(" QWE"), false);
             break;
         case _DVORAK:
-            oled_write_P(PSTR("Dvorak\n"), false);
+            oled_write_ln_P(PSTR(" DVO"), false);
             break;
         case _COLEMAKDH:
-            oled_write_P(PSTR("ColemakDH\n"), false);
+            oled_write_ln_P(PSTR(" CLM"), false);
             break;
 #ifdef MOUSEKEY_ENABLE
         case _MOUSE:
-            oled_write_P(PSTR("Mouse\n"), false);
+            oled_write_ln_P(PSTR(" MOU"), false);
             break;
 #endif
         case _NAV:
-            oled_write_P(PSTR("Nav\n"), false);
+            oled_write_ln_P(PSTR(" NAV"), false);
             break;
         case _SYM:
-            oled_write_P(PSTR("Symbols\n"), false);
+            oled_write_ln_P(PSTR(" SYM"), false);
             break;
         case _NUM:
-            oled_write_P(PSTR("Numbers\n"), false);
+            oled_write_ln_P(PSTR(" NUM"), false);
             break;
         case _MEDIA:
-            oled_write_P(PSTR("Media\n"), false);
+            oled_write_ln_P(PSTR(" MED"), false);
             break;
         case _ADJUST:
-            oled_write_P(PSTR("Adjust\n"), false);
+            oled_write_ln_P(PSTR(" ADJ"), false);
             break;
         default:
-            oled_write_P(PSTR("Undefined\n"), false);
+            oled_write_ln_P(PSTR(" UND"), false);
     }
+    oled_write_ln_P(PSTR("-----"), false);
 
     // Write host Keyboard LED Status to OLEDs
     led_t led_usb_state = host_keyboard_led_state();
-    oled_write_P(led_usb_state.num_lock    ? PSTR("NUMLCK ") : PSTR("       "), false);
-    oled_write_P(led_usb_state.caps_lock   ? PSTR("CAPLCK ") : PSTR("       "), false);
-    oled_write_P(led_usb_state.scroll_lock ? PSTR("SCRLCK ") : PSTR("       "), false);
+#ifdef CAPS_WORD_ENABLE
+    oled_write_ln_P(is_caps_word_on()         ? PSTR("CAPWD") : PSTR("     "), false);
+#else
+    oled_write_ln_P(led_usb_state.num_lock    ? PSTR("NUMLK") : PSTR("     "), false);
+#endif
+    oled_write_ln_P(led_usb_state.caps_lock   ? PSTR("CAPLK ") : PSTR("     "), false);
+    oled_write_ln_P(led_usb_state.scroll_lock ? PSTR("SCRLK ") : PSTR("     "), false);
+    oled_write_ln_P(PSTR("-----"), false);
 }
 
 
@@ -216,7 +224,7 @@ void oled_render_logo(void) {
 bool oled_task_user(void) {
     if (is_keyboard_master()) {
         oled_render_layer_state();
-        oled_render_keylog();
+        /* oled_render_keylog(); */
     } else {
         oled_render_logo();
     }
