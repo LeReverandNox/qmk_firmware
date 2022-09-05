@@ -7,7 +7,7 @@ enum layers {
   _COLEMAKDH,
 #ifdef MOUSEKEY_ENABLE
   _MOUSE,
-#endif
+#endif // MOUSEKEY_ENABLE
   _NAV,
   _SYM,
   _NUM,
