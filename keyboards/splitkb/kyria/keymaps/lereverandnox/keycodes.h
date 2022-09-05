@@ -14,47 +14,47 @@ enum keycodes {
 };
 
 // Layers
-#define NAV MO(_NAV)
-#define SYM MO(_SYM)
-#define NUM MO(_NUM)
-#define ADJUST MO(_ADJUST)
+#define NAV     MO(_NAV)
+#define SYM     MO(_SYM)
+#define NUM     MO(_NUM)
+#define ADJUST  MO(_ADJUST)
 #ifdef MOUSEKEY_ENABLE
 #define MOUSE_T TG(_MOUSE)
 #endif
-#define MEDIA MO(_MEDIA)
+#define MEDIA   MO(_MEDIA)
 
 // Layer Tap
 #define LT_ESCG LT(MEDIA, KC_ESC)
-#define LT_TAB KC_TAB
+#define LT_TAB  KC_TAB
 
 // Below-Home mods
 // DVORAK
-#define DM_SCLN CTL_T(KC_SCLN)
-#define DM_Q LGUI_T(KC_Q)
-#define DM_J LALT_T(KC_J)
-#define DM_K LSFT_T(KC_K)
-#define DM_M LSFT_T(KC_M)
-#define DM_W LALT_T(KC_W)
-#define DM_V LGUI_T(KC_V)
-#define DM_Z LCTL_T(KC_Z)
+#define DM_SCLN LCTL_T(KC_SCLN)
+#define DM_Q    LGUI_T(KC_Q)
+#define DM_J    LALT_T(KC_J)
+#define DM_K    LSFT_T(KC_K)
+#define DM_M    RSFT_T(KC_M)
+#define DM_W    LALT_T(KC_W)
+#define DM_V    RGUI_T(KC_V)
+#define DM_Z    RCTL_T(KC_Z)
 // QWERTY
-#define QM_Z CTL_T(KC_Z)
-#define QM_X LGUI_T(KC_X)
-#define QM_C LALT_T(KC_C)
-#define QM_V LSFT_T(KC_V)
-#define QM_M LSFT_T(KC_M)
+#define QM_Z    LCTL_T(KC_Z)
+#define QM_X    LGUI_T(KC_X)
+#define QM_C    LALT_T(KC_C)
+#define QM_V    LSFT_T(KC_V)
+#define QM_M    RSFT_T(KC_M)
 #define QM_COMM LALT_T(KC_COMM)
-#define QM_DOT LGUI_T(KC_DOT)
-#define QM_SLSH LCTL_T(KC_SLSH)
+#define QM_DOT  RGUI_T(KC_DOT)
+#define QM_SLSH RCTL_T(KC_SLSH)
 // COLEMAK-DH
-#define CM_Z CTL_T(KC_Z)
-#define CM_X LGUI_T(KC_X)
-#define CM_C LALT_T(KC_C)
-#define CM_D LSFT_T(KC_D)
-#define CM_H LSFT_T(KC_H)
+#define CM_Z    LCTL_T(KC_Z)
+#define CM_X    LGUI_T(KC_X)
+#define CM_C    LALT_T(KC_C)
+#define CM_D    LSFT_T(KC_D)
+#define CM_H    RSFT_T(KC_H)
 #define CM_COMM LALT_T(KC_COMM)
-#define CM_DOT LGUI_T(KC_DOT)
-#define CM_SLSH LCTL_T(KC_SLSH)
+#define CM_DOT  RGUI_T(KC_DOT)
+#define CM_SLSH RCTL_T(KC_SLSH)
 
 #define NKR_TOG MAGIC_TOGGLE_NKRO
 
