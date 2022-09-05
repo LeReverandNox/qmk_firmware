@@ -19,6 +19,10 @@
 [_QWERTY] = LAYOUT_ortho_4x12(
     KC_GRV,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_QUOT,
     LT_ESCG, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
+#ifdef TAP_DANCE_ENABLE
     LT_TAB,  QM_Z,    QM_X,    QM_C,    QM_V,    KC_B,    KC_N,    QM_M,    QM_COMM, QM_DOT,  QM_SLSH, TD_RSFT,
+#else
+    LT_TAB,  QM_Z,    QM_X,    QM_C,    QM_V,    KC_B,    KC_N,    QM_M,    QM_COMM, QM_DOT,  QM_SLSH, KC_RSFT,
+#endif // TAP_DANCE_ENABLE
     KC_LCTL, KC_LGUI, KC_LALT, NAV,     KC_SPC,  NUM,     SYM,     KC_BSPC, KC_RALT, OS_LALT, OS_RGUI, OS_RCTL
 ),
