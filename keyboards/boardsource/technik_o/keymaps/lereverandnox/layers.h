@@ -5,17 +5,21 @@ enum layers {
   _QWERTY = 0,
   _DVORAK,
   _COLEMAKDH,
+#ifdef GAMING_DVORAK
   _GAMING,
-  _GAMING_RAISE,
   _GAMING_LOWER,
+  _GAMING_RAISE,
   _GAMING_ADJUST,
-  _MOUSE,
+#endif // GAMING_DVORAK
   _NAV,
   _SYM,
   _NUM,
+  _MEDIA,
+  _ADJUST,
 #ifdef PLOVER_ENABLED
   _PLOVER,
-#endif
-  _MEDIA,
-  _ADJUST
+#endif // PLOVER_ENABLED
+#ifdef MOUSEKEY_ENABLE
+  _MOUSE
+#endif // MOUSEKEY_ENABLE
 };
