@@ -1,27 +1,32 @@
 // clang-format off
-/* Adjust
- *                         v------------------------RGB CONTROL----------------------------v
- * ,-----------------------------------------------------------------------------------------------.
- * |Mu Tog |Ck Tog |Au Tog | RGB   |RGBMOD | HUE+  | HUE-  | SAT+  | SAT-  |BRGTH+ |BRGTH- | Make  |
- * |       |       |       |       |       |       |       |       |       |       |       |       |
- * |-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------|
- * |Mu Mod |Ck Rst |       |Ag Tog |NKRO T |Timbr1 |Timbr2 |Timbr3 |Timbr4 |       |Reset  |EepRst |
- * |       |       |       |       |       |       |       |       |       |       |       |       |
- * |-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------|
- * |Voice+ |Ck P+  |GUIOff |GUIOn  |       |TempUP |TempDN |TempDF |       |       |       |Debug  |
- * |       |       |       |       |       |       |       |       |       |       |       |       |
- * |-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------|
- * |Voice- |Ck P-  |       |       |       |       |       |       |Plover |Gaming |Qwerty |Dvorak |
- * |       |       |       |       |       |       |       |       |       |       |       |       |
- * `-----------------------------------------------------------------------------------------------'
+/*
+ * Adjust
+ *
+ * v------------------------RGB CONTROL------------------v
+ * ,-----------------------------------------------------------------------------------------------------------.
+ * | Toggle | Mode + | HUE +  | SAT +  | BRI +  | SPE +  |        |        |        |        |        |  Make  |
+ * |        |        |        |        |        |        |        |        |        |        |        |        |
+ * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+ * |        | Mode - | HUE -  | SAT -  | BRI -  | SPE -  |        |        |        |        | Reset  | EepRst |
+ * |        |        |        |        |        |        |        |        |        |        |        |        |
+ * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+ * | Mu Mod | Voice+ | Ck Rst |  Ck P+ |        |        |        |        |        |        |        |        |
+ * |        |        |        |        |        |        |        |        |        |        |        |        |
+ * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+ * | Mu Tog | Voice- | Ck Tog |  Ck P- | Au Tog |        |        |        | Gaming |Colemak | Qwerty | Dvorak |
+ * |        |        |        |        |        |        |        |        |        |        |        |        |
+ * `-----------------------------------------------------------------------------------------------------------'
+ * ^------------------AUDIO CONTROL-------------^
  */
-[_ADJUST] = LAYOUT_planck_grid(
-    MU_TOG,  CK_TOGG, AU_TOG,  RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, KC_MAKE,
-    MU_MOD,  CK_RST,  XXXXXXX, AG_TOGG, NKR_TOG, TIMBR_1, TIMBR_2, TIMBR_3, TIMBR_4, XXXXXXX, RESET,   EEP_RST,
-    MUV_IN,  CK_UP,   GUI_OFF, GUI_ON,  XXXXXXX, TEMP_UP, TEMP_DN, TEMP_DF, XXXXXXX, XXXXXXX, XXXXXXX, DEBUG,
+[_ADJUST] = LAYOUT(
+    RGB_TOG, RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, RGB_SPI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_MAKE,
+    XXXXXXX, RGB_RMOD,RGB_HUD, RGB_SAD, RGB_VAD, RGB_SPD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT, EE_CLR,
+    MU_MOD,  MUV_IN,  CK_RST,  CK_UP,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 #ifdef PLOVER_ENABLED
-    MUV_DE,  CK_DOWN, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, PLOVER,  GAMING,  QWERTY,  DVORAK
+    MU_TOG,  MUV_DE,  CK_TOGG, CK_DOWN, AU_TOG,  XXXXXXX, XXXXXXX, XXXXXXX, PLOVER,  CLMKDT,  QWERTY,  DVORAK
+#elseif GAMING_DVORAK
+    MU_TOG,  MUV_DE,  CK_TOGG, CK_DOWN, AU_TOG,  XXXXXXX, XXXXXXX, XXXXXXX, GAMING,  CLMKDH,  QWERTY,  DVORAK
 #else
-    MUV_DE,  CK_DOWN, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, GAMING,  CLMKDH,  QWERTY,  DVORAK
-#endif
+    MU_TOG,  MUV_DE,  CK_TOGG, CK_DOWN, AU_TOG,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, CLMKDH,  QWERTY,  DVORAK
+#endif // PLOVER_ENABLED || GAMING_DVORAK
 ),
