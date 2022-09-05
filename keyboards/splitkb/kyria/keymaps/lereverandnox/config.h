@@ -22,7 +22,7 @@
 // Mouse wheel
 #    undef MOUSEKEY_WHEEL_DELAY
 #    define MOUSEKEY_WHEEL_DELAY    0
-#endif
+#endif // MOUSEKEY_ENABLE
 
 // From https://www.reddit.com/r/olkb/comments/c0y085/rotary_encoder_general_help_request/
 // The default value of 100 doesn't work to handle VOLU/VOLD with an encoder
@@ -41,7 +41,7 @@
 /* #    define RGBLIGHT_EFFECT_SNAKE           // Enable snake animation mode. */
 /* #    define RGBLIGHT_EFFECT_STATIC_GRADIENT // Enable static gradient mode. */
 /* #    define RGBLIGHT_EFFECT_TWINKLE         // Enable twinkle animation mode. */
-#endif
+#endif // RGBLIGHT_ENABLE
 
 // Firmware size reduction (https://thomasbaart.nl/2018/12/01/reducing-firmware-size-in-qmk/)
 #ifndef NO_DEBUG

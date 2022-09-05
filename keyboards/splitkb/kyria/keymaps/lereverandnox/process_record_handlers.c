@@ -1,7 +1,7 @@
 #include "process_record_handlers.h"
 
 bool is_mouse_active = false;
-bool extern is_caps_on;
+extern bool is_caps_on;
 
 bool QWERTY_handler(keyrecord_t *record) {
     if (record->event.pressed) {
@@ -34,7 +34,7 @@ bool MOUSE_T_handler(keyrecord_t *record) {
     }
     return true;
 }
-#endif
+#endif // MOUSEKEY_ENABLE
 
 bool KC_MAKE_handler(keyrecord_t *record) {
     if (!record->event.pressed) {
