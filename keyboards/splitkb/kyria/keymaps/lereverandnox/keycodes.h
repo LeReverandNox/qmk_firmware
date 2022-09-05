@@ -20,7 +20,7 @@ enum keycodes {
 #define ADJUST  MO(_ADJUST)
 #ifdef MOUSEKEY_ENABLE
 #define MOUSE_T TG(_MOUSE)
-#endif
+#endif // MOUSEKEY_ENABLE
 #define MEDIA   MO(_MEDIA)
 
 // Layer Tap
