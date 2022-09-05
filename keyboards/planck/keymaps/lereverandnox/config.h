@@ -17,7 +17,7 @@
 // Lower the volume
 #    define AUDIO_DAC_SAMPLE_MAX 750U
 
-#endif
+#endif // AUDIO_ENABLE
 
 // Most tactile encoders have detents every 4 stages
 #define ENCODER_RESOLUTION 4
