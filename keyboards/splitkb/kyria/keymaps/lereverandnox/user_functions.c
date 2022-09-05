@@ -15,7 +15,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case MOUSE_T:
             return MOUSE_T_handler(record);
             break;
-#endif
+#endif // MOUSEKEY_ENABLE
         case KC_MAKE:
             return KC_MAKE_handler(record);
             break;
@@ -139,13 +139,13 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     return false;
 }
 
-const uint16_t PROGMEM encoder_actions[][15] = { \
+const uint16_t PROGMEM encoder_actions[][15] = {
     /* None    CTRL     GUI      ALT      SHIFT    C+G      C+A      C+S      G+A      G+S      A+S      C+G+A    C+A+S    G+A+S    C+G+A+S    */
     /* 0       1        2        3        4        5        6        7        8        9        10       11       12       13       14         */
     { KC_PGDN, KC_DOWN, XXXXXXX, KC_VOLU, KC_WFWD, TABNEXT, XXXXXXX, KC_RGHT, KC_MUTE, XXXXXXX, KC_MNXT, XXXXXXX, XXXXXXX, KC_MUTE, KC_BRIU }, // Clockwise
     { KC_PGUP, KC_UP,   XXXXXXX, KC_VOLD, KC_WBAK, TABPREV, XXXXXXX, KC_LEFT, KC_MPLY, XXXXXXX, KC_MPRV, XXXXXXX, XXXXXXX, KC_MPLY, KC_BRID }  // Anti-Clockwise
 };
-#endif
+#endif // ENCODER_ENABLE
 
 #ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) { return OLED_ROTATION_180; }
@@ -179,7 +179,7 @@ bool oled_task_user(void) {
             case _MOUSE:
                 oled_write_P(PSTR("Mouse\n"), false);
                 break;
-#endif
+#endif // MOUSEKEY_ENABLE
             case _NAV:
                 oled_write_P(PSTR("Nav\n"), false);
                 break;
@@ -205,7 +205,7 @@ bool oled_task_user(void) {
         oled_write_P(is_caps_word_on()         ? PSTR("CAPWRD ") : PSTR("       "), false);
 #else
         oled_write_P(led_usb_state.num_lock    ? PSTR("NUMLCK ") : PSTR("       "), false);
-#endif
+#endif // CAPS_WORD_ENABLE
         oled_write_P(led_usb_state.caps_lock   ? PSTR("CAPLCK ") : PSTR("       "), false);
         oled_write_P(led_usb_state.scroll_lock ? PSTR("SCRLCK ") : PSTR("       "), false);
     } else {
@@ -225,4 +225,4 @@ bool oled_task_user(void) {
     }
     return false;
 }
-#endif
+#endif // OLED_ENABLE
