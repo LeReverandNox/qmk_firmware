@@ -29,7 +29,7 @@
 // #define PERMISSIVE_HOLD
 
 // Choose the layout for the gaming layer. For now DVORAK is the only option ^^'
-#define GAMING_DVORAK
+/* #define GAMING_DVORAK */
 
 // Force enable NKRO
 #define FORCE_NKRO
