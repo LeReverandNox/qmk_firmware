@@ -11,9 +11,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case CLMKDH:
             return COLEMAKDH_handler(record);
             break;
+#ifdef GAMING_DVORAK
         case GAMING:
             return GAMING_handler(record);
             break;
+        case EXT_GAM:
+            return EXT_GAM_handler(record);
+            break;
+#endif // GAMING_DVORAK
 #ifdef PLOVER_ENABLED
         case PLOVER:
             return PLOVER_handler(record);
@@ -21,59 +26,29 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case EXT_PLV:
             return EXT_PLV_handler(record);
             break;
-#endif
-        case EXT_GAM:
-            return EXT_GAM_handler(record);
-            break;
+#endif // PLOVER_ENABLED
+#ifdef MOUSEKEY_ENABLE
         case MOUSE_T:
             return MOUSE_T_handler(record);
             break;
+#endif // MOUSEKEY_ENABLE
         case KC_MAKE:
             return KC_MAKE_handler(record);
             break;
         case KC_CAPS:
             return KC_CAPS_handler(record);
             break;
+#ifdef UNICODE_ENABLE
         case KC_SHRG:
             return KC_SHRG_handler(record);
             break;
+#endif // UNICODE_ENABLE
         case GUI_OFF:
             return GUI_OFF_handler(record);
             break;
         case GUI_ON:
             return GUI_ON_handler(record);
             break;
-#ifdef AUDIO_ENABLE
-        case TIMBR_1:
-            set_timbre(TIMBRE_12);
-            return false;
-            break;
-        case TIMBR_2:
-            set_timbre(TIMBRE_25);
-            return false;
-            break;
-        case TIMBR_3:
-            set_timbre(TIMBRE_50);
-            return false;
-            break;
-        case TIMBR_4:
-            set_timbre(TIMBRE_75);
-            return false;
-            break;
-        case TEMP_UP:
-            increase_tempo(10);
-            return false;
-            break;
-        case TEMP_DN:
-            decrease_tempo(10);
-            return false;
-            break;
-        case TEMP_DF:
-            set_tempo(TEMPO_DEFAULT);
-            set_timbre(TIMBRE_DEFAULT);
-            return false;
-            break;
-#endif
     }
     return process_record_secrets(keycode, record);
 }
@@ -88,20 +63,16 @@ void matrix_scan_user(void) {
 
 layer_state_t layer_state_set_user(layer_state_t state) {
     state = update_tri_layer_state(state, _SYM, _NUM, _ADJUST);
+#ifdef GAMING_DVORAK
     state = update_tri_layer_state(state, _GAMING_LOWER, _GAMING_RAISE, _GAMING_ADJUST);
+#endif // GAMING_DVORAK
     return state;
 }
 
 void matrix_init_user(void) {
-#ifdef AUDIO_ENABLE
-    set_tempo(150);
-#endif
 }
 
 void keyboard_post_init_user(void) {
-#ifdef AUDIO_CLICKY
-    clicky_off();
-#endif
 }
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
