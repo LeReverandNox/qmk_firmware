@@ -47,7 +47,7 @@ void tap_shift_caps(qk_tap_dance_state_t *state, uint8_t shift) {
         }
     }
 }
-#endif
+#endif // TAP_DANCE_ENABLE
 
 void unregister_code_mods(uint8_t mods) {
     if (mods & MOD_MASK_CTRL) {
