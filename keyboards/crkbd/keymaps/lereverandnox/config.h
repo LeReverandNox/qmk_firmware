@@ -6,8 +6,6 @@
 // #    define MASTER_RIGHT
 #    define EE_HANDS
 
-#    define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
-
 #ifdef RGBLIGHT_ENABLE
 #undef RGBLED_NUM
 #    define RGBLED_NUM 6
@@ -137,6 +135,9 @@
 
 #    define NO_ACTION_MACRO
 #    define NO_ACTION_FUNCTION
-/* #    define NO_ACTION_LAYER	// (-1368) */
+/* #    define NO_ACTION_LAYER   // (-1368) */
 /* #    define NO_ACTION_ONESHOT // (-382) */
 /* #    define NO_ACTION_TAPPING // (-2186) */
+
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+/* #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD */
