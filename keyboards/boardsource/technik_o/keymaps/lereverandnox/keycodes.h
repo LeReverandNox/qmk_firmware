@@ -5,19 +5,23 @@ enum keycodes {
     QWERTY = SAFE_RANGE,
     DVORAK,
     CLMKDH,
-    GAMING,
-#ifdef PLOVER_ENABLED
-    PLOVER,
-    EXT_PLV,
-#endif
-    EXT_GAM,
     KC_MAKE,
     KC_SEC1,
     KC_SEC2,
     KC_SEC3,
     KC_SEC4,
     KC_SEC5,
+#ifdef PLOVER_ENABLED
+    PLOVER,
+    EXT_PLV,
+#endif // PLOVER_ENABLED
+#ifdef GAMING_DVORAK
+    GAMING,
+    EXT_GAM,
+#endif // GAMING_DVORAK
+#ifdef UNICODE_ENABLE
     KC_SHRG
+#endif // UNICODE_ENABLE
 };
 
 // Layers
@@ -25,10 +29,14 @@ enum keycodes {
 #define SYM     MO(_SYM)
 #define NUM     MO(_NUM)
 #define ADJUST  MO(_ADJUST)
-#define MOUSE_T TG(_MOUSE)
 #define MEDIA   MO(_MEDIA)
+#ifdef GAMING_DVORAK
 #define G_RAISE MO(_GAMING_RAISE)
 #define G_LOWER MO(_GAMING_LOWER)
+#endif // GAMING_DVORAK
+#ifdef MOUSEKEY_ENABLE
+#define MOUSE_T TG(_MOUSE)
+#endif // MOUSEKEY_ENABLE
 
 // Layer Tap
 #define LT_ESCG LT(MEDIA, KC_ESC)
