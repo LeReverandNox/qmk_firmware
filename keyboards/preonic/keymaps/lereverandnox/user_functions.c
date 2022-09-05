@@ -11,9 +11,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case CLMKDH:
             return COLEMAKDH_handler(record);
             break;
+#ifdef GAMING_DVORAK
         case GAMING:
             return GAMING_handler(record);
             break;
+        case EXT_GAM:
+            return EXT_GAM_handler(record);
+            break;
+#endif // GAMING_DVORAK
 #ifdef PLOVER_ENABLED
         case PLOVER:
             return PLOVER_handler(record);
@@ -21,16 +26,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case EXT_PLV:
             return EXT_PLV_handler(record);
             break;
-#endif
-        case EXT_GAM:
-            return EXT_GAM_handler(record);
-            break;
+#endif // PLOVER_ENABLED
+#ifdef AUDIO_ENABLE
         case MU_TOG:
             return MU_TOG_handler(record);
             break;
+#endif // AUDIO_ENABLE
+#ifdef MOUSEKEY_ENABLE
         case MOUSE_T:
             return MOUSE_T_handler(record);
             break;
+#endif // MOUSEKEY_ENABLE
         case KC_MAKE:
             return KC_MAKE_handler(record);
             break;
@@ -73,7 +79,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             set_timbre(TIMBRE_DEFAULT);
             return false;
             break;
-#endif
+#endif // AUDIO_ENABLE
     }
     return process_record_secrets(keycode, record);
 }
@@ -93,24 +99,26 @@ layer_state_t layer_state_set_user(layer_state_t state) {
             if (is_music_on()) {
                 stop_all_notes();
             }
-#endif
+#endif // AUDIO_ENABLE
             break;
     }
     state = update_tri_layer_state(state, _SYM, _NUM, _ADJUST);
+#ifdef GAMING_DVORAK
     state = update_tri_layer_state(state, _GAMING_LOWER, _GAMING_RAISE, _GAMING_ADJUST);
+#endif // GAMING_DVORAK
     return state;
 }
 
 void matrix_init_user(void) {
 #ifdef AUDIO_ENABLE
     set_tempo(180);
-#endif
+#endif // AUDIO_ENABLE
 }
 
 void keyboard_post_init_user(void) {
 #ifdef AUDIO_CLICKY
     clicky_off();
-#endif
+#endif // AUDIO_CLICKY
 }
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
@@ -134,6 +142,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
+#ifdef ENCODER_ENABLE
 bool encoder_update_user(uint8_t index, bool clockwise) {
     static uint16_t kc;
     uint8_t mods = get_mods();
@@ -214,9 +223,10 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     return true;
 }
 
-const uint16_t PROGMEM encoder_actions[][15] = { \
+const uint16_t PROGMEM encoder_actions[][15] = {
     /* None    CTRL     GUI      ALT      SHIFT    C+G      C+A      C+S      G+A      G+S      A+S      C+G+A    C+A+S    G+A+S    C+G+A+S    */
     /* 0       1        2        3        4        5        6        7        8        9        10       11       12       13       14         */
     { KC_PGDN, KC_DOWN, XXXXXXX, KC_VOLU, KC_WFWD, TABNEXT, XXXXXXX, KC_RGHT, KC_MUTE, XXXXXXX, KC_MNXT, XXXXXXX, XXXXXXX, KC_MUTE, KC_BRIU }, // Clockwise
     { KC_PGUP, KC_UP,   XXXXXXX, KC_VOLD, KC_WBAK, TABPREV, XXXXXXX, KC_LEFT, KC_MPLY, XXXXXXX, KC_MPRV, XXXXXXX, XXXXXXX, KC_MPLY, KC_BRID }  // Anti-Clockwise
 };
+#endif // ENCODER_ENABLE
