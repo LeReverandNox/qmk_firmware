@@ -30,7 +30,7 @@ bool MOUSE_T_handler(keyrecord_t *record) {
     }
     return true;
 }
-#endif
+#endif // MOUSEKEY_ENABLE
 
 bool KC_MAKE_handler(keyrecord_t *record) {
     if (!record->event.pressed) {

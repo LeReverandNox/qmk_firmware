@@ -18,10 +18,10 @@ enum keycodes {
 #define SYM      MO(_SYM)
 #define NUM      MO(_NUM)
 #define ADJUST   MO(_ADJUST)
+#define MEDIA    MO(_MEDIA)
 #ifdef MOUSEKEY_ENABLE
 #define MOUSE_T  TG(_MOUSE)
-#endif
-#define MEDIA    MO(_MEDIA)
+#endif // MOUSEKEY_ENABLE
 
 // Layer Tap
 #define LT_ESCG LT(MEDIA, KC_ESC)

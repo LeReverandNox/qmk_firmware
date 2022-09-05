@@ -23,6 +23,6 @@
     LT_TAB,  DM_SCLN, DM_Q,    DM_J,    DM_K,    KC_X,                         KC_B,    DM_M,    DM_W,    DM_V,    DM_Z,    TD_RSFT,
 #else
     LT_TAB,  DM_SCLN, DM_Q,    DM_J,    DM_K,    KC_X,                         KC_B,    DM_M,    DM_W,    DM_V,    DM_Z,    KC_RSFT,
-#endif
+#endif // TAP_DANCE_ENABLE
                                         NAV,     KC_SPC,  NUM,        SYM,     KC_BSPC, KC_RALT
 ),
