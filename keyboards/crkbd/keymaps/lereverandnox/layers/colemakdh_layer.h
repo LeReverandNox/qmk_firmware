@@ -23,6 +23,6 @@
     LT_TAB,  CM_Z,    CM_X,    CM_C,    CM_D,    KC_V,                         KC_K,    CM_H,    CM_COMM, CM_DOT,  CM_SLSH, TD_RSFT,
 #else
     LT_TAB,  CM_Z,    CM_X,    CM_C,    CM_D,    KC_V,                         KC_K,    CM_H,    CM_COMM, CM_DOT,  CM_SLSH, KC_RSFT,
-#endif
+#endif // TAP_DANCE_ENABLE
                                         NAV,     KC_SPC,  NUM,        SYM,     KC_BSPC, KC_RALT
 ),
