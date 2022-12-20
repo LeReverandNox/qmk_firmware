@@ -70,7 +70,7 @@ void matrix_scan_user(void) {
 /*     } */
 /* } */
 
-/* void rgb_matrix_indicators_user(void) { */
+/* bool rgb_matrix_indicators_user(void) { */
 /*     if (rgb_matrix_config.enable) { */
 /*         switch (get_highest_layer(layer_state)) { */
 /*         case _MOUSE: */
@@ -85,6 +85,7 @@ void matrix_scan_user(void) {
 /*         } */
 /*         } */
 /*         /\* check_default_layer(0, LED_FLAG_MODIFIER); *\/ */
+/*         return true */
 /*     } */
 /* } */
 #endif // RGB_MATRIX_ENABLE
