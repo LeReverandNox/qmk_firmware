@@ -9,7 +9,7 @@ void matrix_scan_user(void);
 void matrix_init_user(void);
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record);
 layer_state_t layer_state_set_user(layer_state_t state);
-void rgb_matrix_indicators_user(void);
+bool rgb_matrix_indicators_user(void);
 
 #ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation);
