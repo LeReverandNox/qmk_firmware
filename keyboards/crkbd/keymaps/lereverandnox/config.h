@@ -105,6 +105,9 @@
 #    define TAPPING_TERM_PER_KEY
 // #    define RETRO_TAPPING
 // #    define PERMISSIVE_HOLD
+// Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
+#define TAPPING_FORCE_HOLD
+
 
 // Force enable NKRO
 #define FORCE_NKRO
