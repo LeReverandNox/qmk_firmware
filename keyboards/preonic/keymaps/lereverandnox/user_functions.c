@@ -125,7 +125,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LT_TAB:
         case LT_ESCG:
-            return 150;
+            return TAPPING_TERM - 50;
         // Shorter tapping_term for Shift
         // Dvorak
         case DM_K:
@@ -136,7 +136,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         // Colemak-DH
         case CM_D:
         case CM_H:
-            return 175;
+            return TAPPING_TERM - 25;
         default:
             return TAPPING_TERM;
     }
