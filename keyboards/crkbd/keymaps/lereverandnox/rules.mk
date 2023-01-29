@@ -8,6 +8,7 @@ OLED_DRIVER       = SSD1306
 CAPS_WORD_ENABLE  = yes
 LTO_ENABLE        = yes
 BOOTLOADER        = atmel-dfu # Because of Elite-C's
+DYNAMIC_TAPPING_TERM_ENABLE = yes
 SRC += helpers.c
 SRC += process_record_handlers.c
 SRC += user_functions.c
