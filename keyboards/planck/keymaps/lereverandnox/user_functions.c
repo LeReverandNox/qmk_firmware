@@ -28,8 +28,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
 #endif // PLOVER_ENABLED
 #ifdef AUDIO_ENABLE
-        case MU_TOG:
-            return MU_TOG_handler(record);
+        case MU_TOGG:
+            return MU_TOGG_handler(record);
             break;
 #endif // AUDIO_ENABLE
 #ifdef MOUSEKEY_ENABLE
