@@ -9,7 +9,7 @@ void tap_key(uint16_t keycode) {
 }
 
 #ifdef TAP_DANCE_ENABLE
-void tap_shift_caps(qk_tap_dance_state_t *state, uint8_t shift) {
+void tap_shift_caps(tap_dance_state_t *state, uint8_t shift) {
     uint8_t mods      = get_mods();
     uint8_t os_mods   = get_oneshot_mods();
     uint8_t weak_mods = get_weak_mods();

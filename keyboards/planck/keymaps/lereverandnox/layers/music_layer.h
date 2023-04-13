@@ -12,7 +12,7 @@
  * |        |        |        |        |        |        |        |        |        |        |        |        |
  * |        |        |        |        |        |        |        |        |        |        |        |        |
  * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
- * | MU_TOG |   Rec  |  Stop  |  Play  | Speed+ | Speed- |        |        |        |        |        |        |
+ * | Mu Tog |  Rec   |  Stop  |  Play  | Speed+ | Speed- |        |        |        |        |        |        |
  * |        |        |        |        |        |        |        |        |        |        |        |        |
  * `-----------------------------------------------------------------------------------------------------------'
  */
@@ -20,5 +20,5 @@
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-    MU_TOG,  KC_LCTL, KC_LALT, KC_LGUI, KC_UP,   KC_DOWN, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+    MU_TOGG, KC_LCTL, KC_LALT, KC_LGUI, KC_UP,   KC_DOWN, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 ),
