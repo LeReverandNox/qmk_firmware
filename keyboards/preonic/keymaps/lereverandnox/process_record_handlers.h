@@ -18,7 +18,7 @@ bool PLOVER_handler(keyrecord_t *record);
 bool EXT_PLV_handler(keyrecord_t *record);
 #endif // PLOVER_ENABLED
 #ifdef AUDIO_ENABLE
-bool MU_TOG_handler(keyrecord_t *record);
+bool MU_TOGG_handler(keyrecord_t *record);
 #endif // AUDIO_ENABLE
 #ifdef MOUSEKEY_ENABLE
 bool MOUSE_T_handler(keyrecord_t *record);
