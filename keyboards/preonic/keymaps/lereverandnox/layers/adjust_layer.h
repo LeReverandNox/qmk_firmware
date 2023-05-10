@@ -16,7 +16,7 @@
  * |  Mu +  | Voice+ | Ck Rst |  Ck P+ |        |        |        |        |        |        |        |        |
  * |        |        |        |        |        |        |        |        |        |        |        |        |
  * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
- * | Mu Tog | Voice- | Ck Tog |  Ck P- | Au Tog |        |        |        | Gaming |Colemak | Qwerty | Dvorak |
+ * | Mu Tog | Voice- | Ck Tog |  Ck P- | Au Tog |        |        |        | Gaming |        | Qwerty |Colemak |
  * |        |        |        |        |        |        |        |        |        |        |        |        |
  * `-----------------------------------------------------------------------------------------------------------'
  * ^------------------AUDIO CONTROL-------------^
@@ -27,10 +27,10 @@
     XXXXXXX, RGB_RMOD,RGB_HUD, RGB_SAD, RGB_VAD, RGB_SPD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT, EE_CLR,
     MU_NEXT, AU_NEXT, CK_RST,  CK_UP,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 #ifdef PLOVER_ENABLED
-    MU_TOGG, AU_PREV, CK_TOGG, CK_DOWN, AU_TOGG, XXXXXXX, XXXXXXX, XXXXXXX, PLOVER,  CLMKDT,  QWERTY,  DVORAK
+    MU_TOGG, AU_PREV, CK_TOGG, CK_DOWN, AU_TOGG, XXXXXXX, XXXXXXX, XXXXXXX, PLOVER,  XXXXXXX, QWERTY,  CLMKDH
 #elseif GAMING_DVORAK
-    MU_TOGG, AU_PREV, CK_TOGG, CK_DOWN, AU_TOGG, XXXXXXX, XXXXXXX, XXXXXXX, GAMING,  CLMKDH,  QWERTY,  DVORAK
+    MU_TOGG, AU_PREV, CK_TOGG, CK_DOWN, AU_TOGG, XXXXXXX, XXXXXXX, XXXXXXX, GAMING,  XXXXXXX, QWERTY,  CLMKDH
 #else
-    MU_TOGG, AU_PREV, CK_TOGG, CK_DOWN, AU_TOGG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, CLMKDH,  QWERTY,  DVORAK
+    MU_TOGG, AU_PREV, CK_TOGG, CK_DOWN, AU_TOGG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QWERTY,  CLMKDH
 #endif // PLOVER_ENABLED || GAMING_DVORAK
 ),
