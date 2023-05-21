@@ -1,4 +1,6 @@
 // clang-format off
+
+#ifdef GAMING_DVORAK
 /*
  * Gaming Dvorak
  *
@@ -15,7 +17,7 @@
  * |  Shift |   ; :  |    Q   |    J   |    K   |    X   |    B   |    M   |    W   |    V   |    Z   |  Shift |
  * |        |        |        |        |        |        |        |        |        |        |        |        |
  * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
- * |  Ctrl  |   GUI  |   Alt  |   Nav  |  Space |  Lower |  Raise |  Bkspc |  RAlt  |   Alt  |   GUI  |  Ctrl  |
+ * |  Ctrl  |   GUI  |   Alt  |   Tab  |  Space |  Lower |  Raise |  Bkspc |  RAlt  |   Alt  |   GUI  |  Ctrl  |
  * |        |        |        |        |        |        |        |        |        |        |        |        |
  * `-----------------------------------------------------------------------------------------------------------'
  */
@@ -26,6 +28,63 @@
     KC_LSFT, KC_SCLN, KC_Q,    KC_J,   KC_K,   KC_X,    KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_RSFT,
     KC_LCTL, KC_LGUI, KC_LALT, KC_TAB, KC_SPC, G_LOWER, G_RAISE, KC_BSPC, KC_RALT, KC_LALT, KC_RGUI, KC_RCTL
 ),
+#elif defined(GAMING_COLEMAK)
+/*
+ * Gaming Colemak
+ *
+ * ,-----------------------------------------------------------------------------------------------------------.
+ * | BAS_ENC|    1   |    2   |    3   |    4   |    5   |    6   |    7   |    8   |    9   |    0   |        |
+ * |        |        |        |        |        |        |        |        |        |        |        |        |
+ * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+ * |   ` ~  |    Q   |    W   |    F   |    P   |    B   |    J   |    L   |    U   |    Y   |   ; :  |   ' "  |
+ * |        |        |        |        |        |        |        |        |        |        |        |        |
+ * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+ * |   Esc  |    A   |    R   |    S   |    T   |    G   |    M   |    N   |    E   |    I   |    O   |  Enter |
+ * |        |        |        |        |        |        |        |        |        |        |        |        |
+ * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+ * |  Shift |    Z   |    X   |    C   |    D   |    V   |    K   |    H   |   , <  |   . >  |   / ?  |  Shift |
+ * |        |        |        |        |        |        |        |        |        |        |        |        |
+ * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+ * |  Ctrl  |   GUI  |   Alt  |   Tab  |  Space |  Lower |  Raise |  Bkspc |  RAlt  |   Alt  |   GUI  |  Ctrl  |
+ * |        |        |        |        |        |        |        |        |        |        |        |        |
+ * `-----------------------------------------------------------------------------------------------------------'
+ */
+[_GAMING] = LAYOUT_preonic_grid(
+    BAS_ENC, KC_1,    KC_2,    KC_3,   KC_4,   KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    XXXXXXX,
+    KC_GRV,  KC_Q,    KC_W,    KC_F,   KC_P,   KC_B,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_QUOT,
+    KC_ESC,  KC_A,    KC_R,    KC_S,   KC_T,   KC_G,    KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_ENT,
+    KC_LSFT, KC_Z,    KC_X,    KC_C,   KC_D,   KC_V,    KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
+    KC_LCTL, KC_LGUI, KC_LALT, KC_TAB, KC_SPC, G_LOWER, G_RAISE, KC_BSPC, KC_RALT, KC_LALT, KC_RGUI, KC_RCTL
+),
+#else
+/*
+ * Gaming Qwerty
+ *
+ * ,-----------------------------------------------------------------------------------------------------------.
+ * | BAS_ENC|    1   |    2   |    3   |    4   |    5   |    6   |    7   |    8   |    9   |    0   |        |
+ * |        |        |        |        |        |        |        |        |        |        |        |        |
+ * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+ * |   ` ~  |    Q   |    W   |    E   |    R   |    T   |    Y   |    U   |    I   |    O   |    P   |   ' "  |
+ * |        |        |        |        |        |        |        |        |        |        |        |        |
+ * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+ * |   Esc  |    A   |    S   |    D   |    F   |    G   |    H   |    J   |    K   |    L   |   ; :  |  Enter |
+ * |        |        |        |        |        |        |        |        |        |        |        |        |
+ * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+ * |  Shift |    Z   |    X   |    C   |    V   |    B   |    N   |    M   |   , <  |   . >  |   / ?  |  Shift |
+ * |        |        |        |        |        |        |        |        |        |        |        |        |
+ * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+ * |  Ctrl  |   GUI  |   Alt  |   Tab  |  Space |  Lower |  Raise |  Bkspc |  RAlt  |   Alt  |   GUI  |  Ctrl  |
+ * |        |        |        |        |        |        |        |        |        |        |        |        |
+ * `-----------------------------------------------------------------------------------------------------------'
+ */
+[_GAMING] = LAYOUT_preonic_grid(
+    BAS_ENC, KC_1,    KC_2,    KC_3,   KC_4,   KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    XXXXXXX,
+    KC_GRV,  KC_Q,    KC_W,    KC_E,   KC_R,   KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_QUOT,
+    KC_ESC,  KC_A,    KC_S,    KC_D,   KC_F,   KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
+    KC_LSFT, QM_Z,    QM_X,    QM_C,   QM_V,   KC_B,    KC_N,    QM_M,    QM_COMM, QM_DOT,  QM_SLSH, KC_RSFT,
+    KC_LCTL, KC_LGUI, KC_LALT, KC_TAB, KC_SPC, G_LOWER, G_RAISE, KC_BSPC, KC_RALT, KC_LALT, KC_RGUI, KC_RCTL
+),
+#endif // GAMING_*
 
 /*
  * Gaming Lower (Num)
