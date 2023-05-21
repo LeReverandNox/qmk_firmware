@@ -9,10 +9,10 @@ bool KC_MAKE_handler(keyrecord_t *record);
 bool KC_CAPS_handler(keyrecord_t *record);
 bool GUI_OFF_handler(keyrecord_t *record);
 bool GUI_ON_handler(keyrecord_t *record);
-#ifdef GAMING_DVORAK
+#ifdef GAMING_ENABLE
 bool GAMING_handler(keyrecord_t *record);
 bool EXT_GAM_handler(keyrecord_t *record);
-#endif // GAMING_DVORAK
+#endif // GAMING_ENABLE
 #ifdef PLOVER_ENABLED
 bool PLOVER_handler(keyrecord_t *record);
 bool EXT_PLV_handler(keyrecord_t *record);
