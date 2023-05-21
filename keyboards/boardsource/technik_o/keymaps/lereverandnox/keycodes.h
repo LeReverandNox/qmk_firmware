@@ -15,10 +15,10 @@ enum keycodes {
     PLOVER,
     EXT_PLV,
 #endif // PLOVER_ENABLED
-#ifdef GAMING_DVORAK
+#ifdef GAMING_ENABLE
     GAMING,
     EXT_GAM,
-#endif // GAMING_DVORAK
+#endif // GAMING_ENABLE
 #ifdef UNICODE_ENABLE
     KC_SHRG
 #endif // UNICODE_ENABLE
@@ -30,17 +30,17 @@ enum keycodes {
 #define NUM     MO(_NUM)
 #define ADJUST  MO(_ADJUST)
 #define MEDIA   MO(_MEDIA)
-#ifdef GAMING_DVORAK
+#ifdef GAMING_ENABLE
 #define G_RAISE MO(_GAMING_RAISE)
 #define G_LOWER MO(_GAMING_LOWER)
-#endif // GAMING_DVORAK
+#endif // GAMING_ENABLE
 #ifdef MOUSEKEY_ENABLE
 #define MOUSE_T TG(_MOUSE)
 #endif // MOUSEKEY_ENABLE
 
 // Layer Tap
 #define LT_ESCG LT(MEDIA, KC_ESC)
-#define LT_TAB  KC_TAB
+#define LT_TAB LT(NAV, KC_TAB)
 
 // Below-Home mods
 // DVORAK
