@@ -20,9 +20,9 @@
     KC_GRV,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_SLSH,
     LT_ESCG, KC_A,    KC_O,    KC_E,    KC_U,    KC_I,    KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    KC_ENT,
 #ifdef TAP_DANCE_ENABLE
-    LT_TAB,  DM_SCLN, DM_Q,    DM_J,    DM_K,    KC_X,    KC_B,    DM_M,    DM_W,    DM_V,    DM_Z,    TD_RSFT,
+    KC_TAB,  DM_SCLN, DM_Q,    DM_J,    DM_K,    KC_X,    KC_B,    DM_M,    DM_W,    DM_V,    DM_Z,    TD_RSFT,
 #else
-    LT_TAB,  DM_SCLN, DM_Q,    DM_J,    DM_K,    KC_X,    KC_B,    DM_M,    DM_W,    DM_V,    DM_Z,    KC_RSFT,
+    KC_TAB,  DM_SCLN, DM_Q,    DM_J,    DM_K,    KC_X,    KC_B,    DM_M,    DM_W,    DM_V,    DM_Z,    KC_RSFT,
 #endif // TAP_DANCE_ENABLE
     KC_LCTL, KC_LGUI, KC_LALT, NAV,     KC_SPC,  NUM,     SYM,     KC_BSPC, KC_RALT, KC_LALT, KC_RGUI, KC_RCTL
 ),

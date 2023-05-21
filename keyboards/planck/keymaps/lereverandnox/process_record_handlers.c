@@ -36,7 +36,7 @@ bool COLEMAKDH_handler(keyrecord_t *record) {
     return false;
 }
 
-#ifdef GAMING_DVORAK
+#ifdef GAMING_ENABLE
 bool GAMING_handler(keyrecord_t *record) {
     if (record->event.pressed) {
 #ifdef AUDIO_ENABLE
@@ -60,7 +60,7 @@ bool EXT_GAM_handler(keyrecord_t *record) {
     }
     return false;
 }
-#endif // GAMING_DVORAK
+#endif // GAMING_ENABLE
 
 #ifdef PLOVER_ENABLED
 bool PLOVER_handler(keyrecord_t *record) {

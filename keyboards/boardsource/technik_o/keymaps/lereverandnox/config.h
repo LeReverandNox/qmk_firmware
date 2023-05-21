@@ -6,8 +6,11 @@
 // #define RETRO_TAPPING
 // #define PERMISSIVE_HOLD
 
-// Choose the layout for the gaming layer. For now DVORAK is the only option ^^'
-#define GAMING_DVORAK
+// Whether the gaming layer is enable or not
+#define GAMING_ENABLE
+// Choose the layout for the gaming layer (default to QWERTY)
+/* #define GAMING_DVORAK */
+#define GAMING_COLEMAK
 
 // Force enable NKRO
 #define FORCE_NKRO

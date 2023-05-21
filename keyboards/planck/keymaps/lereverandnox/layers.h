@@ -5,12 +5,12 @@ enum layers {
   _QWERTY = 0,
   _DVORAK,
   _COLEMAKDH,
-#ifdef GAMING_DVORAK
+#ifdef GAMING_ENABLE
   _GAMING,
   _GAMING_RAISE,
   _GAMING_LOWER,
   _GAMING_ADJUST,
-#endif // GAMING_DVORAK
+#endif // GAMING_ENABLE
   _NAV,
   _SYM,
   _NUM,
