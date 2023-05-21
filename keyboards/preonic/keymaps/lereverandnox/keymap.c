@@ -4,9 +4,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #include "layers/dvorak_layer.h"
 #include "layers/qwerty_layer.h"
 #include "layers/colemakdh_layer.h"
-#ifdef GAMING_DVORAK
+#ifdef GAMING_ENABLE
 #    include "layers/gaming_layer.h"
-#endif // GAMING_DVORAK
+#endif // GAMING_ENABLE
 #include "layers/nav_layer.h"
 #include "layers/sym_layer.h"
 #include "layers/num_layer.h"

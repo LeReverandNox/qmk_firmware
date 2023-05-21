@@ -25,7 +25,7 @@ enum keycodes {
 
 // Layer Tap
 #define LT_ESCG LT(MEDIA, KC_ESC)
-#define LT_TAB  KC_TAB
+#define LT_TAB LT(NAV, KC_TAB)
 
 // Below-Home mods
 // DVORAK
