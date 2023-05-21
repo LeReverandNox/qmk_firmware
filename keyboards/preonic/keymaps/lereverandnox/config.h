@@ -1,20 +1,17 @@
 #pragma once
 
 #ifdef AUDIO_ENABLE
-#    if __GNUC__ > 5
-#        if __has_include("lrn_song_list.h")
-#            include "lrn_song_list.h"
-#        endif  // if file exists
-#    endif      // __GNUC__
+#    ifdef TEMPO_DEFAULT
+#       undef TEMPO_DEFAULT
+#       define TEMPO_DEFAULT 60
+#    endif
 
 #    define STARTUP_SONG SONG(PREONIC_SOUND)
 
-#    define DEFAULT_LAYER_SONGS \
-        { SONG(QWERTY_SOUND), SONG(DVORAK_SOUND) }
 #    define AUDIO_CLICKY
 
-// Lower the volume
-#    define AUDIO_DAC_SAMPLE_MAX 750U
+// Lower the volume (4095U = 100%)
+#    define AUDIO_DAC_SAMPLE_MAX 1500U
 
 #endif // AUDIO_ENABLE
 

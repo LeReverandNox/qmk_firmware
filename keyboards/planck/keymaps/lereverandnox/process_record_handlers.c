@@ -5,10 +5,19 @@ extern bool is_caps_on;
 extern keymap_config_t keymap_config;
 
 #ifdef AUDIO_ENABLE
+float qwerty_song[][2]    = SONG(QWERTY_SOUND);
+float qwerty_gb_song[][2] = SONG(GOODBYE_SOUND);
+
+float dvorak_song[][2]    = SONG(DVORAK_SOUND);
+float dvorak_gb_song[][2] = SONG(GOODBYE_SOUND);
+
+float colemak_song[][2]    = SONG(COLEMAK_SOUND);
+float colemak_gb_song[][2] = SONG(GOODBYE_SOUND);
+
 float plover_song[][2]    = SONG(PLOVER_SOUND);
 float plover_gb_song[][2] = SONG(PLOVER_GOODBYE_SOUND);
 
-float gaming_song[][2]    = SONG(ONE_UP_SOUND);
+float gaming_song[][2]    = SONG(ZELDA_PUZZLE);
 float gaming_gb_song[][2] = SONG(GOODBYE_SOUND);
 
 float mouse_song[][2]    = SONG(STARTUP_SOUND);
@@ -17,6 +26,9 @@ float mouse_gb_song[][2] = SONG(GOODBYE_SOUND);
 
 bool QWERTY_handler(keyrecord_t *record) {
     if (record->event.pressed) {
+#ifdef AUDIO_ENABLE
+        PLAY_SONG(qwerty_song);
+#endif // AUDIO_ENABLE
         set_single_persistent_default_layer(_QWERTY);
     }
     return false;
@@ -24,6 +36,9 @@ bool QWERTY_handler(keyrecord_t *record) {
 
 bool DVORAK_handler(keyrecord_t *record) {
     if (record->event.pressed) {
+#ifdef AUDIO_ENABLE
+        PLAY_SONG(dvorak_song);
+#endif // AUDIO_ENABLE
         set_single_persistent_default_layer(_DVORAK);
     }
     return false;
@@ -31,6 +46,9 @@ bool DVORAK_handler(keyrecord_t *record) {
 
 bool COLEMAKDH_handler(keyrecord_t *record) {
     if (record->event.pressed) {
+#ifdef AUDIO_ENABLE
+        PLAY_SONG(colemak_song);
+#endif // AUDIO_ENABLE
         set_single_persistent_default_layer(_COLEMAKDH);
     }
     return false;
