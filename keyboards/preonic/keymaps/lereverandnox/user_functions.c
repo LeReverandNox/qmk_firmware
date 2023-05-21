@@ -11,14 +11,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case CLMKDH:
             return COLEMAKDH_handler(record);
             break;
-#ifdef GAMING_DVORAK
+#ifdef GAMING_ENABLE
         case GAMING:
             return GAMING_handler(record);
             break;
         case EXT_GAM:
             return EXT_GAM_handler(record);
             break;
-#endif // GAMING_DVORAK
+#endif // GAMING_ENABLE
 #ifdef PLOVER_ENABLED
         case PLOVER:
             return PLOVER_handler(record);
@@ -103,9 +103,9 @@ layer_state_t layer_state_set_user(layer_state_t state) {
             break;
     }
     state = update_tri_layer_state(state, _SYM, _NUM, _ADJUST);
-#ifdef GAMING_DVORAK
+#ifdef GAMING_ENABLE
     state = update_tri_layer_state(state, _GAMING_LOWER, _GAMING_RAISE, _GAMING_ADJUST);
-#endif // GAMING_DVORAK
+#endif // GAMING_ENABLE
     return state;
 }
 
