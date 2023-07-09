@@ -2,7 +2,7 @@
 #include "lereverandnox.h"
 
 enum keycodes {
-    QWERTY = SAFE_RANGE,
+    QWERTY = QK_KB_0,
     DVORAK,
     CLMKDH,
     KC_MAKE,
