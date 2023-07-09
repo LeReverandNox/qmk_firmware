@@ -18,12 +18,10 @@
 // Most tactile encoders have detents every 4 stages
 #define ENCODER_RESOLUTION 4
 
-#define IGNORE_MOD_TAP_INTERRUPT
 #define TAPPING_TERM 200
 #define TAPPING_TERM_PER_KEY
 #define PERMISSIVE_HOLD
 // #define RETRO_TAPPING
-/* #undef IGNORE_MOD_TAP_INTERRUPT */
 /* #undef PERMISSIVE_HOLD */
 
 // Whether the gaming layer is enable or not
