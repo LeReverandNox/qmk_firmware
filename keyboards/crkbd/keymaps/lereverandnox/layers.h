@@ -1,9 +1,9 @@
 #pragma once
 
 enum layers {
-	_DVORAK,
+    _COLEMAKDH = 0,
 	_QWERTY,
-    _COLEMAKDH,
+	_DVORAK,
 #ifdef MOUSEKEY_ENABLE
 	_MOUSE,
 #endif // MOUSEKEY_ENABLE
