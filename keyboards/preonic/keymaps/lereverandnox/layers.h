@@ -2,9 +2,9 @@
 
 // clang-format off
 enum layers {
-  _DVORAK = 0,
+  _COLEMAKDH = 0,
   _QWERTY,
-  _COLEMAKDH,
+  _DVORAK,
 #ifdef GAMING_ENABLE
   _GAMING,
   _GAMING_RAISE,
