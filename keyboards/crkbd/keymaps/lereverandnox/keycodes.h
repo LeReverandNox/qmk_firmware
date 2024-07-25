@@ -56,4 +56,4 @@ enum keycodes {
 #define CM_DOT  RGUI_T(KC_DOT)
 #define CM_SLSH RCTL_T(KC_SLSH)
 
-#define NKR_TOG MAGIC_TOGGLE_NKRO
+#define NKR_TOG QK_MAGIC_TOGGLE_NKRO

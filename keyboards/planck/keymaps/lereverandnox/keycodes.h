@@ -84,7 +84,7 @@ enum keycodes {
 #define OS_LSFT OSM(MOD_LSFT)
 #define OS_RSFT OSM(MOD_RSFT)
 
-#define NKR_TOG MAGIC_TOGGLE_NKRO
+#define NKR_TOG QK_MAGIC_TOGGLE_NKRO
 
 // Encoder button
 #define BAS_ENC KC_MPLY
