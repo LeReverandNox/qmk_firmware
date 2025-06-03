@@ -49,6 +49,7 @@
 /* Limits maximum brightness of LEDs. */
 /* If not defined maximum brightness is set to 255. */
 /* Higher value might cause the controller to crash if you have a lot of LEDs */
+#    undef RGB_MATRIX_MAXIMUM_BRIGHTNESS
 #    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 152
 #    define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_SOLID_COLOR  // Sets the default mode, if none has been set
 
