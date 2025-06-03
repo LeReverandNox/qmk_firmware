@@ -43,12 +43,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_CAPS:
             return KC_CAPS_handler(record);
             break;
-        case GUI_OFF:
-            return GUI_OFF_handler(record);
-            break;
-        case GUI_ON:
-            return GUI_ON_handler(record);
-            break;
 #ifdef AUDIO_ENABLE
         case TIMBR_1:
             set_timbre(TIMBRE_12);

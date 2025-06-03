@@ -178,20 +178,3 @@ bool KC_CAPS_handler(keyrecord_t *record) {
     }
     return true;
 }
-bool GUI_OFF_handler(keyrecord_t *record) {
-    if (record->event.pressed) {
-#ifdef AUDIO_ENABLE
-        PLAY_SONG(mouse_gb_song);
-#endif // AUDIO_ENABLE
-    }
-    return true;
-}
-
-bool GUI_ON_handler(keyrecord_t *record) {
-    if (record->event.pressed) {
-#ifdef AUDIO_ENABLE
-        PLAY_SONG(mouse_song);
-#endif // AUDIO_ENABLE
-    }
-    return true;
-}

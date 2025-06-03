@@ -118,14 +118,3 @@ bool KC_CAPS_handler(keyrecord_t *record) {
     }
     return true;
 }
-bool GUI_OFF_handler(keyrecord_t *record) {
-    if (record->event.pressed) {
-    }
-    return true;
-}
-
-bool GUI_ON_handler(keyrecord_t *record) {
-    if (record->event.pressed) {
-    }
-    return true;
-}

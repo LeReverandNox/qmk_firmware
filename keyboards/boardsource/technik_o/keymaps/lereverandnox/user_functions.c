@@ -43,12 +43,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return KC_SHRG_handler(record);
             break;
 #endif // UNICODE_ENABLE
-        case GUI_OFF:
-            return GUI_OFF_handler(record);
-            break;
-        case GUI_ON:
-            return GUI_ON_handler(record);
-            break;
     }
     return process_record_secrets(keycode, record);
 }
