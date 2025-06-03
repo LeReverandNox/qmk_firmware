@@ -109,7 +109,7 @@
 
 
 // Force enable NKRO
-#define FORCE_NKRO
+#define NKRO_DEFAULT_ON true
 
 // Mouse key speed and acceleration.
 #ifdef MOUSEKEY_ENABLE

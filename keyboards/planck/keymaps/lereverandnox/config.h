@@ -30,7 +30,7 @@
 /* #define GAMING_COLEMAK */
 
 // Force enable NKRO
-#define FORCE_NKRO
+#define NKRO_DEFAULT_ON true
 
 // Mouse key speed and acceleration.
 #undef MOUSEKEY_DELAY
